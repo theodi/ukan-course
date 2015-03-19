@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Home</title>
+	<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+	<script src="js/jquery.cookie.js" type="text/javascript"></script>
+	<script src="js/app.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<h1>Page 2</h1>
+	<script type="text/javascript">
+		var pathname = window.location.href;
+		$.cookie("currentUrl", "http://localhost:8887/page1.html"); 
+		if(pathname !== $.cookie("currentUrl")){
+			window.location.href = "http://localhost:8777/page1.html";
+		}
+		console.log(pathname);
+		
+	</script>
+</body>

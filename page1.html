@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="assets/app.css" type="text/css" media="screen">
+	<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+	<script src="js/jquery.cookie.js" type="text/javascript"></script>
+	<script src="js/app.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<header>	
+<div id="progress-bar">
+	<div class="dark"></div>
+	<div class="light"></div>
+	<div class="dark"></div>
+	<div class="light"></div>
+	<div class="dark"></div>
+	<div class="light"></div>
+	<div class="dark"></div>
+	<div class="light"></div>
+	<div class="dark"></div>
+	<div class="light"></div>
+	<div class="dark"></div>
+	<div class="light"></div>
+</div>
+<p id="progress-text">Progress 1.2 of 12</p>
+</header>
+
+
+
+
+
+
+
+
+<footer>
+
+	<div id="menu-button" class="toolbar-element"></div>
+<div id="toolbar">
+	<div id="left" class="toolbar-element">Previous Title</div>
+	<div id="descriptor" class="toolbar-element">Active Topic Title</div>
+	<div id="right" class="toolbar-element">Next Title</div>
+</div>
+
+</footer>
+
+	<script type="text/javascript">
+		var pathname = window.location.href;
+		$.cookie("currentUrl", "http://localhost:8777/page1.html"); 
+		if(pathname !== $.cookie("currentUrl")){
+			window.location.href = "http://localhost:8777/page1.html";
+		}
+		console.log(pathname);
+		
+	</script>
+</body>
