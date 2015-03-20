@@ -46,6 +46,10 @@ table {
 
 /* app.css */
 
+body {
+	font-family: 'helvetica neue';
+}
+
 header {
 	position:fixed;
 	top:0;
@@ -88,6 +92,12 @@ footer {
 
 /* bottom toolbar */
 
+.truncate {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 #menu-button {
 	height: 60px;
@@ -96,22 +106,73 @@ footer {
 	float: left;
 }
 
+#menu-button img {
+	width: 60px;
+	height: 60px;
+}
+
 #toolbar {
 	width: 100%;
+}
+
+.but-l {
+	width: 25%;
+	float: left;
+}
+
+.desc-l {
+	width: 75%;
+	float: left;
+}
+
+.but-r {
+	width: 25%;
+	float: left;
+}
+
+.desc-r {
+	width: 75%;
+	float: left;
 }
 
 #left {
 	height: 60px;
 	width: 15%;
-	background-color: #1681ff;
+	background-color: #2284fb;
 	float: left;
+}
+
+#left p {
+	vertical-align: middle;
+	line-height:60px;
+	color: white;
+	text-align: center;
+}
+
+#left img {
+	width: 60px;
+	height: 60px;
 }
 
 #right {
 	height: 60px;
 	width: 15%;
-	background-color: #1681ff;
+	background-color: #2284fb;
 	float: right;
+	text-align: right;
+}
+
+#right img {
+	width: 60px;
+	height: 60px;
+	float: right;
+}
+
+#right p {
+	vertical-align: middle;
+	line-height:60px;
+	color: white;
+	text-align: center;
 }
 
 #descriptor {
@@ -121,6 +182,7 @@ footer {
 	text-align: center;
 	float: left;
 	background-color: black;
+	font-weight: 600;
 }
 
 #descriptor h4 {
@@ -135,6 +197,10 @@ footer {
 
 @media only screen and (max-width: 40em) { 
 
+	body {
+		background-color: green;
+	}
+
 	#descriptor {
 	color: white;
 	width: 50%;
@@ -142,6 +208,21 @@ footer {
 	text-align: center;
 	float: left;
 	background-color: black;
+	}
+
+	#right p, #left p {
+		display: none;
+	}
+
+	.but-r, .but-l {
+		width: 100%;
+		text-align: center;
+	}
+
+	#right img {
+		width: 60px;
+		height: 60px;
+		float: none;
 	}
 
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
@@ -163,6 +244,23 @@ footer {
 	float: left;
 	background-color: black;
 	}
+
+	#right p, #left p {
+		display: none;
+	}
+
+	.but-r, .but-l {
+		width: 100%;
+		text-align: center;
+	}
+
+	#right img {
+		width: 60px;
+		height: 60px;
+		float: none;
+	}
+
+
 
 } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 
