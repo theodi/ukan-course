@@ -28,7 +28,11 @@
 <p id="progress-text">Progress 1.2 of 12</p>
 </header>
 
-
+<section id="content-wrapper">
+	<div id="slide">
+		
+	</div>
+</section>
 
 
 
@@ -59,6 +63,10 @@
 			window.location.href = "http://localhost:8777/page1.html";
 		}
 		console.log(pathname);
+
+		$('#menu-button').click(function(){
+			$('#slide').toggleClass('openslide');
+		});
 		
 	</script>
 </body>
