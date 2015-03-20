@@ -5,17 +5,40 @@
 	<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
 	<script src="js/jquery.cookie.js" type="text/javascript"></script>
 	<script src="js/app.js" type="text/javascript"></script>
+
+	
+
 </head>
 
 <body>
-	<h1>Page 2</h1>
-	<script type="text/javascript">
-		var pathname = window.location.href;
-		$.cookie("currentUrl", "http://localhost:8887/page1.html"); 
-		if(pathname !== $.cookie("currentUrl")){
-			window.location.href = "http://localhost:8777/page1.html";
-		}
-		console.log(pathname);
+<div id="canvas">
+		<div class="circle" id="circles-1"></div>
+		<div class="circle" id="circles-2"></div>
+		<div class="circle" id="circles-3"></div>
+		<div class="circle" id="circles-4"></div>
+		<div class="circle" id="circles-5"></div>
 		
+	</div>
+
+	<script src="js/circles.js"></script>
+	<script>
+		
+
+		var colors = [
+			['#D3B6C6', '#4B253A'], ['#FCE6A4', '#EFB917'], ['#BEE3F7', '#45AEEA'], ['#F8F9B6', '#D2D558'], ['#F4BCBF', '#D43A43']
+		], circles = [];
+
+		for (var i = 1; i <= 5; i++) {
+			var child = document.getElementById('circles-' + i),
+				percentage = 31.42 + (i * 9.84);
+
+			circles.push(Circles.create({
+				id:         child.id,
+				value:		percentage,
+				radius:     60,
+				width:      10,
+				colors:     colors[i - 1]
+			}));
+		};
 	</script>
 </body>

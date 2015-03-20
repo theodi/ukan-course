@@ -46,6 +46,8 @@ table {
 
 /* app.css */
 
+
+
 body {
 	font-family: 'helvetica neue';
 }
@@ -76,7 +78,7 @@ header {
 /* content wrapper */
 
 #content-wrapper {
-	margin-top: 7px;
+	margin-top: 10px;
 	margin-bottom: 60px;
     position: relative;
     overflow: hidden;
@@ -86,26 +88,21 @@ header {
 }
 
 #slide {
-	margin-top: 7px;
+	margin-top: 0px;
     position: absolute;
-    left: -400px;
-    width: 400px;
+    left: -600px;
+    width: 600px;
     height: 100vh;
-    background-color: gray;  
+    background-color: #2d2d2d;  
     transition: 1s;
 }
-
-/*
-#content-wrapper:hover #slide {
-    transition: 1s;
-    left: 0;
-}
-*/
 
 .openslide {
 	transition: 1s !important;
     left: 0 !important;
 }
+
+
 
 /* footer */
 
@@ -223,6 +220,39 @@ footer {
 	vertical-align: middle;
 	line-height:60px;
 }
+
+
+
+/* left panel */
+
+.side-panel-title {
+	background-color: #444444;
+	color: #ededed;
+}
+
+.side-panel-title {
+	font-size: 3em;
+	font-weight: 500;
+	padding: 20px 0 20px 60px;
+}
+
+#canvas h3 {
+	color: #ededed;
+	font-size: 2em;
+	display: inline-block;
+	font-weight: 500;
+}
+
+.circle {
+	display: inline-block;
+}
+
+.slide-content {
+	padding-left: 60px;
+	padding-top: 20px;
+}
+
+
 
 
 
