@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="assets/app.css" type="text/css" media="screen">
 	<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
 	<script src="js/jquery.cookie.js" type="text/javascript"></script>
-	<script src="js/app.js" type="text/javascript"></script>
+	
 	
 </head>
 
@@ -29,8 +29,11 @@
 <p id="progress-text">Progress 1.2 of 12</p>
 </header>
 
+
+
 <section id="content-wrapper">
-	<div id="slide">
+
+	<div id="slide-left">
 		<div class="side-panel-title">
 			<h2>Course Contents</h2>
 		</div>
@@ -39,6 +42,16 @@
 			<h3>Introduction</h3>
 		</div>
 	</div>
+
+	<div id="slide-right">
+	<div>
+		<div class="col-1">
+			<div class="arrow-left help"><p>?</p></div>
+		</div>
+		<div class="col-2"></div>
+	</div>
+	</div>
+
 </section>
 
 
@@ -62,24 +75,13 @@
 
 </footer>
 	<script src="js/circles.js" type="text/javascript"></script>
+	<script src="js/app.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	
 
-		$('#menu-button').click(function(){
-			$('#slide').toggleClass('openslide');
-
-			Circles.create({
-				id:         'circles-1',
-				value:		'75',
-				radius:     15,
-				width:      5,
-				text:       '',
-				colors:     ['#999999', '#5AEA5B']
-			});
-	
+		
 
 
-		});
 
 
 		

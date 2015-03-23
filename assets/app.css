@@ -52,6 +52,8 @@ body {
 	font-family: 'helvetica neue';
 }
 
+/**** header ****/
+
 header {
 	position:fixed;
 	top:0;
@@ -75,10 +77,12 @@ header {
 	float: left;
 }
 
-/* content wrapper */
+
+
+/**** content wrapper ****/
 
 #content-wrapper {
-	margin-top: 10px;
+	margin-top: 7px;
 	margin-bottom: 60px;
     position: relative;
     overflow: hidden;
@@ -87,7 +91,7 @@ header {
     border: 1px solid black;
 }
 
-#slide {
+#slide-left {
 	margin-top: 0px;
     position: absolute;
     left: -600px;
@@ -97,14 +101,64 @@ header {
     transition: 1s;
 }
 
-.openslide {
+#slide-right {
+	margin-top: 0px;
+    position: absolute;
+    right: -500px;
+    width: 570px;
+    height: 100vh;
+    
+    transition: 1s;
+}
+
+.openslide-left {
 	transition: 1s !important;
     left: 0 !important;
 }
 
+.openslide-right {
+	transition: 1s !important;
+    right: 0 !important;
+}
+
+.col-1 {
+	width: 70px;
+	background-color: white !important;
+	height: 100vh;
+	float: left;
+}
+
+.help p {
+	font-size: 3rem;
+	font-weight: 500;
+	color: white;
+	padding-left: 30px;
+	margin-top: -23px;
+}
+
+.help {
+	cursor: pointer;
+}
 
 
-/* footer */
+
+.arrow-left {
+	width: 0; 
+	height: 0; 
+	border-top: 70px solid transparent;
+	border-bottom: 70px solid transparent; 
+	border-right:70px solid #FF5B02; 
+}
+
+.col-2 {
+	width: 570px;
+	background-color: #2d2d2d;
+	height: 100vh;
+}
+
+
+
+/**** footer ****/
 
 footer {
 	position: fixed;
@@ -121,7 +175,7 @@ footer {
     top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }
 
-/* bottom toolbar */
+/**** bottom toolbar ****/
 
 .truncate {
   width: 100px;
@@ -135,11 +189,13 @@ footer {
 	background-color: #ff5b02;
 	width: 60px;
 	float: left;
+	cursor: pointer;
 }
 
 #menu-button img {
 	width: 60px;
 	height: 60px;
+	cursor: pointer;
 }
 
 #toolbar {
@@ -149,6 +205,7 @@ footer {
 .but-l {
 	width: 25%;
 	float: left;
+	cursor: pointer;
 }
 
 .desc-l {
@@ -159,6 +216,7 @@ footer {
 .but-r {
 	width: 25%;
 	float: left;
+	cursor: pointer;
 }
 
 .desc-r {
@@ -171,6 +229,7 @@ footer {
 	width: 15%;
 	background-color: #2284fb;
 	float: left;
+	cursor: pointer;
 }
 
 #left p {
@@ -191,6 +250,7 @@ footer {
 	background-color: #2284fb;
 	float: right;
 	text-align: right;
+	cursor: pointer;
 }
 
 #right img {
@@ -223,7 +283,7 @@ footer {
 
 
 
-/* left panel */
+/**** left panel ****/
 
 .side-panel-title {
 	background-color: #444444;
@@ -261,9 +321,7 @@ footer {
 
 @media only screen and (max-width: 40em) { 
 
-	body {
-		background-color: green;
-	}
+	
 
 	#descriptor {
 	color: white;
@@ -296,9 +354,7 @@ footer {
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) { 
 
-	body {
-		background-color: red;
-	}
+	
 
 	#descriptor {
 	color: white;
