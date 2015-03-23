@@ -363,6 +363,16 @@ footer {
 	border: solid 4px #ededed;
 }
 
+input[type=submit] {
+	background: #5AEA5B;
+	border: none;
+	color: black;
+	font-weight: 600;
+	font-size: 1.2em;
+	width: 25%;
+	margin-top: 40px;
+}
+
 
 .right-side-panel-content form {
 	margin-top: 30px;
