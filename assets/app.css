@@ -104,10 +104,9 @@ header {
 #slide-right {
 	margin-top: 0px;
     position: absolute;
-    right: -500px;
-    width: 570px;
+    right: -600px;
+    width: 670px;
     height: 100vh;
-    
     transition: 1s;
 }
 
@@ -151,7 +150,7 @@ header {
 }
 
 .col-2 {
-	width: 570px;
+	width: 670px;
 	background-color: #2d2d2d;
 	height: 100vh;
 }
@@ -291,7 +290,7 @@ footer {
 }
 
 .side-panel-title {
-	font-size: 3em;
+	font-size: 2.3em;
 	font-weight: 500;
 	padding: 20px 0 20px 60px;
 }
@@ -312,6 +311,62 @@ footer {
 	padding-top: 20px;
 }
 
+.right-side-panel-title {
+	background-color: #444444;
+	color: #ededed;
+	font-size: 2.3em;
+	font-weight: 500;
+	padding: 20px 0 20px 120px;
+	margin-bottom: 40px;
+}
+
+.right-side-panel-content {
+	color: #ededed;
+	font-size: 1em;
+	font-weight: 400;
+	padding-left: 120px;
+	padding-right: 70px;
+}
+
+.right-side-panel-content input::-webkit-input-placeholder {
+   color: #ededed;
+}
+
+.right-side-panel-content input:-moz-placeholder { /* Firefox 18- */
+   color: #ededed;  
+}
+
+.right-side-panel-content input::-moz-placeholder {  /* Firefox 19+ */
+   color: #ededed;  
+}
+
+.right-side-panel-content input:-ms-input-placeholder {  
+   color: #ededed;  
+}
+
+.right-side-panel-content input, .right-side-panel-content textarea {
+	width: 100%;
+	background: #444;
+	font-size: 1em;
+	font-weight: 300;
+	color: #ededed;
+}
+
+.right-side-panel-content input {
+	height: 40px;
+	border: solid 4px #ededed;
+	margin-bottom: 8px;
+}
+
+.right-side-panel-content textarea {
+	height: 160px;
+	border: solid 4px #ededed;
+}
+
+
+.right-side-panel-content form {
+	margin-top: 30px;
+}
 
 
 
