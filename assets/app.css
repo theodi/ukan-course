@@ -77,6 +77,13 @@ header {
 	float: left;
 }
 
+#progress-text {
+	padding-top: 20px;
+	padding-left: 40px;
+	color: gray;
+	font-weight: 600;
+}
+
 
 
 /**** content wrapper ****/
@@ -122,7 +129,7 @@ header {
 
 .col-1 {
 	width: 70px;
-	background-color: white !important;
+	background: white;
 	height: 100vh;
 	float: left;
 }
@@ -154,6 +161,25 @@ header {
 	background-color: #2d2d2d;
 	height: 100vh;
 }
+
+
+/**** course content area ****/
+
+#course-content-wrapper {
+	width: 100%;
+	padding-top: 70px;
+	padding-right: 100px;
+	padding-left: 100px;
+	padding-bottom: 100px;
+}
+
+#course-content {
+	border: 1px solid gray;
+	width: 85%;
+	height: 80vh;
+}
+
+
 
 
 
@@ -375,7 +401,6 @@ input[type=submit] {
 
 input#image-submit{
     background: #5AEA5B url('images/submit.png') no-repeat top right;
-    margin-left: 10px;
     height: 50px;
     background-size: 34%;
 }
