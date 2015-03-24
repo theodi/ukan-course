@@ -108,6 +108,15 @@ header {
     transition: 1s;
 }
 
+.slide-content h3 {
+	float: none;
+	margin-left: 10px;
+}
+
+.ch-title {
+	margin-bottom: 30px;
+}
+
 #slide-right {
 	margin-top: 0px;
     position: absolute;
