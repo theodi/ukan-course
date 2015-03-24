@@ -77,6 +77,13 @@ header {
 	float: left;
 }
 
+#progress-text {
+	padding-top: 20px;
+	padding-left: 40px;
+	color: gray;
+	font-weight: 600;
+}
+
 
 
 /**** content wrapper ****/
@@ -88,7 +95,7 @@ header {
     overflow: hidden;
     width: 100%;
     height: 100vh; 
-    border: 1px solid black;
+    
 }
 
 #slide-left {
@@ -101,13 +108,21 @@ header {
     transition: 1s;
 }
 
+.slide-content h3 {
+	float: none;
+	margin-left: 10px;
+}
+
+.ch-title {
+	margin-bottom: 30px;
+}
+
 #slide-right {
 	margin-top: 0px;
     position: absolute;
-    right: -500px;
-    width: 570px;
+    right: -600px;
+    width: 670px;
     height: 100vh;
-    
     transition: 1s;
 }
 
@@ -123,7 +138,7 @@ header {
 
 .col-1 {
 	width: 70px;
-	background-color: white !important;
+	background: white;
 	height: 100vh;
 	float: left;
 }
@@ -151,10 +166,28 @@ header {
 }
 
 .col-2 {
-	width: 570px;
+	width: 670px;
 	background-color: #2d2d2d;
 	height: 100vh;
 }
+
+
+/**** course content area ****/
+
+#course-content-wrapper {
+	width: 100%;
+	padding-top: 70px;
+	padding-right: 100px;
+	padding-left: 100px;
+	padding-bottom: 100px;
+}
+
+#course-content {
+	width: 85%;
+	height: 80vh;
+}
+
+
 
 
 
@@ -291,7 +324,7 @@ footer {
 }
 
 .side-panel-title {
-	font-size: 3em;
+	font-size: 2.3em;
 	font-weight: 500;
 	padding: 20px 0 20px 60px;
 }
@@ -312,6 +345,126 @@ footer {
 	padding-top: 20px;
 }
 
+.right-side-panel-title {
+	background-color: #444444;
+	color: #ededed;
+	font-size: 2.3em;
+	font-weight: 500;
+	padding: 20px 0 20px 120px;
+	margin-bottom: 40px;
+}
+
+.right-side-panel-content {
+	color: #ededed;
+	font-size: 1em;
+	font-weight: 400;
+	padding-left: 120px;
+	padding-right: 70px;
+}
+
+.right-side-panel-content input::-webkit-input-placeholder {
+   color: #ededed;
+}
+
+.right-side-panel-content input:-moz-placeholder { /* Firefox 18- */
+   color: #ededed;  
+}
+
+.right-side-panel-content input::-moz-placeholder {  /* Firefox 19+ */
+   color: #ededed;  
+}
+
+.right-side-panel-content input:-ms-input-placeholder {  
+   color: #ededed;  
+}
+
+.right-side-panel-content input, .right-side-panel-content textarea {
+	width: 100%;
+	background: #444;
+	font-size: 1em;
+	font-weight: 300;
+	color: #ededed;
+}
+
+.right-side-panel-content input {
+	height: 40px;
+	border: solid 4px #ededed;
+	margin-bottom: 8px;
+}
+
+.right-side-panel-content textarea {
+	height: 160px;
+	border: solid 4px #ededed;
+}
+
+input[type=submit] {
+	background: #5AEA5B;
+	border: none;
+	color: black;
+	font-weight: 600;
+	font-size: 1.2em;
+	width: 33%;
+	margin-top: 40px;
+}
+
+input#image-submit{
+    background: #5AEA5B url('images/submit.png') no-repeat top right;
+    height: 50px;
+    background-size: 34%;
+}
+
+
+.right-side-panel-content form {
+	margin-top: 30px;
+}
+
+
+
+/**** demo content ****/
+
+#welcome {
+	text-align: center;
+	vertical-align: middle;
+	line-height: 300px;
+	font-size: 3em;
+	color: gray;
+}
+
+.course-section-title h1 {
+	font-size: 3em;
+	color: gray;
+}
+
+.course-section-title p {
+	font-size: 1.5em;
+	color: black;
+	margin-top: 40px;
+	padding-right: 30px;
+}
+
+.content-left {
+	width: 60%;
+	float: left;
+}
+
+.content-right {
+	width: 40%;
+	float: right;
+	padding-top: 40px;
+}
+
+.content-right img {
+	width: 100%;
+}
+
+.captioned-image {
+	background: #efefef;
+}
+
+.caption {
+	padding-left: 20px;
+	padding-bottom: 40px;
+}
 
 
 
