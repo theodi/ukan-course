@@ -183,7 +183,6 @@ header {
 }
 
 #course-content {
-	border: 1px solid gray;
 	width: 85%;
 	height: 80vh;
 }
@@ -417,6 +416,54 @@ input#image-submit{
 
 .right-side-panel-content form {
 	margin-top: 30px;
+}
+
+
+
+/**** demo content ****/
+
+#welcome {
+	text-align: center;
+	vertical-align: middle;
+	line-height: 300px;
+	font-size: 3em;
+	color: gray;
+}
+
+.course-section-title h1 {
+	font-size: 3em;
+	color: gray;
+}
+
+.course-section-title p {
+	font-size: 1.5em;
+	color: black;
+	margin-top: 40px;
+	padding-right: 30px;
+}
+
+.content-left {
+	width: 60%;
+	float: left;
+}
+
+.content-right {
+	width: 40%;
+	float: right;
+	padding-top: 40px;
+}
+
+.content-right img {
+	width: 100%;
+}
+
+.captioned-image {
+	background: #efefef;
+}
+
+.caption {
+	padding-left: 20px;
+	padding-bottom: 40px;
 }
 
 
