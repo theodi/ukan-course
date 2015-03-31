@@ -46,7 +46,9 @@ table {
 
 /* app.css */
 
-
+h1 {
+	color: #2d2d2d !important;
+}
 
 body {
 	font-family: 'helvetica neue';
@@ -63,25 +65,91 @@ header {
 	background-color:black;
 }
 
-.dark {
+#progress-bar div
+{
 	width: 8.33%;
-	background-color: #8c8c8c;
 	height: 7px;
 	float: left;
 }
 
-.light {
-	width: 8.33%;
+#progress-step-0
+{
+	background: #1C4BF2;
+}
+
+#progress-step-1
+{
+	background: #1681FF;
+}
+
+#progress-step-2
+{
+	background: #00AFFF;
+}
+
+#progress-step-3
+{
+	background: #10B131;
+}
+
+#progress-step-4
+{
+	background: #5AEA5B;
+}
+
+#progress-step-5
+{
+	background: #F6B122;
+}
+
+#progress-step-6
+{
+	background: #FF5B02;
+}
+
+#progress-step-7
+{
+	background: #D10005;
+}
+
+#progress-step-8
+{
+	background: #E20072;
+}
+
+#progress-step-9
+{
+	background: #A72B8C;
+}
+
+#progress-step-10
+{
+	background: #D32A4D;
+}
+
+#progress-step-11
+{
+	background: #67299B;
+}
+
+#progress-bar .grey:nth-child(odd)
+{
+	
+	background-color: #8c8c8c;
+}
+
+#progress-bar .grey:nth-child(even)
+{
 	background-color: #d8d8d8;
-	height: 7px;
-	float: left;
 }
 
 #progress-text {
 	padding-top: 20px;
 	padding-left: 40px;
+	padding-bottom: 10px;
 	color: gray;
 	font-weight: 600;
+	background-color: white;
 }
 
 
@@ -91,11 +159,8 @@ header {
 #content-wrapper {
 	margin-top: 7px;
 	margin-bottom: 60px;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh; 
-    
+    position: fixed;
+    width: 100%;  
 }
 
 #slide-left {
@@ -106,6 +171,7 @@ header {
     height: 100vh;
     background-color: #2d2d2d;  
     transition: 1s;
+    overflow-y: scroll;
 }
 
 .slide-content h3 {
@@ -115,13 +181,14 @@ header {
 
 .ch-title {
 	margin-bottom: 30px;
+	cursor: pointer;
 }
 
 #slide-right {
 	margin-top: 0px;
     position: absolute;
     right: -600px;
-    width: 670px;
+    width: 600px;
     height: 100vh;
     transition: 1s;
 }
@@ -138,9 +205,10 @@ header {
 
 .col-1 {
 	width: 70px;
-	background: white;
+	background: transparent;
 	height: 100vh;
-	float: left;
+	position: absolute;
+	left: -70px;
 }
 
 .help p {
@@ -177,18 +245,24 @@ header {
 #course-content-wrapper {
 	width: 100%;
 	padding-top: 70px;
-	padding-right: 100px;
-	padding-left: 100px;
 	padding-bottom: 100px;
+	position: absolute;
+	z-index: -1;
 }
 
 #course-content {
 	width: 85%;
 	height: 80vh;
+	transition: 0.5s;
+	margin: 0 auto;
 }
 
-
-
+#left.faded,
+#right.faded
+{
+	opacity: 0.1;
+	cursor: default;
+}
 
 
 /**** footer ****/
@@ -331,9 +405,24 @@ footer {
 
 #canvas h3 {
 	color: #ededed;
-	font-size: 2em;
+	font-size: 1.3em;
 	display: inline-block;
-	font-weight: 500;
+	font-weight: normal;
+}
+
+#wrapperleft {
+	overflow: scroll;
+	height: 75%;
+}
+
+#wrapperright {
+	overflow: scroll;
+	height: 70%;
+}
+
+strong
+{
+	font-weight: bold;
 }
 
 .circle {
@@ -350,7 +439,7 @@ footer {
 	color: #ededed;
 	font-size: 2.3em;
 	font-weight: 500;
-	padding: 20px 0 20px 120px;
+	padding: 20px 0 20px 60px;
 	margin-bottom: 40px;
 }
 
@@ -358,8 +447,9 @@ footer {
 	color: #ededed;
 	font-size: 1em;
 	font-weight: 400;
-	padding-left: 120px;
+	padding-left: 60px;
 	padding-right: 70px;
+	width: 70%;
 }
 
 .right-side-panel-content input::-webkit-input-placeholder {
@@ -418,9 +508,17 @@ input#image-submit{
 	margin-top: 30px;
 }
 
+.alert-message {
+	visibility: hidden;
+	padding-top: 10px;
+	color: red;
+}
+
 
 
 /**** demo content ****/
+
+
 
 #welcome {
 	text-align: center;
@@ -432,12 +530,17 @@ input#image-submit{
 
 .course-section-title h1 {
 	font-size: 3em;
-	color: gray;
+	font-weight: 600;
+}
+
+#course-content > section > h1 > span {
+	color: #8e8e8e;
+	font-weight: 500;
 }
 
 .course-section-title p {
 	font-size: 1.5em;
-	color: black;
+	color: #2d2d2d;
 	margin-top: 40px;
 	padding-right: 30px;
 }
@@ -450,12 +553,14 @@ input#image-submit{
 .content-right {
 	width: 40%;
 	float: right;
-	padding-top: 40px;
+	padding-top: 10px;
+	color: black;
 }
 
 .content-right img {
 	width: 100%;
 }
+
 
 .captioned-image {
 	background: #efefef;
@@ -464,11 +569,101 @@ input#image-submit{
 .caption {
 	padding-left: 20px;
 	padding-bottom: 40px;
+	font-weight: 500;
 }
 
+/**** multiple choice ****/
+
+#navContent{
+      margin:auto;
+      width:100%;
+      height:400px;
+      position:relative;
+      overflow:hidden;
+      }
+#game1{
+      margin:auto;
+      width:100%;
+      height:400px;
+      right:0px;
+      position:absolute;
+      }
+#game2{
+      margin:auto;
+      width:100%;
+      height:400px;
+      right:-800px;
+      position:absolute;
+      }
+      
+.questionText{
+      font-size:18px;
+      color:#000;
+      }
+.option{
+      width:400px;
+      height:30px;
+      margin:15px;
+      font-size:18px;
+      color:#000;
+      padding:2px;
+      padding-left:10px;
+      border: 5px solid white;
+      cursor:pointer;
+      background-color:#CCC;
+      vertical-align: middle;
+  	  line-height: 30px;
+      }
+.option:hover{
+      border:#CCC solid 5px;
+      background-color:#FF5B02;
+      color: white;
+      }
+
+#topbar{
+      height:50px;
+      margin:auto;
+      color:#2d2d2d;
+      font-size:36px;
+      width:100%;
+      font-weight: 500;
+      }
 
 
+.feedback1{
+      width:150px;
+      padding:5px;
+      font-size:30px;
+      color:#FFF;
+      background-color:#5AEA5B;
+      text-align:center;
+      }
+           
+.feedback2{
+      width:150px;
+      padding:5px;
+      font-size:30px;
+      color:#FFF;
+      background-color:#FF5B02;
+      text-align:center;
+      }
 
+.mc-quiz {
+	border: solid 1px #dedede;
+  	background-color: #f2f2f2;
+  	padding: 20px;
+}
+
+input#restartQuiz {
+ 	background: #5AEA5B;
+  	height: 40px;
+  	width: 150px;
+  	font-family: 'helvetica neue';
+  	border: none;
+  	font-size: 1em;
+}
+
+      
 
 @media only screen { } /* Define mobile styles */
 
@@ -538,6 +733,27 @@ input#image-submit{
 } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 
 
+@media only screen and (max-width: 800px) {
+	
+.content-left
+{
+	width: 100%;
+	display: block;
+}	
+	
+	
+.content-right
+{
+	
+	width: 100%;
+	display: block;
+	
+}
+	
+	
+}
+
+
 @media only screen and (min-width: 64.063em) { } /* min-width 1025px, large screens */
 
 @media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
@@ -549,8 +765,6 @@ input#image-submit{
 
 
 @media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */
-
-
 
 
 

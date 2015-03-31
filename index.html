@@ -3,9 +3,8 @@
 <head>
 	<title>Home</title>
 	<link rel="stylesheet" href="assets/app.css" type="text/css" media="screen">
-	<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
-	<script src="js/jquery.cookie.js" type="text/javascript"></script>
-	
+
+
 	
 </head>
 
@@ -13,30 +12,37 @@
 
 <header>	
 <div id="progress-bar">
-	<div class="dark"></div>
-	<div class="light"></div>
-	<div class="dark"></div>
-	<div class="light"></div>
-	<div class="dark"></div>
-	<div class="light"></div>
-	<div class="dark"></div>
-	<div class="light"></div>
-	<div class="dark"></div>
-	<div class="light"></div>
-	<div class="dark"></div>
-	<div class="light"></div>
-</div>
-<p id="progress-text">Progress 1.2 of 12</p>
+	<div id="progress-step-0" class="grey"></div>
+	<div id="progress-step-1" class="grey" ></div>
+	<div id="progress-step-2" class="grey"></div>
+	<div id="progress-step-3" class="grey"></div>
+	<div id="progress-step-4" class="grey"></div>
+	<div id="progress-step-5" class="grey"></div>
+	<div id="progress-step-6" class="grey"></div>
+	<div id="progress-step-7" class="grey"></div>
+	<div id="progress-step-8" class="grey"></div>
+	<div id="progress-step-9" class="grey"></div>
+	<div id="progress-step-10" class="grey"></div>
+	<div id="progress-step-11" class="grey"></div>
 
-	<section id="course-content-wrapper">
-		<div id="course-content">
-		<h1 id="welcome">Welcome Page</h1>
-		</div>
-	</section>
+	<p id="progress-text"></p>
+
+</div>
+
+
+	
 
 </header>
 
-
+<section id="course-content-wrapper">
+	
+		
+		<div id="course-content">
+		<h1 id="welcome">Welcome</h1>
+		</div>
+		
+		
+	</section>
 
 
 <section id="content-wrapper">
@@ -45,58 +51,73 @@
 		<div class="side-panel-title">
 			<h2>Course Contents</h2>
 		</div>
+		<div id="wrapperleft">
+		<div id="scrollerleft">
 		<div class="slide-content" id="canvas">
-			<div class="ch-title">
-			<div class="circle" id="circles-1"></div>
-			<h3>Introduction</h3>
+		
+			<div class="ch-title" data-topic="0" data-sections="1">
+				<h3>Introduction</h3>
 			</div>
 
-			<div class="ch-title">
-			<div class="circle" id="circles-2"></div>
-			<h3>Chapter 1</h3>
+			<div class="ch-title" data-topic="1" data-sections="3">
+			<h3>Topic 1 - <strong>Describing the Data Environment</strong></h3>
 			</div>
 
-			<div class="ch-title">
-			<div class="circle" id="circles-3"></div>
-			<h3>Chapter 2</h3>
+			<div class="ch-title" data-topic="2" data-sections="3">
+			<h3>Topic 2 - <strong>Know Your Data</strong></h3>
 			</div>
 
-			<div class="ch-title">
-			<div class="circle" id="circles-4"></div>
-			<h3>Chapter 3</h3>
+			<div class="ch-title" data-topic="3" data-sections="3">
+			<h3>Topic 3 - <strong>The Use Case</strong></h3>
 			</div>
 
-			<div class="ch-title">
-			<div class="circle" id="circles-5"></div>
-			<h3>Chapter 4</h3>
+			<div class="ch-title" data-topic="4" data-sections="3">
+			<h3>Topic 4 - <strong>Understand the pre-share/release legal issue</strong></h3>
 			</div>
 
-			<div class="ch-title">
-			<div class="circle" id="circles-6"></div>
-			<h3>Chapter 5</h3>
+			<div class="ch-title" data-topic="5" data-sections="3">
+			<h3>Topic 5 - <strong>Understand the issue of consent and your ethical obligations</strong></h3>
 			</div>
 
-			<div class="ch-title">
-			<div class="circle" id="circles-7"></div>
-			<h3>Chapter 6</h3>
+			<div class="ch-title" data-topic="6" data-sections="3">
+			<h3>Topic 6 - <strong>Assess disclosure risk process</strong></h3>
 			</div>
 
-			<div class="ch-title">
-			<div class="circle" id="circles-8"></div>
-			<h3>Chapter 7</h3>
+			<div class="ch-title" data-topic="7" data-sections="3">
+			<h3>Topic 7 - <strong>Anonymise your data</strong></h3>
 			</div>
 
-			<div class="ch-title">
-			<div class="circle" id="circles-9"></div>
-			<h3>Chapter 8</h3>
+			<div class="ch-title" data-topic="8" data-sections="3">
+			<h3>Topic 8 - <strong>Stakeholders</strong></h3>
 			</div>
+			
+			<div class="ch-title" data-topic="9" data-sections="3">
+			<h3>Topic 9 - <strong>What if something goes wrong?</strong></h3>
+			</div>
+			
+			<div class="ch-title" data-topic="10" data-sections="3">
+			<h3>Topic 10 - <strong>What happens next?</strong></h3>
+			</div>
+			
+			<div class="ch-title" data-topic="11" data-sections="3">
+			<h3><strong>Summary & Certificate</strong></h3>
+			</div>
+			
 		</div>
+		</div>
+		</div>
+
+
+
+
+
 	</div>
 
 	
 
 	<div id="slide-right">
-	<div>
+	
+	
 		<div class="col-1">
 			<div class="arrow-left help"><p>?</p></div>
 		</div>
@@ -104,20 +125,25 @@
 			<div class="right-side-panel-title">
 				<h2>Got Questions?</h2>
 			</div>
-			<div class="right-side-panel-content">
+			<div id="wrapperright">
+			<div class="right-side-panel-content" id="scrollerright">
 				<p>Got questions about best practice or want to make a comment about the course?</p><br>
 				<p>Just use the form below and we will get back to you shortly.</p>
 
-				<form>
-					<input id="name" type="text" placeholder="Name">
-					<input id="email" type="email" placeholder="youremail@domain.com">
+				<form name="myForm" action="" onsubmit="return validateForm()" method="post">
+					<input id="name" type="text" name="fname" placeholder="Name">
+					<input id="email" type="email" name="email" placeholder="youremail@domain.com">
 					<textarea rows="10" cols="50">Query / Comment
 					</textarea>
+						<div class="alert-message">
+						<p>Name and email must be filled out!</p>
+						</div>
 					<input id="image-submit" type="submit" value="Submit">
 				</form>
 			</div>
+			</div>
 		</div>
-	</div>
+	
 	</div>
 
 </section>
@@ -133,31 +159,20 @@
 <div id="toolbar">
 	<div id="left" class="toolbar-element">
 	<div class="but-l"><img src="assets/images/chevron-left.png"></div>
-	<div class="desc-l"><p>Previous Title</p></div>
+	<div class="desc-l"><p>Previous</p></div>
 	</div>
-	<div id="descriptor" class="toolbar-element"><h4>Active Topic Title</h4></div>
+	<div id="descriptor" class="toolbar-element"><h4>Introduction</h4></div>
 	<div id="right" class="toolbar-element">
-	<div class="desc-r"><p>Next Title</p></div>
+	<div class="desc-r"><p>Next</p></div>
 	<div class="but-r"><img src="assets/images/chevron-right.png"></div>
 	</div>
 </div>
 
 </footer>
+	<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+	<script src="js/jquery.cookie.js" type="text/javascript"></script>
 	<script src="js/circles.js" type="text/javascript"></script>
 	<script src="js/app.js" type="text/javascript"></script>
-	<script type="text/javascript">
-	
+	<script src="js/quiz.js" type="text/javascript"></script>
 
-		
-$('#right').click(function(){
-		$('#course-content').load(next);
-	});
-
-
-
-		
-
-
-		
-	</script>
 </body>
