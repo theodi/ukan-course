@@ -728,30 +728,16 @@ input#restartQuiz {
 		float: none;
 	}
 
+	.content-left, .content-right {
+		width: 100%;
+		margin-bottom: 40px;
+	}
 
 
 } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 
 
-@media only screen and (max-width: 800px) {
-	
-.content-left
-{
-	width: 100%;
-	display: block;
-}	
-	
-	
-.content-right
-{
-	
-	width: 100%;
-	display: block;
-	
-}
-	
-	
-}
+@media only screen and (max-width: 800px) { }
 
 
 @media only screen and (min-width: 64.063em) { } /* min-width 1025px, large screens */
