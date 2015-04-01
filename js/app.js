@@ -1,10 +1,11 @@
+var localData = { }; // Initialise global object to store local data
+var currentPage = "0.1";
+var currentTopic = "0";
+var currentSection = "1";
+var quiz = false;
+var quizPassed;
+
 $( document ).ready(function() {
-
-
-localData = { }; // Initialise global object to store local data
-topicCount = $("#slide-left .ch-title").size() - 2; // Minus 2 accounts for intro and summary.
-currentPage = "";
-quizPassed = false;
 
 
 // Load data from cookie
@@ -42,21 +43,6 @@ $.each($("#slide-left .ch-title"), function(key, value){
 
 /* FUNCTIONS */
 
-
-function loadContent(page)
-{		
-	$("#left, #right").removeClass("faded");
-	
-	if(nextSection == 1)
-	{
-		console.log("Grey out previous");
-		$("#left").addClass("faded");
-	}
-	
-	$('#course-content').load("content/" + page + ".html");		// Load page contents
-}
-		
-
 function updateProgressBar()
 {
 	
@@ -76,7 +62,7 @@ function updateProgressBar()
 
 function updateCircles()
 {
-	$.each($("#slide-left .ch-title"), function(key, value){
+	$.each($(".ch-title"), function(key, value){
 		
 		
 		var topicNumber = $(this).data("topic");
@@ -122,78 +108,87 @@ $(window).bind("beforeunload", function()
 	
 	function changePage(page, context)
 	{	
-			
-				
-				
-		if(page != null)
-		{	
-			
-				currentPage = String(page);	
-				currentTopic = currentPage.substring(0,1);	// Get current topic - used to record progress
-				currentSection = currentPage.substring(2);	// Get current section - used to record progress
-				
-				nextTopic = String(page).substring(0,1);	// Get next topic - used to 
-				nextSection = String(page).substring(2);
-				lastSection = $("[data-topic=" + nextTopic + "]").data("sections");	// Get last section of next topic - used to determine if on last page of topic
-				
-				
-					
-					loadContent(page);	// Change page content
-					
-					$("#descriptor h4").html(  $("[data-topic=" + nextTopic + "] h3 strong").html() );
-					
-					$('#slide-left').removeClass('openslide-left'); 												// Close menu if open
-					$('#slide-right').removeClass('openslide-right'); 												// Close menu if open
-					$('#course-content').removeClass('faded');														// Restore opacity
-					
-					$("#progress-text").html("Section " + nextSection + " of " + lastSection);					// Change progress text
-					
-					
-					// Save Progress
-					
-					if(context == "next")
-					{
-						
-						if(currentTopic in localData)	// If topic exists in object
-						{
-							if(localData[currentTopic] < currentSection)
-							{
-								localData[currentTopic] = currentSection;
-							}
-						}
-						
-						else
-						{
-							console.log("New");
-							localData[currentTopic] = currentSection;
-						}
-												
-						updateProgressBar();
-						
-						
-						console.log("Current " + currentSection);
-						console.log("Last " + lastSection);
-						
-						if(currentSection == lastSection) // If last page
-						{
-							if(quizPassed == true)
-							{
-								console.log("sdfsdf");
-								quizPassed = false; // Reset variable	
-								loadContent("summary");	// Change page content
-							}
-						}
-						
-						
-						
-						
-					}
-					
-					window.location.hash = page;								// Add content location to URL hash
-					
+		console.log("Change Page");
 		
+		if(page == null) // Either first or last page
+		{
+			if(context == "next")
+			{
+				if(currentTopic in localData)	// If topic exists in object
+				{
+					if(localData[currentTopic] < currentSection)
+					{
+						console.log("New Section");
+						localData[currentTopic] = currentSection;
+					}
+				}
+				
+				else
+				{
+					console.log("New Topic");
+					localData[currentTopic] = currentSection;
+				}
+									
+				
+				if(currentTopic > 0 && currentSection == lastSection) // If last page
+				{	
+					if(quizPassed == true)
+					{
+						$('#course-content').html( $("#scrollerleft .slide-content").html() );		// Load page contents
+						updateCircles();
+						quizPassed = false; 	// Reset variable	
+				
+					}
+				}
 				
 			}
+
+		}
+		
+		else
+		{
+			
+		nextTopic = String(page).substring(0,1);	// Get next topic - used to 
+		nextSection = String(page).substring(2);
+		lastSection = $("[data-topic=" + nextTopic + "]").data("sections");	// Used to determine if on last page of topic
+		
+		
+		// Save Progress in Cookie
+		
+		$('#course-content').load("content/" + page + ".html");		// Load page contents
+			
+			
+		// Update UI Elements
+		$("#descriptor h4").html(  $("[data-topic=" + nextTopic + "] h3 strong").html() );
+		$('#slide-left').removeClass('openslide-left'); 										// Close menu if open
+		$('#slide-right').removeClass('openslide-right'); 										// Close menu if open
+		$('#course-content').removeClass('faded');												// Restore opacity
+		$("#progress-text").html("Section " + nextSection + " of " + lastSection);				// Change progress text
+		
+		
+		// Previous - Next Buttons
+		$("#left, #right").removeClass("faded");
+
+		if(nextSection == 1)
+		{
+			$("#left").addClass("faded");
+		}
+		console.log(quiz);
+		if(currentTopic > 0 && nextSection == lastSection)
+		{
+			$("#right").addClass("faded");
+		}
+			
+		console.log(localData);			
+		window.location.hash = page;								// Add content location to URL hash
+			
+		// Set new current page
+		currentPage = String(page);	
+		currentTopic = currentPage.substring(0,1);	// Get current topic - used to record progress
+		currentSection = currentPage.substring(2);	// Get current section - used to record progress
+			
+		} // Close else	
+		
 	} // Close changePage() function
 
 
@@ -253,12 +248,19 @@ $(window).bind("beforeunload", function()
 		
 	// PREVIOUS PAGE
 	$('#left').click(function(){	
+		if(! $(this).hasClass("faded") ) // Check if greyed out
+		{
 		changePage(previous, "previous"); // Pass in previous page filename
+		}
 	});
 	
 	// NEXT BUTTON 
 	$('#right').click(function(){
+		
+		if(! $(this).hasClass("faded") ) // Check if greyed out
+		{
 		changePage(next, "next"); // Pass in next page filename
+		}
 	});
 	
 

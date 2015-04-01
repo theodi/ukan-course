@@ -420,8 +420,7 @@ footer {
 	height: 70%;
 }
 
-strong
-{
+strong{
 	font-weight: bold;
 }
 
@@ -519,7 +518,9 @@ input#image-submit{
 	color: red;
 }
 
-
+#canvas h3 {
+	width: 85%;
+}
 
 /**** demo content ****/
 
@@ -767,6 +768,10 @@ input#restartQuiz {
 	.content-left, .content-right {
 		width: 100%;
 		margin-bottom: 40px;
+	}
+
+	#canvas h3 {
+		font-size: 1.1rem;
 	}
 
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
