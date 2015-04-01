@@ -441,6 +441,7 @@ strong
 	font-weight: 500;
 	padding: 20px 0 20px 60px;
 	margin-bottom: 40px;
+	height: 40px;
 }
 
 .right-side-panel-content {
@@ -450,6 +451,10 @@ strong
 	padding-left: 60px;
 	padding-right: 70px;
 	width: 70%;
+}
+
+.right-side-panel-title img {
+	visibility: hidden;
 }
 
 .right-side-panel-content input::-webkit-input-placeholder {
@@ -693,6 +698,75 @@ input#restartQuiz {
 		width: 60px;
 		height: 60px;
 		float: none;
+	}
+
+	#slide-left {
+		width: 100%;
+		left: -100%;
+	}
+
+	#slide-right {
+		width: 100%;
+		right: -100%;
+	}
+
+	.arrow-left {
+		border-top: 40px solid transparent;
+  		border-bottom: 40px solid transparent;
+  		border-right: 40px solid #FF5B02;
+	}
+
+	.col-1 {
+  		width: 40px;
+  		background: transparent;
+  		height: 100vh;
+  		position: absolute;
+  		left: -40px;
+	}
+
+	.col-2 {
+		width: 100%;
+	}
+
+	.right-side-panel-title {
+		padding-left: 20px;
+		padding-top: 0;
+		height: 40px;
+	}
+
+	.right-side-panel-title h2 {
+		float: left;
+		margin-top: 13px;
+	}
+
+	.right-side-panel-title img {
+		float: right;
+		height: 150%;
+		cursor: pointer;
+		visibility: visible;
+	}
+
+	.right-side-panel-content {
+		width: inherit;
+		padding-left: 10px;
+		padding-right: 20px;
+	}
+
+	input#image-submit {
+		width: 150px;
+	}
+
+	.help p {
+		  font-size: 2rem;
+		  font-weight: 500;
+		  color: white;
+		  padding-left: 16px;
+		  margin-top: -16px;
+	}
+
+	.content-left, .content-right {
+		width: 100%;
+		margin-bottom: 40px;
 	}
 
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */

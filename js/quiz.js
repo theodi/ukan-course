@@ -6,7 +6,7 @@ var stage2=new Object;
 var questionLock=false;
 var numberOfQuestions;
 var score=0;
-		 
+var quizPassed=false;		 
 
 		 
 		 
@@ -84,7 +84,8 @@ $(stage).append('<div class="questionText">'+questionBank[questionNumber][0]+'</
 	function displayFinalSlide(){
 		
 		$(stage).append('<div class="questionText">You have finished the quiz!<br><br>Total questions: '+numberOfQuestions+'<br>Correct answers: '+score+'</div>');
-		
+		quizPassed = true;
+		console.log(quizPassed);
 	}//display final slide
 	
 	

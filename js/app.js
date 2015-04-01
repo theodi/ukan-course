@@ -4,18 +4,17 @@ $( document ).ready(function() {
 localData = { }; // Initialise global object to store local data
 topicCount = $("#slide-left .ch-title").size() - 2; // Minus 2 accounts for intro and summary.
 currentPage = "";
-QuizPassed = false;
+quizPassed = false;
 
 
 // Load data from cookie
 if($.cookie('progress') != undefined)
 {
 	localData = JSON.parse( $.cookie('progress') );
-	console.log( JSON.parse( $.cookie('progress') ) );
 }
 
 
-loadContent("0.1"); // Load intro page
+changePage("0.1"); // Load intro page
 updateProgressBar();
 
 /* Create circle for each title */
@@ -45,8 +44,15 @@ $.each($("#slide-left .ch-title"), function(key, value){
 
 
 function loadContent(page)
-{	
-	currentPage = String(page);		
+{		
+	$("#left, #right").removeClass("faded");
+	
+	if(nextSection == 1)
+	{
+		console.log("Grey out previous");
+		$("#left").addClass("faded");
+	}
+	
 	$('#course-content').load("content/" + page + ".html");		// Load page contents
 }
 		
@@ -121,29 +127,26 @@ $(window).bind("beforeunload", function()
 				
 		if(page != null)
 		{	
-				console.log("sdfsdfsd");
-				var currentTopic = currentPage.substring(0,1);	// Get current topic - used to record progress
-				var currentSection = currentPage.substring(2);	// Get current section - used to record progress
+			
+				currentPage = String(page);	
+				currentTopic = currentPage.substring(0,1);	// Get current topic - used to record progress
+				currentSection = currentPage.substring(2);	// Get current section - used to record progress
 				
-				var nextTopic = String(page).substring(0,1);	// Get next topic - used to 
-				var nextSection = String(page).substring(2);
-				var lastSection = $("[data-topic=" + nextTopic + "]").data("sections");	// Get last section of next topic - used to determine if on last page of topic
+				nextTopic = String(page).substring(0,1);	// Get next topic - used to 
+				nextSection = String(page).substring(2);
+				lastSection = $("[data-topic=" + nextTopic + "]").data("sections");	// Get last section of next topic - used to determine if on last page of topic
 				
 				
 					
 					loadContent(page);	// Change page content
 					
-					console.log(page);
 					$("#descriptor h4").html(  $("[data-topic=" + nextTopic + "] h3 strong").html() );
 					
 					$('#slide-left').removeClass('openslide-left'); 												// Close menu if open
 					$('#slide-right').removeClass('openslide-right'); 												// Close menu if open
 					$('#course-content').removeClass('faded');														// Restore opacity
 					
-					$("#progress-text").html("Progress " + nextTopic + " of " + topicCount);					// Change progress text
-					
-					
-					
+					$("#progress-text").html("Section " + nextSection + " of " + lastSection);					// Change progress text
 					
 					
 					// Save Progress
@@ -164,18 +167,19 @@ $(window).bind("beforeunload", function()
 							console.log("New");
 							localData[currentTopic] = currentSection;
 						}
-						
-						console.log(localData);
-						
+												
 						updateProgressBar();
 						
 						
+						console.log("Current " + currentSection);
+						console.log("Last " + lastSection);
 						
 						if(currentSection == lastSection) // If last page
 						{
-							if(QuizPassed == true)
+							if(quizPassed == true)
 							{
-								QuizPassed = false; // Reset variable	
+								console.log("sdfsdf");
+								quizPassed = false; // Reset variable	
 								loadContent("summary");	// Change page content
 							}
 						}
@@ -259,6 +263,14 @@ $(window).bind("beforeunload", function()
 	
 
 
+
+
+// multiple choice quiz 
+
+
+
+}); // Close document ready
+	
 // validate contact form
 
 function validateForm() {
@@ -269,11 +281,3 @@ function validateForm() {
         return false;
     }
 }
-
-// multiple choice quiz 
-
-
-
-}); // Close document ready
-	
-
