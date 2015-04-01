@@ -753,6 +753,15 @@ input#restartQuiz {
 		padding-right: 20px;
 	}
 
+	.side-panel-title {
+		padding-left: 20px;
+	}
+
+	.slide-content {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
 	input#image-submit {
 		width: 150px;
 	}
