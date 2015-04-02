@@ -669,7 +669,47 @@ input#restartQuiz {
   	font-size: 1em;
 }
 
-      
+
+/**** interactive dataset ****/
+
+#int-dataset {
+	border: 1px solid #d8d8d8;
+	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+#int-dataset input {
+	border: none;
+	background-color: transparent;
+	font-size: 1em;
+	text-align: center;
+}
+
+#int-dataset th, #int-dataset td {
+	padding: 5px;
+	text-align: center;
+}
+
+#int-dataset th {
+	background-color:#ccc;
+}
+
+#int-dataset td {
+	height: 50px;
+	line-height: 50px;
+}
+
+#int-dataset tr:nth-child(even) {background: #f2f2f2}
+#int-dataset tr:nth-child(odd) {background: #FFF}
+
+button#dataset-submit {
+  background: #5AEA5B;
+  height: 50px;
+  border: none;
+  width: 150px;
+  font-size: 1.3em;
+}      
 
 @media only screen { } /* Define mobile styles */
 
