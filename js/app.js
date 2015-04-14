@@ -2,7 +2,7 @@ var localData = { }; // Initialise global object to store local data
 var currentPage = "0.1";
 var currentTopic = "0";
 var currentSection = "1";
-var quiz = false;
+var quizExists = false;
 var quizPassed;
 
 $( document ).ready(function() {
@@ -108,50 +108,47 @@ $(window).bind("beforeunload", function()
 	
 	function changePage(page, context)
 	{	
-		console.log("Change Page");
 		
-		if(page == null) // Either first or last page
-		{
 			if(context == "next")
 			{
 				if(currentTopic in localData)	// If topic exists in object
 				{
 					if(localData[currentTopic] < currentSection)
 					{
-						console.log("New Section");
 						localData[currentTopic] = currentSection;
 					}
 				}
 				
 				else
 				{
-					console.log("New Topic");
 					localData[currentTopic] = currentSection;
 				}
-									
+					
+		$.cookie('progress', JSON.stringify( localData )); // Update cookie
+					
+		updateProgressBar();				
 				
 				if(currentTopic > 0 && currentSection == lastSection) // If last page
 				{	
 					if(quizPassed == true)
 					{
-						$('#course-content').html( $("#scrollerleft .slide-content").html() );		// Load page contents
+						//$('#course-content').html( $("#scrollerleft .slide-content").html() );		// Load page contents
 						updateCircles();
+						//$("#descriptor h4").html("Course Summary");
+						//$("#left, #right").addClass("faded");
 						quizPassed = false; 	// Reset variable	
-				
+						//return false;			// Stop function here
 					}
 				}
 				
 			}
 
-		}
 		
-		else
-		{
 			
 		nextTopic = String(page).substring(0,1);	// Get next topic - used to 
 		nextSection = String(page).substring(2);
 		lastSection = $("[data-topic=" + nextTopic + "]").data("sections");	// Used to determine if on last page of topic
-		
+		containsQuiz = $("[data-topic=" + nextTopic + "]").data("quiz");
 		
 		// Save Progress in Cookie
 		
@@ -173,8 +170,8 @@ $(window).bind("beforeunload", function()
 		{
 			$("#left").addClass("faded");
 		}
-		console.log(quiz);
-		if(currentTopic > 0 && nextSection == lastSection)
+		
+		if(currentTopic > 0 && nextSection == lastSection && containsQuiz == true)
 		{
 			$("#right").addClass("faded");
 		}
@@ -187,7 +184,7 @@ $(window).bind("beforeunload", function()
 		currentTopic = currentPage.substring(0,1);	// Get current topic - used to record progress
 		currentSection = currentPage.substring(2);	// Get current section - used to record progress
 			
-		} // Close else	
+			
 		
 	} // Close changePage() function
 
@@ -267,6 +264,7 @@ $(window).bind("beforeunload", function()
 
 
 
+
 // multiple choice quiz 
 
 
@@ -283,3 +281,84 @@ function validateForm() {
         return false;
     }
 }
+
+
+function checkdob(){
+  if($( '#birth option:selected' ).val() == 'dob'){
+    $('.age').text('01/09/1933');
+  } else if($( '#birth option:selected' ).val() == 'age'){ 
+    $('.age').text('29');
+  } else if($( '#birth option:selected' ).val() == 'noage'){
+    $('.age').text('N/A'); 
+  } else if($( '#birth option:selected' ).val() == 'ageband'){
+    $('.age').text('20 - 30');
+  }
+}
+
+function checkstart(){
+  if($( '#startpoint option:selected' ).val() == 'start'){
+    $('.startpoint').text('Brooks End');
+  } else if($( '#startpoint option:selected' ).val() == 'nostart'){
+    $('.startpoint').text('N/A'); 
+  } else if($( '#startpoint option:selected' ).val() == 'morespecific'){
+    $('.startpoint').text('Brooks End, No.7');
+  } else if($( '#startpoint option:selected' ).val() == 'lessspecific'){
+    $('.startpoint').text('Glasgow'); 
+  }
+}
+
+function checkend(){
+  if($( '#endpoint option:selected' ).val() == 'end'){
+    $('.endpoint').text('Tree Street');
+  } else if($( '#endpoint option:selected' ).val() == 'noend'){
+    $('.endpoint').text('N/A');
+  } else if($( '#endpoint option:selected' ).val() == 'morespecific'){
+    $('.endpoint').text('Tree Street, No.11A');
+  } else if($( '#endpoint option:selected' ).val() == 'lessspecific'){
+    $('.endpoint').text('New York');
+  }
+}
+
+function checktime(){
+  if($( '#time option:selected' ).val() == 'show'){
+    $('.journey').text('17.45');
+  } else if($( '#time option:selected' ).val() == 'noshow'){
+    $('.journey').text('N/A');
+  } else if($( '#time option:selected' ).val() == 'roundup'){
+    $('.journey').text('18.00');
+  } else if($( '#time option:selected' ).val() == 'rounddown'){
+    $('.journey').text('17.00');
+  }
+}
+
+
+function checkdataset(){
+
+	var ticketlen1 = $(".ticketno1").val().length < 5;
+	var ticketlen2 = $(".ticketno2").val().length < 5;
+	var ticketlen3 = $(".ticketno3").val().length < 5;
+	var ticketlen4 = $(".ticketno4").val().length < 5;
+	var dobcorrect = $('.age:first').text() == '20 - 30';
+	var startcorrect = $('.startpoint:first').text() == 'Glasgow';
+	var endcorrect = $('.endpoint:first').text() == 'New York';
+	var timecorrectdn = $('.journey:first').text() == '17.00';
+	var timecorrectup = $('.journey:first').text() == '18.00';
+
+    if(ticketlen1 && ticketlen2 && ticketlen3 && ticketlen4 && dobcorrect && startcorrect && endcorrect && (timecorrectdn || timecorrectup)){
+    //alert('correct');
+    $('#int-dataset').css({'border':'6px solid #5AEA5B'});
+    $('.dataset-correct').fadeIn('slow');
+    $('.dataset-correct').delay(5000).fadeOut('slow');
+  } else {
+    //alert('false');
+    $('#int-dataset').css({'border':'6px solid #FF0000'});
+    $('.dataset-wrong').fadeIn('slow');
+    $('.dataset-wrong').delay(5000).fadeOut('slow');
+  }
+}
+
+
+
+
+
+

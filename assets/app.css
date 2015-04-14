@@ -709,7 +709,28 @@ button#dataset-submit {
   border: none;
   width: 150px;
   font-size: 1.3em;
-}      
+  float: left;
+} 
+
+.dataset-feedback {
+	float: right;
+	width: 70%;
+} 
+
+.dataset-feedback p {
+	margin-top: 10px;
+	float: right;
+} 
+
+.dataset-feedback img {
+	float: right;
+	width: 5%;
+  	margin-right: 20px;
+} 
+
+.dataset-correct, .dataset-wrong {
+	display: none;
+}  
 
 @media only screen { } /* Define mobile styles */
 

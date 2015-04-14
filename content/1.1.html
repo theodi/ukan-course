@@ -18,62 +18,70 @@
   </tr>
   <tr>
     <th>Edit text</th>
-    <th><select>
-      <option value="dob">Show Date of Birth</option>
+    <th><select id="birth" onchange="checkdob()">
+    <option value="none">Choose Option</option>
+    <option value="dob">Show Date of Birth</option>
 	  <option value="age">Show Age</option>
 	  <option value="noage">Show No Age</option>
 	  <option value="ageband">Show Age-band</option>
 	</select></th>
-    <th><select>
-      <option value="start">Show Start Point</option>
+    <th><select id="startpoint" onchange="checkstart()">
+    <option value="none">Choose Option</option>
+    <option value="start">Show Start Point</option>
 	  <option value="nostart">Don't Show</option>
 	  <option value="lessspecific">Less Specific</option>
 	  <option value="morespecific">More Specific</option>
 	</select></th>
-    <th><select>
-      <option value="start">Show End Point</option>
-	  <option value="nostart">Don't Show</option>
+    <th><select id="endpoint" onchange="checkend()">
+    <option value="none">Choose Option</option>
+    <option value="end">Show End Point</option>
+	  <option value="noend">Don't Show</option>
 	  <option value="lessspecific">Less Specific</option>
 	  <option value="morespecific">More Specific</option>
 	</select></th>
-    <th><select>
-      <option value="start">Show</option>
-	  <option value="nostart">Don't Show</option>
-	  <option value="lessspecific">Round Up</option>
-	  <option value="morespecific">Round Down</option>
+    <th><select id="time" onchange="checktime()">
+    <option value="none">Choose Option</option>
+    <option value="show">Show</option>
+	  <option value="noshow">Don't Show</option>
+	  <option value="roundup">Round Up</option>
+	  <option value="rounddown">Round Down</option>
 	</select></th>
   </tr>
   <tr>
-    <td><input type="text" value="WT98765G"></td>
-    <td>01/09/1933</td>
-    <td>Brooks End</td>
-    <td>Tree Street</td>
-    <td>17.45</td>
+    <td><input class="ticketno1" type="text" value="WT98765G"></td>
+    <td class="age">01/09/1933</td>
+    <td class="startpoint">Brooks End</td>
+    <td class="endpoint">Tree Street</td>
+    <td class="journey">17.45</td>
   </tr>
   <tr>
-    <td><input type="text" value="WT98765H"></td>
-    <td>01/09/1933</td>
-    <td>Brooks End</td>
-    <td>Tree Street</td>
-    <td>17.45</td>
+    <td><input class="ticketno2" type="text" value="WT98765H"></td>
+    <td class="age">01/09/1933</td>
+    <td class="startpoint">Brooks End</td>
+    <td class="endpoint">Tree Street</td>
+    <td class="journey">17.45</td>
   </tr>
   <tr>
-    <td><input type="text" value="WT98765I"></td>
-    <td>01/09/1933</td>
-    <td>Brooks End</td>
-    <td>Tree Street</td>
-    <td>17.45</td>
+    <td><input class="ticketno3" type="text" value="WT98765I"></td>
+    <td class="age">01/09/1933</td>
+    <td class="startpoint">Brooks End</td>
+    <td class="endpoint">Tree Street</td>
+    <td class="journey">17.45</td>
   </tr>
   <tr>
-    <td><input type="text" value="WT98765J"></td>
-    <td>01/09/1933</td>
-    <td>Brooks End</td>
-    <td>Tree Street</td>
-    <td>17.45</td>
+    <td><input class="ticketno4" type="text" value="WT98765J"></td>
+    <td class="age">01/09/1933</td>
+    <td class="startpoint">Brooks End</td>
+    <td class="endpoint">Tree Street</td>
+    <td class="journey">17.45</td>
   </tr>
 </table>
 
-<button id="dataset-submit">Submit</button>
+<button id="dataset-submit" onclick="checkdataset()">Submit</button>
+<div class="dataset-feedback">
+  <article class="dataset-correct"><p>Spot on! Congrats!</p><img src="assets/images/correct.png"></article>
+  <article class="dataset-wrong"><p>Not quite what we were looking for. Have another go at it!</p><img src="assets/images/error.png"></article>
+</div>
 	
 </div>
 
@@ -85,4 +93,5 @@
 <script>
 	next = '1.2';
 	previous = null;
+
 </script>

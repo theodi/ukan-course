@@ -5,8 +5,7 @@ var stage="#game1";
 var stage2=new Object;
 var questionLock=false;
 var numberOfQuestions;
-var score=0;	 
-var quiz = true;
+var score=0;
 		 
 		 
 		 
