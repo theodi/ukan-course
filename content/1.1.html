@@ -11,42 +11,44 @@
 <table class="responsive" id="int-dataset">
 <tr>
     <th>Go-card No.</th>
-    <th>Passenger DoB</th>
-    <th>Start point</th>
-    <th>End point</th>
-    <th>Journey time</th>
-  </tr>
-  <tr>
-    <th>Edit text</th>
-    <th><select id="birth" onchange="checkdob()">
+    <th>Passenger DoB
+      <select id="birth" onchange="checkdob()">
     <option value="none">Choose Option</option>
     <option value="dob">Show Date of Birth</option>
-	  <option value="age">Show Age</option>
-	  <option value="noage">Show No Age</option>
-	  <option value="ageband">Show Age-band</option>
-	</select></th>
-    <th><select id="startpoint" onchange="checkstart()">
+    <option value="age">Show Age</option>
+    <option value="noage">Show No Age</option>
+    <option value="ageband">Show Age-band</option>
+  </select>
+    </th>
+    <th>Start point
+      <select id="startpoint" onchange="checkstart()">
     <option value="none">Choose Option</option>
     <option value="start">Show Start Point</option>
-	  <option value="nostart">Don't Show</option>
-	  <option value="lessspecific">Less Specific</option>
-	  <option value="morespecific">More Specific</option>
-	</select></th>
-    <th><select id="endpoint" onchange="checkend()">
+    <option value="nostart">Don't Show</option>
+    <option value="lessspecific">Less Specific</option>
+    <option value="morespecific">More Specific</option>
+  </select>
+    </th>
+    <th>End point
+      <select id="endpoint" onchange="checkend()">
     <option value="none">Choose Option</option>
     <option value="end">Show End Point</option>
-	  <option value="noend">Don't Show</option>
-	  <option value="lessspecific">Less Specific</option>
-	  <option value="morespecific">More Specific</option>
-	</select></th>
-    <th><select id="time" onchange="checktime()">
+    <option value="noend">Don't Show</option>
+    <option value="lessspecific">Less Specific</option>
+    <option value="morespecific">More Specific</option>
+  </select>
+    </th>
+    <th>Journey time
+      <select id="time" onchange="checktime()">
     <option value="none">Choose Option</option>
     <option value="show">Show</option>
-	  <option value="noshow">Don't Show</option>
-	  <option value="roundup">Round Up</option>
-	  <option value="rounddown">Round Down</option>
-	</select></th>
+    <option value="noshow">Don't Show</option>
+    <option value="roundup">Round Up</option>
+    <option value="rounddown">Round Down</option>
+  </select>
+    </th>
   </tr>
+  
   <tr>
     <td><input class="ticketno1" type="text" value="WT98765G"></td>
     <td class="age">01/09/1933</td>
@@ -79,7 +81,7 @@
 
 <button id="dataset-submit" onclick="checkdataset()">Submit</button>
 <div class="dataset-feedback">
-  <article class="dataset-correct"><p>Spot on! Congrats!</p><img src="assets/images/correct.png"></article>
+  <article class="dataset-correct"><p>Spot on! Congrats! You may now proceed to your results page.</p><img src="assets/images/correct.png"></article>
   <article class="dataset-wrong"><p>Not quite what we were looking for. Have another go at it!</p><img src="assets/images/error.png"></article>
 </div>
 	
@@ -95,74 +97,7 @@
 	previous = null;
 
 
-  
-$(document).ready(function() {
-  // RESPONSIVE TABLE
 
-var switched = false;
-  var updateTables = function() {
-    if (($(window).width() < 767) && !switched ){
-      switched = true;
-      $("table.responsive").each(function(i, element) {
-        splitTable($(element));
-      });
-      return true;
-    }
-    else if (switched && ($(window).width() > 767)) {
-      switched = false;
-      $("table.responsive").each(function(i, element) {
-        unsplitTable($(element));
-      });
-    }
-  };
-   
-  $(window).load(updateTables);
-  $(window).on("redraw",function(){switched=false;updateTables();}); // An event to listen for
-  $(window).on("resize", updateTables);
-   
-  
-  function splitTable(original)
-  {
-    original.wrap("<div class='table-wrapper' />");
-    
-    var copy = original.clone();
-    copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
-    copy.removeClass("responsive");
-    
-    original.closest(".table-wrapper").append(copy);
-    copy.wrap("<div class='pinned' />");
-    original.wrap("<div class='scrollable' />");
 
-    setCellHeights(original, copy);
-  }
-  
-  function unsplitTable(original) {
-    original.closest(".table-wrapper").find(".pinned").remove();
-    original.unwrap();
-    original.unwrap();
-  }
-
-  function setCellHeights(original, copy) {
-    var tr = original.find('tr'),
-        tr_copy = copy.find('tr'),
-        heights = [];
-
-    tr.each(function (index) {
-      var self = $(this),
-          tx = self.find('th, td');
-
-      tx.each(function () {
-        var height = $(this).outerHeight(true);
-        heights[index] = heights[index] || 0;
-        if (height > heights[index]) heights[index] = height;
-      });
-
-    });
-
-    tr_copy.each(function (index) {
-      $(this).height(heights[index]);
-    });
-  }
-});
 
 </script>

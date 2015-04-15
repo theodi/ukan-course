@@ -687,8 +687,11 @@ input#restartQuiz {
 }
 
 #int-dataset th, #int-dataset td {
-	padding: 5px;
+	line-height: 50px;
+	padding-left: 5px;
+	padding-right: 5px;
 	text-align: center;
+	height: 50px;
 }
 
 #int-dataset th {
@@ -843,6 +846,95 @@ button#dataset-submit {
 	#canvas h3 {
 		font-size: 1.1rem;
 	}
+
+	
+
+	.dataset-feedback {
+  float: none;
+  width: 100%;
+}
+
+	.dataset-feedback p {
+  margin-top: 10px;
+  float: left;
+  width: 70%;
+}
+
+	.dataset-feedback img {
+  float: right;
+  width: 12%;
+  margin-top: 25px;
+}
+
+
+
+
+/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 0px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Go-card No."; }
+	td:nth-of-type(2):before { content: "Passenger DoB"; }
+	td:nth-of-type(3):before { content: "Start point"; }
+	td:nth-of-type(4):before { content: "End point"; }
+	td:nth-of-type(5):before { content: "Journey time"; }
+
+
+
+	#int-dataset th, #int-dataset td {
+		line-height: 50px;
+		padding-left: 5px;
+		padding-right: 5px;
+		text-align: left;
+		height: 50px;
+	}
+
+	#int-dataset th select {
+		float: right;
+	  margin-top: 15px;
+	  margin-right: 65px;
+	}
+
+	#int-dataset td{
+		padding-left: 175px;
+	}
+
+	#int-dataset input {
+		text-align: left;
+	}
+
 
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 

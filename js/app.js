@@ -336,10 +336,10 @@ function checktime(){
 
 function checkdataset(){
 
-	var ticketlen1 = $(".ticketno1").val().length < 5;
-	var ticketlen2 = $(".ticketno2").val().length < 5;
-	var ticketlen3 = $(".ticketno3").val().length < 5;
-	var ticketlen4 = $(".ticketno4").val().length < 5;
+	var ticketlen1 = $(".ticketno1").val().length < 5 && $(".ticketno1").val().length > 3;
+	var ticketlen2 = $(".ticketno2").val().length < 5 && $(".ticketno2").val().length > 3;
+	var ticketlen3 = $(".ticketno3").val().length < 5 && $(".ticketno3").val().length > 3;
+	var ticketlen4 = $(".ticketno4").val().length < 5 && $(".ticketno4").val().length > 3;
 	var dobcorrect = $('.age:first').text() == '20 - 30';
 	var startcorrect = $('.startpoint:first').text() == 'Glasgow';
 	var endcorrect = $('.endpoint:first').text() == 'New York';
