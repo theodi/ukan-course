@@ -265,7 +265,7 @@ $(window).bind("beforeunload", function()
 
 
 
-// multiple choice quiz 
+
 
 
 
@@ -282,6 +282,8 @@ function validateForm() {
     }
 }
 
+
+// INTERACTIVE DATASET FUNCTIONS
 
 function checkdob(){
   if($( '#birth option:selected' ).val() == 'dob'){
