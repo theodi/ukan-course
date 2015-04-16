@@ -4,41 +4,33 @@ var currentTopic = "0";
 var currentSection = "1";
 var quizExists = false;
 var quizPassed;
-
-$( document ).ready(function() {
-
-
-// Load data from cookie
-if($.cookie('progress') != undefined)
-{
-	localData = JSON.parse( $.cookie('progress') );
-}
+var context;
 
 
-changePage("0.1"); // Load intro page
-updateProgressBar();
+/* URL Hash Update */
 
-/* Create circle for each title */
-
-$.each($("#slide-left .ch-title"), function(key, value){
+$(window).on('hashchange', function(e){
+	var pageNumber = String(window.location.hash);
+	console.log("HASH");
 	
-	var titleID = $(this).data("topic")
 	
-	$(this).prepend("<div class='circle' id='circles-" + titleID + "'></div>");	
 	
-	Circles.create({
-		id:         'circles-' + titleID ,
-		value:		'0',
-		radius:     15,
-		width:      5,
-		text:       '',
-		colors:     ['#999999', '#5AEA5B']
-	});
+	$.ajax({
+    url:'content/' + pageNumber.substring(1) + '.html',
+    type:'HEAD',
+    error: function()
+    {
+       console.log("File not found");
+    },
+    success: function()
+    {
+	    console.log("SUCCES");
+	changePage(pageNumber.substring(1), context);	
+    }
+});
 	
 	
 });
-
-
 
 
 /* FUNCTIONS */
@@ -89,6 +81,36 @@ function updateCircles()
 		
 }
 
+function updateSumary()
+{
+	$.each($(".ch-title"), function(key, value){
+		
+		
+		var topicNumber = $(this).data("topic");
+		var lastSection = $(this).data("sections")
+		
+		if( localData[topicNumber] != undefined )
+		{
+			
+			var percentage = (localData[topicNumber] / lastSection) * 100;
+			var circleID = "circles-" + topicNumber;
+			
+			Circles.create({
+				id:         'circles-' + topicNumber ,
+				value:		percentage,
+				radius:     5,
+				width:      5,
+				text:       '',
+				colors:     ['#999999', '#5AEA5B']
+			});
+
+		}
+		
+	});
+		
+}
+
+
 /* LEAVE APP - BROSWER CLOSE OR NAVIGATE AWAY */
 
 $(window).bind("beforeunload", function() 
@@ -108,7 +130,21 @@ $(window).bind("beforeunload", function()
 	
 	function changePage(page, context)
 	{	
+		nextTopic = String(page).substring(0,1);	// Get next topic - used to 
+		nextSection = String(page).substring(2);
+		lastSection = $("[data-topic=" + nextTopic + "]").data("sections");	// Used to determine if on last page of topic
+		containsQuiz = $("[data-topic=" + nextTopic + "]").data("quiz");
 		
+		/* Check user has progressed to this page - prevent access via URL manipulation */
+		console.log(localData);
+		console.log( localData[nextTopic] );
+		
+		if(localData[nextTopic] >= window.location.hash ) // If requested page is recorded in JS object 
+		{
+		
+		
+			// Update progress in temporary global variable
+			
 			if(context == "next")
 			{
 				if(currentTopic in localData)	// If topic exists in object
@@ -124,33 +160,24 @@ $(window).bind("beforeunload", function()
 					localData[currentTopic] = currentSection;
 				}
 					
-		$.cookie('progress', JSON.stringify( localData )); // Update cookie
-					
-		updateProgressBar();				
-				
+				$.cookie('progress', JSON.stringify( localData )); // Update cookie
+							
+				updateProgressBar();				
+						
 				if(currentTopic > 0 && currentSection == lastSection) // If last page
 				{	
 					if(quizPassed == true)
 					{
-						//$('#course-content').html( $("#scrollerleft .slide-content").html() );		// Load page contents
+						$('#course-content').html( $("#scrollerleft .slide-content").html() );		// Load page contents
 						updateCircles();
-						//$("#descriptor h4").html("Course Summary");
-						//$("#left, #right").addClass("faded");
+						$("#descriptor h4").html("Course Summary");
+						$("#left, #right").addClass("faded");
 						quizPassed = false; 	// Reset variable	
-						//return false;			// Stop function here
+						return false;			// Stop function here
 					}
 				}
 				
-			}
-
-		
-			
-		nextTopic = String(page).substring(0,1);	// Get next topic - used to 
-		nextSection = String(page).substring(2);
-		lastSection = $("[data-topic=" + nextTopic + "]").data("sections");	// Used to determine if on last page of topic
-		containsQuiz = $("[data-topic=" + nextTopic + "]").data("quiz");
-		
-		// Save Progress in Cookie
+			} // Close if context == next
 		
 		$('#course-content').load("content/" + page + ".html");		// Load page contents
 			
@@ -165,7 +192,8 @@ $(window).bind("beforeunload", function()
 		
 		// Previous - Next Buttons
 		$("#left, #right").removeClass("faded");
-
+		
+		
 		if(nextSection == 1)
 		{
 			$("#left").addClass("faded");
@@ -175,18 +203,56 @@ $(window).bind("beforeunload", function()
 		{
 			$("#right").addClass("faded");
 		}
-			
-		console.log(localData);			
-		window.location.hash = page;								// Add content location to URL hash
+		
 			
 		// Set new current page
 		currentPage = String(page);	
 		currentTopic = currentPage.substring(0,1);	// Get current topic - used to record progress
 		currentSection = currentPage.substring(2);	// Get current section - used to record progress
-			
-			
+	
+		} // Close if
 		
 	} // Close changePage() function
+
+
+
+
+
+
+$( document ).ready(function() {
+
+// Load data from cookie
+if($.cookie('progress') != undefined)
+{
+	localData = JSON.parse( $.cookie('progress') );
+}
+
+window.location.hash = "0.1";
+changePage("0.1", "menu");	// Load welcome page by default
+updateProgressBar();
+
+
+
+/* Create circle for each title */
+$.each($("#slide-left .ch-title"), function(key, value){
+	
+	var titleID = $(this).data("topic")
+	
+	$(this).prepend("<div class='circle' id='circles-" + titleID + "'></div>");	
+	
+	Circles.create({
+		id:         'circles-' + titleID ,
+		value:		'0',
+		radius:     15,
+		width:      5,
+		text:       '',
+		colors:     ['#999999', '#5AEA5B']
+	});
+	
+	
+});
+
+
 
 
 	/* UI BUTTONS */
@@ -240,14 +306,18 @@ $(window).bind("beforeunload", function()
 	
 	// MENU TITLE SELECT 
 	$('.ch-title').click(function(){	
-		changePage( $(this).data("topic") + ".1", "menu"); // Pass in previous page filename
+		context = "menu";
+		window.location.hash = $(this).data("topic") + ".1";								// Add content location to URL hash
+		
 	});
 		
 	// PREVIOUS PAGE
 	$('#left').click(function(){	
 		if(! $(this).hasClass("faded") ) // Check if greyed out
 		{
-		changePage(previous, "previous"); // Pass in previous page filename
+			context = "previous"; // Pass in previous page filename
+			window.location.hash = previous;								// Add content location to URL hash
+		
 		}
 	});
 	
@@ -256,7 +326,8 @@ $(window).bind("beforeunload", function()
 		
 		if(! $(this).hasClass("faded") ) // Check if greyed out
 		{
-		changePage(next, "next"); // Pass in next page filename
+			context = "next";
+			window.location.hash = next;	
 		}
 	});
 	
@@ -265,13 +336,16 @@ $(window).bind("beforeunload", function()
 
 
 
-
+// multiple choice quiz 
 
 
 
 }); // Close document ready
 	
-// validate contact form
+	
+	
+	
+/* Validate contact form */
 
 function validateForm() {
     var x = document.forms["myForm"]["fname"].value;
@@ -282,8 +356,6 @@ function validateForm() {
     }
 }
 
-
-// INTERACTIVE DATASET FUNCTIONS
 
 function checkdob(){
   if($( '#birth option:selected' ).val() == 'dob'){
@@ -336,10 +408,10 @@ function checktime(){
 
 function checkdataset(){
 
-	var ticketlen1 = $(".ticketno1").val().length < 5 && $(".ticketno1").val().length > 3;
-	var ticketlen2 = $(".ticketno2").val().length < 5 && $(".ticketno2").val().length > 3;
-	var ticketlen3 = $(".ticketno3").val().length < 5 && $(".ticketno3").val().length > 3;
-	var ticketlen4 = $(".ticketno4").val().length < 5 && $(".ticketno4").val().length > 3;
+	var ticketlen1 = $(".ticketno1").val().length < 5;
+	var ticketlen2 = $(".ticketno2").val().length < 5;
+	var ticketlen3 = $(".ticketno3").val().length < 5;
+	var ticketlen4 = $(".ticketno4").val().length < 5;
 	var dobcorrect = $('.age:first').text() == '20 - 30';
 	var startcorrect = $('.startpoint:first').text() == 'Glasgow';
 	var endcorrect = $('.endpoint:first').text() == 'New York';
@@ -360,7 +432,18 @@ function checkdataset(){
 }
 
 
+// order-quiz
 
+function chkorder(){
 
+	
 
+		if(($(".ord1").val() == 2) && ($(".ord2").val() == 1) && ($(".ord3").val() == 3)){
+			$('.ordresultmessage').append('correct');
+		} else {
+			$('.ordresultmessage').append('false');
+		}
+	
+
+}
 

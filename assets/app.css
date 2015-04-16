@@ -733,7 +733,16 @@ button#dataset-submit {
 
 .dataset-correct, .dataset-wrong {
 	display: none;
-}  
+} 
+
+
+/*** order quiz ***/
+
+.orderquiz input {
+	margin-right: 20px;
+	height: 30px;
+	width: 30px;
+} 
 
 @media only screen { } /* Define mobile styles */
 

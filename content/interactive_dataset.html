@@ -1,25 +1,12 @@
-<section class="course-section-title">
+<section class="course-section-title" data-topic-title="Describing the data environment" data-chapter="1.1" >
 
-<h1><span>2.3</span> Topic 2: Know your data</h1>
+<h1><span class="ch-numbering">1.1</span> Chapter One</h1>
 
+<p>Edit this table according to your accumulated knowledge about anonymisation. When you're done, press the submit button to get feedback and suggestions. Good luck! ;)</p>
 
-	<p>Here we see a few rows of the dataset of the Titanic's passenger list. It contains 1309 passengers but none of the crew. In 14 columns we have various passenger characteristics such as age or their passenger class. This data clearly contains personal information and if we would want to release it, we would first go through the process of anonymising this data. </p>
+<p><strong>Tip:</strong> for Go-card No. edit text, for all other columns, choose an option.</p>
 
-<p>If a name is unique, we would call it a direct identifier. This means an unusual name is enough to identify a person. A more common name such as James Smith in combination with for eg address may also be a direct identifier. </p>
-
-<p>Ticket number may also be a direct identifier. If someone knows to whom the ticket number refers, it would be possible to identify the person in the data.</p> 
-
-<p>What can we do? A common strategy is to mask or hash the direct identifier, that is, to replace it with another, usually random, value. Or we may choose to simply delete both columns.</p> 
-
-<p>Age is quite an important variable for many analyses or use cases. We cannot delete it, even though there is, for example, only one passenger aged 80. A common strategy is to create age bands such as 0-10, 11-20, 21-30 and so forth. Choosing the optimal trade-off between usefulness and risk is up to the analyst and also depends on the remaining data and its context.</p> 
-
-<p>Fare is, similar to age, quite granular. We may want to include it in a data release because it could tell an interesting story around prices. Again, it may be prudent to reduce the amount of information disclosed. More on possible methods to do so in topic 7 of the course.</p>
-
-<p>Just applying some anonymisation method on its own is usually not enough. You have to evaluate its effect on the risk of disclosing personal information. The beginning of anonymising data is to understand your data. </p>
-
-
-
-
+<div>
 
 <table class="responsive" id="int-dataset">
 <tr>
@@ -92,10 +79,25 @@
   </tr>
 </table>
 
+<button id="dataset-submit" onclick="checkdataset()">Submit</button>
+<div class="dataset-feedback">
+  <article class="dataset-correct"><p>Spot on! Congrats! You may now proceed to your results page.</p><img src="assets/images/correct.png"></article>
+  <article class="dataset-wrong"><p>Not quite what we were looking for. Have another go at it!</p><img src="assets/images/error.png"></article>
+</div>
+	
+</div>
+
+
+
 </section>
 
 
 <script>
-	next = '2.4';
-	previous = '2.2';
+	next = '';
+	previous = ;
+
+
+
+
+
 </script>

@@ -1,103 +1,33 @@
-<section class="course-section-title" data-topic-title="Describing the data environment" data-chapter="1.1" >
+<section class="course-section-title">
 
-<h1><span class="ch-numbering">1.1</span> Chapter One</h1>
+<h1><span>1.1</span> Describing the data environment</h1>
 
-<p>Edit this table according to your accumulated knowledge about anonymisation. When you're done, press the submit button to get feedback and suggestions. Good luck! ;)</p>
+<div class="content-left">
+<p>The process of anonymising data relies on a careful consideration of the data environment. The data environment is, in a broad sense, the context. This could be people who are interested in the data, other related datasets, or processes that interact with the data.</p>
+<p>For example, you release an open dataset on expenses. Then, considerations of the data environment are at least 
+</p>
 
-<p><strong>Tip:</strong> for Go-card No. edit text, for all other columns, choose an option.</p>
+<ul>
+	<li>all people who have access to the internet, </li>
+	<li>journalists who are are looking for a story on transparency, </li>
+	<li>expense datasets from previous years, </li>
+	<li>the internal people who access the dataset before it is anonymised,</li>
+</ul>
 
-<div>
-
-<table class="responsive" id="int-dataset">
-<tr>
-    <th>Go-card No.</th>
-    <th>Passenger DoB
-      <select id="birth" onchange="checkdob()">
-    <option value="none">Choose Option</option>
-    <option value="dob">Show Date of Birth</option>
-    <option value="age">Show Age</option>
-    <option value="noage">Show No Age</option>
-    <option value="ageband">Show Age-band</option>
-  </select>
-    </th>
-    <th>Start point
-      <select id="startpoint" onchange="checkstart()">
-    <option value="none">Choose Option</option>
-    <option value="start">Show Start Point</option>
-    <option value="nostart">Don't Show</option>
-    <option value="lessspecific">Less Specific</option>
-    <option value="morespecific">More Specific</option>
-  </select>
-    </th>
-    <th>End point
-      <select id="endpoint" onchange="checkend()">
-    <option value="none">Choose Option</option>
-    <option value="end">Show End Point</option>
-    <option value="noend">Don't Show</option>
-    <option value="lessspecific">Less Specific</option>
-    <option value="morespecific">More Specific</option>
-  </select>
-    </th>
-    <th>Journey time
-      <select id="time" onchange="checktime()">
-    <option value="none">Choose Option</option>
-    <option value="show">Show</option>
-    <option value="noshow">Don't Show</option>
-    <option value="roundup">Round Up</option>
-    <option value="rounddown">Round Down</option>
-  </select>
-    </th>
-  </tr>
-  
-  <tr>
-    <td><input class="ticketno1" type="text" value="WT98765G"></td>
-    <td class="age">01/09/1933</td>
-    <td class="startpoint">Brooks End</td>
-    <td class="endpoint">Tree Street</td>
-    <td class="journey">17.45</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno2" type="text" value="WT98765H"></td>
-    <td class="age">01/09/1933</td>
-    <td class="startpoint">Brooks End</td>
-    <td class="endpoint">Tree Street</td>
-    <td class="journey">17.45</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno3" type="text" value="WT98765I"></td>
-    <td class="age">01/09/1933</td>
-    <td class="startpoint">Brooks End</td>
-    <td class="endpoint">Tree Street</td>
-    <td class="journey">17.45</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno4" type="text" value="WT98765J"></td>
-    <td class="age">01/09/1933</td>
-    <td class="startpoint">Brooks End</td>
-    <td class="endpoint">Tree Street</td>
-    <td class="journey">17.45</td>
-  </tr>
-</table>
-
-<button id="dataset-submit" onclick="checkdataset()">Submit</button>
-<div class="dataset-feedback">
-  <article class="dataset-correct"><p>Spot on! Congrats! You may now proceed to your results page.</p><img src="assets/images/correct.png"></article>
-  <article class="dataset-wrong"><p>Not quite what we were looking for. Have another go at it!</p><img src="assets/images/error.png"></article>
-</div>
-	
+<p>and so forth.</p>
 </div>
 
-
+<div class="content-right">
+	<div class="captioned-image">
+		<img src="assets/images/placeholder.png">
+		<p class="caption">image caption</p>
+	</div>
+</div>
 
 </section>
 
 
 <script>
 	next = '1.2';
-	previous = null;
-
-
-
-
-
+	previous = '1.1';
 </script>
