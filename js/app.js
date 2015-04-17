@@ -10,13 +10,15 @@ var context;
 /* URL Hash Update */
 
 $(window).on('hashchange', function(e){
-	var pageNumber = String(window.location.hash);
-	console.log("HASH");
+	var fileName = String(window.location.hash);
 	
-	
+	if(fileName !== "summary")
+	{
+		fileName = fileName.substring(1);
+	}
 	
 	$.ajax({
-    url:'content/' + pageNumber.substring(1) + '.html',
+    url:'content/' + fileName + '.html',
     type:'HEAD',
     error: function()
     {
@@ -24,8 +26,10 @@ $(window).on('hashchange', function(e){
     },
     success: function()
     {
-	    console.log("SUCCES");
-	changePage(pageNumber.substring(1), context);	
+	    console.log("File Successfully Loaded - " + fileName);
+	 
+		
+	changePage(fileName, context);	
     }
 });
 	
@@ -76,6 +80,13 @@ function updateCircles()
 			});
 
 		}
+		
+		
+		//if() // If page is present in JS object
+		//{
+		//$(this).addClass("grey");
+			
+		//}
 		
 	});
 		
@@ -135,18 +146,34 @@ $(window).bind("beforeunload", function()
 		lastSection = $("[data-topic=" + nextTopic + "]").data("sections");	// Used to determine if on last page of topic
 		containsQuiz = $("[data-topic=" + nextTopic + "]").data("quiz");
 		
-		/* Check user has progressed to this page - prevent access via URL manipulation */
-		console.log(localData);
-		console.log( localData[nextTopic] );
 		
-		if(localData[nextTopic] >= window.location.hash ) // If requested page is recorded in JS object 
+		
+		
+		if(page == "summary")
 		{
+			console.log(currentTopic + 1);
+			next = (Number(currentTopic) + 1) + 0.1;
+			$('#course-content').html( $("#scrollerleft .slide-content").html() );		// Load page contents
+						updateCircles();
+						$("#descriptor h4, #progress-text").html("Course Summary");
+						
+						$("#left").addClass("faded");
+						quizPassed = false; 	// Reset variable	
+						return false;			// Stop function here
+		}
 		
+		/* Check user has progressed to this page - prevent access via URL manipulation */
+		
+		//if(localData[nextTopic] >= window.location.hash) // If page is present in JS object
+		else
+		{
 		
 			// Update progress in temporary global variable
 			
 			if(context == "next")
 			{
+				console.log("NEXT CLICK");
+				
 				if(currentTopic in localData)	// If topic exists in object
 				{
 					if(localData[currentTopic] < currentSection)
@@ -157,30 +184,18 @@ $(window).bind("beforeunload", function()
 				
 				else
 				{
+					console.log("ADD TO DATA");
 					localData[currentTopic] = currentSection;
 				}
 					
 				$.cookie('progress', JSON.stringify( localData )); // Update cookie
 							
 				updateProgressBar();				
-						
-				if(currentTopic > 0 && currentSection == lastSection) // If last page
-				{	
-					if(quizPassed == true)
-					{
-						$('#course-content').html( $("#scrollerleft .slide-content").html() );		// Load page contents
-						updateCircles();
-						$("#descriptor h4").html("Course Summary");
-						$("#left, #right").addClass("faded");
-						quizPassed = false; 	// Reset variable	
-						return false;			// Stop function here
-					}
-				}
+			
 				
 			} // Close if context == next
 		
 		$('#course-content').load("content/" + page + ".html");		// Load page contents
-			
 			
 		// Update UI Elements
 		$("#descriptor h4").html(  $("[data-topic=" + nextTopic + "] h3 strong").html() );
@@ -305,7 +320,7 @@ $.each($("#slide-left .ch-title"), function(key, value){
 	});
 	
 	// MENU TITLE SELECT 
-	$('.ch-title').click(function(){	
+	$('.ch-title').on("click", function(){	
 		context = "menu";
 		window.location.hash = $(this).data("topic") + ".1";								// Add content location to URL hash
 		
@@ -326,6 +341,7 @@ $.each($("#slide-left .ch-title"), function(key, value){
 		
 		if(! $(this).hasClass("faded") ) // Check if greyed out
 		{
+			console.log("Next");
 			context = "next";
 			window.location.hash = next;	
 		}
