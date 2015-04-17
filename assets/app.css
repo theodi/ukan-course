@@ -28,9 +28,25 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ul {
 	list-style: none;
+	margin-left: 20px;
+ 	padding-left: 1em;
+ 	text-indent: -1em;
+ 	font-size: 1.3em;
+ 	margin-top: 20px;
 }
+
+ul li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+ul li:before {
+ content: "\0BB \020";
+ }
+
 blockquote, q {
 	quotes: none;
 }
@@ -53,6 +69,8 @@ h1 {
 body {
 	font-family: 'helvetica neue';
 }
+
+
 
 /**** header ****/
 
@@ -257,6 +275,7 @@ header {
 	margin: 0 auto;
 }
 
+.faded,
 #left.faded,
 #right.faded
 {
@@ -264,6 +283,25 @@ header {
 	cursor: default;
 }
 
+.lower-roman
+{
+	list-style: lower-roman;
+}
+
+.no_bullets
+{
+	list-style: none;
+}
+
+em
+{
+	font-style: italic;
+}
+
+.underline
+{
+	text-decoration: underline;
+}
 
 /**** footer ****/
 
@@ -537,6 +575,7 @@ input#image-submit{
 .course-section-title h1 {
 	font-size: 3em;
 	font-weight: 600;
+	margin-bottom: 40px;
 }
 
 #course-content > section > h1 > span {
@@ -743,6 +782,43 @@ button#dataset-submit {
 	height: 30px;
 	width: 30px;
 } 
+
+/*** image quiz ***/
+
+.imagequiz-wrong {
+	display: none;
+	text-align: left;
+	width: 40%;
+	padding: 10px;
+	margin: 0 auto;
+	border: solid 1px #ccc;
+	margin-top: 20px;
+}
+
+.imagequiz-wrong img {
+	float: right;
+	width: 50px;
+}
+
+.imagequiz-wrong p {
+	float: left;
+	width: 80%;
+	margin: 0;
+	padding: 0;
+	font-size: 1.1em;
+}
+
+.imagequiz {
+	text-align: center;
+}
+
+.instruction {
+	margin-bottom: 20px;
+}
+
+.imagequiz img {
+	padding: 10px;
+}
 
 @media only screen { } /* Define mobile styles */
 

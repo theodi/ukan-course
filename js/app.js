@@ -1,10 +1,10 @@
-var localData = { }; // Initialise global object to store local data
+var localData = { 0: 1 }; // Initialise global object to store local data
 var currentPage = "0.1";
 var currentTopic = "0";
 var currentSection = "1";
 var quizExists = false;
 var quizPassed;
-var context;
+var context = "URL";
 
 
 /* URL Hash Update */
@@ -81,20 +81,19 @@ function updateCircles()
 
 		}
 		
-		
-		//if() // If page is present in JS object
-		//{
-		//$(this).addClass("grey");
+		if(!(topicNumber in localData)) // If topic has been unlocked
+		{
+			$(this).addClass("faded");
 			
-		//}
+		}
 		
 	});
 		
 }
 
-function updateSumary()
+function updateSummary()
 {
-	$.each($(".ch-title"), function(key, value){
+	$.each($(".summary_tile"), function(key, value){
 		
 		
 		var topicNumber = $(this).data("topic");
@@ -141,38 +140,40 @@ $(window).bind("beforeunload", function()
 	
 	function changePage(page, context)
 	{	
-		nextTopic = String(page).substring(0,1);	// Get next topic - used to 
-		nextSection = String(page).substring(2);
+		console.log(page);
+		dotLocation = page.indexOf(".");
+		nextTopic = String(page).substring(0, dotLocation);					// Get next topic - everything before dot
+		nextSection = String(page).substring((dotLocation + 1));			// Get next section - everything after dot
 		lastSection = $("[data-topic=" + nextTopic + "]").data("sections");	// Used to determine if on last page of topic
-		containsQuiz = $("[data-topic=" + nextTopic + "]").data("quiz");
+		containsQuiz = $("[data-topic=" + nextTopic + "]").data("quiz");	// Check if topic contains quiz using data attribute in sidemenu
 		
 		
 		
-		
-		if(page == "summary")
+		/* Summary Page Logic */
+		/*
+		if(context == "next" && nextTopic > 1 && nextSection == "1")
 		{
-			console.log(currentTopic + 1);
+			console.log("SDfasf");
 			next = (Number(currentTopic) + 1) + 0.1;
 			$('#course-content').html( $("#scrollerleft .slide-content").html() );		// Load page contents
-						updateCircles();
-						$("#descriptor h4, #progress-text").html("Course Summary");
+			updateSummary();
 						
+						$("#descriptor h4, #progress-text").html("Course Summary");
 						$("#left").addClass("faded");
-						quizPassed = false; 	// Reset variable	
 						return false;			// Stop function here
 		}
+		*/
 		
 		/* Check user has progressed to this page - prevent access via URL manipulation */
 		
 		//if(localData[nextTopic] >= window.location.hash) // If page is present in JS object
-		else
-		{
+		//else
+		//{
 		
 			// Update progress in temporary global variable
 			
 			if(context == "next")
 			{
-				console.log("NEXT CLICK");
 				
 				if(currentTopic in localData)	// If topic exists in object
 				{
@@ -184,7 +185,6 @@ $(window).bind("beforeunload", function()
 				
 				else
 				{
-					console.log("ADD TO DATA");
 					localData[currentTopic] = currentSection;
 				}
 					
@@ -222,10 +222,10 @@ $(window).bind("beforeunload", function()
 			
 		// Set new current page
 		currentPage = String(page);	
-		currentTopic = currentPage.substring(0,1);	// Get current topic - used to record progress
-		currentSection = currentPage.substring(2);	// Get current section - used to record progress
+		currentTopic = nextTopic;		// Set current topic - used to record progress
+		currentSection = nextSection;	// Set current section - used to record progress
 	
-		} // Close if
+		//} // Close if
 		
 	} // Close changePage() function
 
@@ -243,7 +243,7 @@ if($.cookie('progress') != undefined)
 }
 
 window.location.hash = "0.1";
-changePage("0.1", "menu");	// Load welcome page by default
+changePage("0.1", "URL");	// Load welcome page by default
 updateProgressBar();
 
 
@@ -321,6 +321,7 @@ $.each($("#slide-left .ch-title"), function(key, value){
 	
 	// MENU TITLE SELECT 
 	$('.ch-title').on("click", function(){	
+		
 		context = "menu";
 		window.location.hash = $(this).data("topic") + ".1";								// Add content location to URL hash
 		
@@ -341,7 +342,7 @@ $.each($("#slide-left .ch-title"), function(key, value){
 		
 		if(! $(this).hasClass("faded") ) // Check if greyed out
 		{
-			console.log("Next");
+			console.log("sdfsfd");
 			context = "next";
 			window.location.hash = next;	
 		}
