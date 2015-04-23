@@ -10,6 +10,7 @@ var context = "URL";
 /* URL Hash Update */
 
 $(window).on('hashchange', function(e){
+	
 	var fileName = String(window.location.hash);
 	
 	if(fileName !== "summary")
@@ -26,10 +27,7 @@ $(window).on('hashchange', function(e){
     },
     success: function()
     {
-	    console.log("File Successfully Loaded - " + fileName);
-	 
-		
-	changePage(fileName, context);	
+		changePage(fileName, context);	
     }
 });
 	
@@ -39,6 +37,80 @@ $(window).on('hashchange', function(e){
 
 /* FUNCTIONS */
 
+
+
+function dynamicContent()
+{
+	// Wrap list item content in span
+
+		$.each($(".content-left li"), function(key, value){
+		
+		$(this).wrapInner("<span></span>");
+		});
+		
+
+// Shorten Paragraphs
+		$.each($("p"), function(key, value){
+		
+		var characterLimit = 150;
+		
+		if(	$(this).text().length > characterLimit )	// If paragraph is longer than character limit
+		{	
+			/*
+			if( $(this).text().substr(characterLimit, 1) != "" ) // If cut off point is not white space
+			{
+						
+				for(count = 0; count < 20; count++ )
+				{
+					characterLimit++;
+					
+					if($(this).text().substr(characterLimit, 1) == "")
+					{
+					break 
+					}
+				}
+				
+				console.log("Not whitesapce");
+				
+			}
+			*/
+			
+			var beforeCut = $(this).text().substr(0, characterLimit);
+			var afterCut = $(this).text().substr(characterLimit);
+			// Extract extra text
+			$(this).html(""); 
+			$(this).append("<span class='beforeCut'>" + beforeCut + "</span>");
+			$(this).append("<span class='elipsis'>...</span>");
+			
+			$(this).append("<span class='afterCut'>" + afterCut + "</span>");
+			$(this).append("<a href='#' class='show_hide'>Show</a>");
+		}
+		
+		});
+
+		
+		$(".show_hide").click(function(){
+			
+			if($(this).html() == "Show") 
+			{ 
+				$(this).html("Hide");
+				$(this).prevAll(".elipsis").toggle();
+			}
+				 
+			else
+			{ 
+				$(this).html("Show"); 
+				$(this).prevAll(".elipsis").toggle();
+			}
+				
+			$(this).prev(".afterCut").delay(500).toggle();
+			
+			
+		});
+	
+
+}
+
 function updateProgressBar()
 {
 	
@@ -46,7 +118,7 @@ function updateProgressBar()
 		
 		var topicNumber = $(this).attr('id').slice(14);
 		
-		if( localData[topicNumber] == $("[data-topic=" + topicNumber + "]").data("sections") ) // If user has completed final topic section
+		if( localData[topicNumber] >= $("[data-topic=" + topicNumber + "]").data("sections") ) // If user has completed final topic section
 		{
 			$(this).removeClass("grey");
 			
@@ -140,92 +212,119 @@ $(window).bind("beforeunload", function()
 	
 	function changePage(page, context)
 	{	
-		console.log(page);
-		dotLocation = page.indexOf(".");
+		dotLocation = String(page).indexOf(".");
 		nextTopic = String(page).substring(0, dotLocation);					// Get next topic - everything before dot
 		nextSection = String(page).substring((dotLocation + 1));			// Get next section - everything after dot
 		lastSection = $("[data-topic=" + nextTopic + "]").data("sections");	// Used to determine if on last page of topic
 		containsQuiz = $("[data-topic=" + nextTopic + "]").data("quiz");	// Check if topic contains quiz using data attribute in sidemenu
 		
 		
+		// Check access to page
+		var allowed = true;
 		
-		/* Summary Page Logic */
-		/*
-		if(context == "next" && nextTopic > 1 && nextSection == "1")
+		if(context == "URL") // If the page is being access by URL manipulation
 		{
-			console.log("SDfasf");
-			next = (Number(currentTopic) + 1) + 0.1;
-			$('#course-content').html( $("#scrollerleft .slide-content").html() );		// Load page contents
-			updateSummary();
-						
-						$("#descriptor h4, #progress-text").html("Course Summary");
-						$("#left").addClass("faded");
-						return false;			// Stop function here
-		}
-		*/
-		
-		/* Check user has progressed to this page - prevent access via URL manipulation */
-		
-		//if(localData[nextTopic] >= window.location.hash) // If page is present in JS object
-		//else
-		//{
-		
-			// Update progress in temporary global variable
+			console.log(context);
 			
-			if(context == "next")
+			/* Check user has progressed to this page - prevent access via URL manipulation */
+			console.log("Before Update " + localData);
+			
+			if(nextTopic > 0) 
 			{
+				allowed = false;
 				
-				if(currentTopic in localData)	// If topic exists in object
+				if(nextSection == 1) // If trying to get to first page in section
 				{
-					if(localData[currentTopic] < currentSection)
+					var previousTopic = parseInt(nextTopic - 1);
+					var previousLastSection = $("[data-topic=" + previousTopic + "]").data("sections");	// Used to determine if on last page of previous topic
+				
+					if(localData[previousTopic] >= previousLastSection)
 					{
-						localData[currentTopic] = currentSection;
+						allowed = true;
 					}
 				}
 				
-				else
+				else // If going to any other page
+				{
+					if(parseInt(nextSection) == parseInt(localData[nextTopic]) + parseInt(1))
+					{
+						//allowed = true;
+					}
+					
+				}
+				
+			}
+		
+		}
+		
+				
+		// Update progress 
+						
+		if(context == "next")
+		{
+			if(currentTopic in localData)	// If topic exists in object
+			{
+				if(parseInt(localData[currentTopic]) < parseInt(currentSection) )
 				{
 					localData[currentTopic] = currentSection;
 				}
-					
-				$.cookie('progress', JSON.stringify( localData )); // Update cookie
-							
-				updateProgressBar();				
+			}
+			
+			else
+			{
+				localData[currentTopic] = currentSection;
+			}
+				
+			$.cookie('progress', JSON.stringify( localData )); // Update cookie
+						
+			updateProgressBar();				
+			
+		} // Close if context == next
+		
+		
+		if( allowed == true)
+		{
+			console.log("After Update " + localData);	
+			$('#course-content').load("content/" + page + ".html");		// Load page contents
 			
 				
-			} // Close if context == next
-		
-		$('#course-content').load("content/" + page + ".html");		// Load page contents
+			// Update UI Elements
+			$("#descriptor h4").html(  $("[data-topic=" + nextTopic + "] h3 strong").html() );
+			$('#slide-left').removeClass('openslide-left'); 										// Close menu if open
+			$('#slide-right').removeClass('openslide-right'); 										// Close menu if open
+			$('#course-content').removeClass('faded');												// Restore opacity
+			$("#progress-text").html("Section " + nextSection + " of " + lastSection);				// Change progress text
 			
-		// Update UI Elements
-		$("#descriptor h4").html(  $("[data-topic=" + nextTopic + "] h3 strong").html() );
-		$('#slide-left').removeClass('openslide-left'); 										// Close menu if open
-		$('#slide-right').removeClass('openslide-right'); 										// Close menu if open
-		$('#course-content').removeClass('faded');												// Restore opacity
-		$("#progress-text").html("Section " + nextSection + " of " + lastSection);				// Change progress text
-		
-		
-		// Previous - Next Buttons
-		$("#left, #right").removeClass("faded");
-		
-		
-		if(nextSection == 1)
-		{
-			$("#left").addClass("faded");
-		}
-		
-		if(currentTopic > 0 && nextSection == lastSection && containsQuiz == true)
-		{
-			$("#right").addClass("faded");
-		}
-		
 			
-		// Set new current page
-		currentPage = String(page);	
-		currentTopic = nextTopic;		// Set current topic - used to record progress
-		currentSection = nextSection;	// Set current section - used to record progress
-	
-		//} // Close if
+			// Summary Page
+			if(nextSection > lastSection)
+			{
+				$("#progress-text").html("");
+				$("#left").addClass("faded");
+				$("#descriptor h4").html("Topic Summary");
+			}
+			
+			// Previous - Next Buttons
+			$("#left, #right").removeClass("faded");
+			
+			if(nextSection == 1)
+			{
+				$("#left").addClass("faded");
+			}
+			
+			if(currentTopic > 0 && nextSection == lastSection && containsQuiz == true)
+			{
+				$("#right").addClass("faded");
+			}
+			
+				
+			// Set new current page
+			currentPage = String(page);	
+			currentTopic = nextTopic;		// Set current topic - used to record progress
+			currentSection = nextSection;	// Set current section - used to record progress
+		
+		} // Close if
+		
 		
 	} // Close changePage() function
 
@@ -341,8 +440,7 @@ $.each($("#slide-left .ch-title"), function(key, value){
 	$('#right').click(function(){
 		
 		if(! $(this).hasClass("faded") ) // Check if greyed out
-		{
-			console.log("sdfsfd");
+		{	
 			context = "next";
 			window.location.hash = next;	
 		}
@@ -353,13 +451,14 @@ $.each($("#slide-left .ch-title"), function(key, value){
 
 
 
-// multiple choice quiz 
 
 
 
 }); // Close document ready
 	
-	
+
+
+
 	
 	
 /* Validate contact form */

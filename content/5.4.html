@@ -2,24 +2,52 @@
 
 <h1><span>5.4</span> Assessment for topic 5</h1>
 
-<div class="content-left">
-	
-<p>Sort introduction</p>
+<h2>Let's see if you can remember. Click on the important sentences.</h2>
 
-<p>Autoplay “slideshow”</p> 
+<p><u>Example 1: Releasing (personal) data about deceased persons</u></p>
 
-<p>Then let user replay slideshow and highlight important sections of the topic</p>
+<p>You can (unless an exemption applies) legally publish data of deceased people. <span id="important1">However this should not negate ethical considerations such as for example any potential distress you may cause to the relatives of the deceased persons by releasing such data.</span></p>  
 
-</div>
+<p>For further information and the list of exemptions see - Confidentiality guidance: Disclosure after a patient's death http://www.gmc-uk.org/guidance/ethical_guidance/confidentiality_70_72_disclosure_after_patient_death.asp</p>
 
-<div class="content-right">
-	
-</div>
+<p><u>Example 2: Releasing anonymised data</u></p>
+
+<p>The Data Protection Act (1998) does not prevent the disclosure of anonymised data, however there may still be reasons for not disclosing it. <span id="important2">For example, in cases where individuals, though not identifiable, are at risk of misidentification and where this misidentification may leads to harmful consequences</span></p>
+
+<p class="highlight"><strong>The key point is that you will need to consider both what you can do legally and what you should do ethically and they may not be the same thing. Ethical considerations may override legal ones.</strong></p>
+
+
+<button id="check-important">Check</button>
+
 
 </section>
 
 
 <script>
-	next = '6.1';
+	 //dynamicContent()
+	next = '5.5';
 	previous = '5.3';
+
+	$('#important1').click(function(){
+		$('#important1').toggleClass('highlight');
+	});
+	$('#important2').click(function(){
+		$('#important2').toggleClass('highlight');
+	});
+
+	
+	$('#check-important').click(function(){
+
+		if($('#important1').hasClass('highlight') && $('#important2').hasClass('highlight')){
+		alert('correct!');
+	} else {
+		alert('false!');
+	}
+
+	});
+
+	
+
 </script>
+
+

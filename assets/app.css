@@ -60,6 +60,21 @@ table {
 	border-spacing: 0;
 }
 
+.table-div {
+	margin-bottom: 40px; margin-top: 40px;
+	padding-right: 40px;
+}
+
+.afterCut
+{
+	display: none;
+}
+
+.afterCut.visible
+{
+	display: inline;
+}
+
 /* app.css */
 
 h1 {
@@ -280,7 +295,7 @@ header {
 #right.faded
 {
 	opacity: 0.1;
-	cursor: default;
+	cursor: default !important;
 }
 
 .lower-roman
@@ -350,7 +365,6 @@ footer {
 .but-l {
 	width: 25%;
 	float: left;
-	cursor: pointer;
 }
 
 .desc-l {
@@ -361,7 +375,6 @@ footer {
 .but-r {
 	width: 25%;
 	float: left;
-	cursor: pointer;
 }
 
 .desc-r {
@@ -818,6 +831,20 @@ button#dataset-submit {
 
 .imagequiz img {
 	padding: 10px;
+}
+
+.cool-ol { width:100%; padding-left: 50px; padding-top: 40px; }
+.cool-ol ol { font-style:italic; font-size:24px;}
+.cool-ol ol li { color: #8e8e8e; font-weight: 500; }
+.cool-ol ol li p { padding:8px; font-style:normal; font-family:Arial; font-size:1em; color:black; border-left: 1px solid #999; margin-top: 0;}
+.cool-ol ol li p em { display:block; }
+
+.highlight {
+	background-color: yellow;
+}
+
+.hidden-p {
+	display: none;
 }
 
 @media only screen { } /* Define mobile styles */
