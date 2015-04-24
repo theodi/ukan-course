@@ -1,0 +1,23 @@
+{"quizlist":[
+  
+	{
+	"question":"The ability to identify a person from from anoymised data should be:",
+	"option1":"a priority",
+	"option2":"impossible",
+	"option3":"possible"
+	},
+	{
+	"question":"Describe the 'likely, reasonable' test.",
+	"option1":"You should make all reasonable attempts to limit the likelihood of identification.",
+	"option2":"You should no attempt to limit the likelihood of identification.",
+	"option3":"None of these."
+	},
+	{
+	"question":"Select three examples of Good Governance.",
+	"option1":"Ensuring someone, within your organisation, with the suitable skills and knowledge has responsibility for authorising and overseeing the anonymisation process",
+	"option2":"Conducting a Privacy impact assessment",
+	"option3":"Ensuring you keep up-to-date with any new guidance or case law that clarifies the legal framework surrounding anonymisation"
+	}
+
+]
+}

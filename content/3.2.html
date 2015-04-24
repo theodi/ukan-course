@@ -1,0 +1,118 @@
+<section class="course-section-title">
+
+<h1><span>3.2</span> Assessment for topic 3</h1>
+
+<div class="content-left">
+	
+	<p>Alternatively polling users and then showing the aggregate against the real value would create an interesting "I never thought of that" moment</p>
+
+<label for="Option1">internal brainstorm, where members of the organisation can bring in their experience and expectations</label>
+<input id="Option1" name="Option1" value="1" type="checkbox"></br>
+<label for="Option2">external workshop, where you invite experts or users to contribute to the discussion</label>
+<input id="Option2" name="Option2" value="1" type="checkbox"></br>
+<label for="Option3">formal consultation for anyone to have a say</label>
+<input id="Option3" name="Option3" value="1" type="checkbox"></br>
+<label for="Option4">user feedback for example via your website</label>
+<input id="Option4" name="Option4" value="1" type="checkbox"></br>
+<label for="Option5">related datasets, where you can learn and observe use cases</label>
+<input id="Option5" name="Option5" value="1" type="checkbox"></br>
+<label for="Option6">something else, please specify here</label>
+<input id="Option6" name="Option6" value="1" type="checkbox"></br>
+<label for="Option7">we do not release data</label>
+<input id="Option7" name="Option7" value="1" type="checkbox"></br>
+<label for="Option8">we haven’t done any so far</label>
+<input id="Option8" name="Option8" value="1" type="checkbox"></br>
+<button id="ButtonSubmit" onclick="postContactToGoogle()" type="button" >Send</button>
+	
+</div>
+
+<div class="content-right">
+
+	<div class="pollresults">
+	<p class="option1result"><span>internal brainstorm, where members of the organisation can bring in their experience and expectations: </span></p>
+	<p class="option2result"><span>external workshop, where you invite experts or users to contribute to the discussion: </span></p>
+	<p class="option3result"><span>formal consultation for anyone to have a say: </span></p>
+	<p class="option4result"><span>user feedback for example via your website: </span></p>
+	<p class="option5result"><span>related datasets, where you can learn and observe use cases: </span></p>
+	<p class="option6result"><span>something else, please specify here: </span></p>
+	<p class="option7result"><span>we do not release data: </span></p>
+	<p class="option8result"><span>we haven’t done any so far: </span></p>
+	</div> 
+	
+</div>
+
+</section>
+
+
+<script>
+	 dynamicContent()
+	next = '3.3';
+	previous = '3.1';
+
+
+        function postContactToGoogle() {
+
+            var option1 = $("input[type='checkbox'][name='Option1']:checked").val();
+            var option2 = $("input[type='checkbox'][name='Option2']:checked").val();
+            var option3 = $("input[type='checkbox'][name='Option3']:checked").val();
+            var option4 = $("input[type='checkbox'][name='Option4']:checked").val();
+            var option5 = $("input[type='checkbox'][name='Option5']:checked").val();
+            var option6 = $("input[type='checkbox'][name='Option6']:checked").val();
+            var option7 = $("input[type='checkbox'][name='Option7']:checked").val();
+            var option8 = $("input[type='checkbox'][name='Option8']:checked").val();
+           
+                $.ajax({
+                    url: "https://docs.google.com/a/purpleguerrilla.com/forms/d/1_-Hcl5Uvxt5xrk9Kx6PpuuqsBns801L-Z5hDrNrXOXA/formResponse",
+                    data: { "entry.601021222": option1, 
+                    "entry.1504847734": option2, "entry.893525032": option3, "entry.731741861": option4, "entry.264978077": option5, "entry.1169370177": option6, "entry.1605736910": option7, "entry.1675801525": option8 },
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                        0: function () {
+                            //console.log("Thank You");
+                            init();
+                        },
+                        200: function () {
+                            //console.log("Thank You");
+                            init();
+                        }
+                    }
+                });
+        }
+
+
+
+        
+
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_liI4Eytg3nVawiKvK1Gj4snaekWOcB4OjaDAunV37g/pubhtml?gid=1760723390&single=true';
+
+  function init() {
+    Tabletop.init( { key: public_spreadsheet_url,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+
+  function showInfo(data, tabletop) {
+    //alert("Successfully processed!")
+    console.log(data);
+    console.log(data[0].internal_brainstorm_sum);
+    console.log(data[0].external_workshop_sum);
+    console.log(data[0].formal_consultation_sum);
+    console.log(data[0].related_datasets_sum);
+    console.log(data[0].something_else_sum);
+    console.log(data[0].user_feedback_sum);
+    console.log(data[0].we_do_not_release_data_sum);
+    console.log(data[0].we_havent_done_any_so_far_sum);
+    $('.option1result').append(data[0].internal_brainstorm_sum);
+    $('.option2result').append(data[0].external_workshop_sum);
+    $('.option3result').append(data[0].formal_consultation_sum);
+    $('.option4result').append(data[0].related_datasets_sum);
+    $('.option5result').append(data[0].something_else_sum);
+    $('.option6result').append(data[0].user_feedback_sum);
+    $('.option7result').append(data[0].we_do_not_release_data_sum);
+    $('.option8result').append(data[0].we_havent_done_any_so_far_sum);
+  }
+ 
+
+
+</script>

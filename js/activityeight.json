@@ -1,0 +1,23 @@
+{"quizlist":[
+  
+	{
+	"question":"Why should you not give exact details of your anoymisation process to stakeholders?",
+	"option1":"Giving too much information eg, how much noise was added to variable, may make it possible to calculate the original values, but giving too little may devalue the data shared.",
+	"option2":"wrong answer",
+	"option3":"wrong answer"
+	},
+	{
+	"question":"question",
+	"option1":"right answer",
+	"option2":"wrong answer",
+	"option3":"wrong answer"
+	},
+	{
+	"question":"question",
+	"option1":"right answer",
+	"option2":"wrong answer",
+	"option3":"wrong answer"
+	}
+
+]
+}

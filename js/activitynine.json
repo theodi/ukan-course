@@ -1,0 +1,23 @@
+{"quizlist":[
+  
+	{
+	"question":"What should do in order to deal with a data breach?",
+	"option1":"As there is always a risk of disclosure (although it should be as remote as possible), developing a breaches policy is crucial ",
+	"option2":"wrong answer",
+	"option3":"wrong answer"
+	},
+	{
+	"question":"Identify a core part of a breaches poilicy",
+	"option1":"Identify critical factors that might lead to a breach such as non-compliance of data security policies and procedures, error, malicious intrusion.",
+	"option2":"wrong answer",
+	"option3":"None of these."
+	},
+	{
+	"question":"What should you do if a breach was to occur?",
+	"option1":"To be able to provide a clear data audit trail",
+	"option2":"wrong answer",
+	"option3":"wrong answer"
+	}
+
+]
+}

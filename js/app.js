@@ -50,7 +50,7 @@ function dynamicContent()
 		
 
 // Shorten Paragraphs
-		$.each($("p"), function(key, value){
+		$.each($(".content-left p"), function(key, value){
 		
 		var characterLimit = 150;
 		
@@ -75,15 +75,15 @@ function dynamicContent()
 			}
 			*/
 			
-			var beforeCut = $(this).text().substr(0, characterLimit);
-			var afterCut = $(this).text().substr(characterLimit);
+			var beforeCut = $(this).html().substr(0, characterLimit);
+			var afterCut = $(this).html().substr(characterLimit);
 			// Extract extra text
 			$(this).html(""); 
 			$(this).append("<span class='beforeCut'>" + beforeCut + "</span>");
 			$(this).append("<span class='elipsis'>...</span>");
 			
 			$(this).append("<span class='afterCut'>" + afterCut + "</span>");
-			$(this).append("<a href='#' class='show_hide'>Show</a>");
+			$(this).append("<button type='button' class='show_hide'>Show</button>");
 		}
 		
 		});
@@ -473,68 +473,95 @@ function validateForm() {
 }
 
 
+
+
+function checkpassclass(){
+  if($( '#passclass option:selected' ).val() == 'range'){
+    $('.passclass').text('1-3');
+  } else if ($( '#passclass option:selected' ).val() == 'asis'){
+    $('.passclass.pc-1').text('3');
+    $('.passclass.pc-2').text('2');
+    $('.passclass.pc-3').text('1');
+    $('.passclass.pc-4').text('3');
+  }
+}
+
+function checksurvived(){
+  if($( '#survived option:selected' ).val() == 'na'){
+    $('.survived').text('N/A');
+  } else if($( '#survived option:selected' ).val() == 'asis'){
+    $('.survived.sv-1').text('1');
+    $('.survived.sv-2').text('0');
+    $('.survived.sv-3').text('1');
+    $('.survived.sv-4').text('0');
+  } 
+}
+
+
+
+function checksex(){
+  if($( '#passsex option:selected' ).val() == 'na'){
+    $('.passsex').text('N/A');
+  } else if($( '#passsex option:selected' ).val() == 'asis'){
+    $('.passsex.ps-1').text('female');
+    $('.passsex.ps-2').text('male');
+    $('.passsex.ps-3').text('male');
+    $('.passsex.ps-4').text('female');
+  } 
+}
+
 function checkdob(){
-  if($( '#birth option:selected' ).val() == 'dob'){
-    $('.age').text('01/09/1933');
-  } else if($( '#birth option:selected' ).val() == 'age'){ 
-    $('.age').text('29');
+  if($( '#birth option:selected' ).val() == 'age'){ 
+    $('.birth.dob1').text('36');
+    $('.birth.dob2').text('36');
+    $('.birth.dob3').text('80');
+    $('.birth.dob4').text('16');
   } else if($( '#birth option:selected' ).val() == 'noage'){
-    $('.age').text('N/A'); 
+    $('.birth').text('N/A'); 
   } else if($( '#birth option:selected' ).val() == 'ageband'){
-    $('.age').text('20 - 30');
+    $('.birth.dob1').text('30-40');
+    $('.birth.dob2').text('36-40');
+    $('.birth.dob3').text('70-80');
+    $('.birth.dob4').text('10-20');
   }
 }
 
-function checkstart(){
-  if($( '#startpoint option:selected' ).val() == 'start'){
-    $('.startpoint').text('Brooks End');
-  } else if($( '#startpoint option:selected' ).val() == 'nostart'){
-    $('.startpoint').text('N/A'); 
-  } else if($( '#startpoint option:selected' ).val() == 'morespecific'){
-    $('.startpoint').text('Brooks End, No.7');
-  } else if($( '#startpoint option:selected' ).val() == 'lessspecific'){
-    $('.startpoint').text('Glasgow'); 
-  }
-}
-
-function checkend(){
-  if($( '#endpoint option:selected' ).val() == 'end'){
-    $('.endpoint').text('Tree Street');
-  } else if($( '#endpoint option:selected' ).val() == 'noend'){
-    $('.endpoint').text('N/A');
-  } else if($( '#endpoint option:selected' ).val() == 'morespecific'){
-    $('.endpoint').text('Tree Street, No.11A');
-  } else if($( '#endpoint option:selected' ).val() == 'lessspecific'){
-    $('.endpoint').text('New York');
-  }
-}
-
-function checktime(){
-  if($( '#time option:selected' ).val() == 'show'){
-    $('.journey').text('17.45');
-  } else if($( '#time option:selected' ).val() == 'noshow'){
-    $('.journey').text('N/A');
-  } else if($( '#time option:selected' ).val() == 'roundup'){
-    $('.journey').text('18.00');
-  } else if($( '#time option:selected' ).val() == 'rounddown'){
-    $('.journey').text('17.00');
+function checkfare(){
+  if($( '#fare option:selected' ).val() == 'show'){
+    $('.fare.fr-1').text('17.400');
+    $('.fare.fr-2').text('12.875');
+    $('.fare.fr-3').text('30.000');
+    $('.fare.fr-4').text('46.900');
+  } else if($( '#fare option:selected' ).val() == 'noshow'){
+    $('.fare').text('N/A');
+  } else if($( '#fare option:selected' ).val() == 'roundup'){
+    $('.fare.fr-1').text('18.000');
+    $('.fare.fr-2').text('13.000');
+    $('.fare.fr-3').text('30.000');
+    $('.fare.fr-4').text('47.000');
+  } else if($( '#fare option:selected' ).val() == 'rounddown'){
+    $('.fare.fr-1').text('17.000');
+    $('.fare.fr-2').text('12.000');
+    $('.fare.fr-3').text('30.000');
+    $('.fare.fr-4').text('46.000');
   }
 }
 
 
 function checkdataset(){
 
-	var ticketlen1 = $(".ticketno1").val().length < 5;
-	var ticketlen2 = $(".ticketno2").val().length < 5;
-	var ticketlen3 = $(".ticketno3").val().length < 5;
-	var ticketlen4 = $(".ticketno4").val().length < 5;
-	var dobcorrect = $('.age:first').text() == '20 - 30';
-	var startcorrect = $('.startpoint:first').text() == 'Glasgow';
-	var endcorrect = $('.endpoint:first').text() == 'New York';
-	var timecorrectdn = $('.journey:first').text() == '17.00';
-	var timecorrectup = $('.journey:first').text() == '18.00';
+	var passname1 = $(".passname1").val().length == 0;
+	var passname2 = $(".passname2").val().length == 0;
+	var passname3 = $(".passname3").val().length == 0;
+	var passname4 = $(".passname4").val().length == 0;
+	var dobcorrect = $( '#birth option:selected' ).val() == 'ageband';
+	var survivecorrect = $( '#survived option:selected' ).val() == 'asis';
+	var classcorrect = $( '#passclass option:selected' ).val() == 'asis';
+	var sexcorrect = $( '#passsex option:selected' ).val() == 'asis';
+	var farecorrectup = $( '#fare option:selected' ).val() == 'roundup';
+	var farecorrectdown = $( '#fare option:selected' ).val() == 'rounddown';
 
-    if(ticketlen1 && ticketlen2 && ticketlen3 && ticketlen4 && dobcorrect && startcorrect && endcorrect && (timecorrectdn || timecorrectup)){
+    if(passname1 && passname2 && passname3 && passname4 && dobcorrect && survivecorrect && classcorrect && sexcorrect && (farecorrectdown || farecorrectup)){
     //alert('correct');
     $('#int-dataset').css({'border':'6px solid #5AEA5B'});
     $('.dataset-correct').fadeIn('slow');
@@ -558,6 +585,7 @@ function chkorder(){
 			$('.ordresultmessage').append('correct');
 		} else {
 			$('.ordresultmessage').append('false');
+			$('.ordresultmessage').delay(5000).fadeOut('slow');
 		}
 	
 

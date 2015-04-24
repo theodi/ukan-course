@@ -4,42 +4,44 @@
 
 <p>Edit this table according to your accumulated knowledge about anonymisation. When you're done, press the submit button to get feedback and suggestions. Good luck! ;)</p>
 
-<p><strong>Tip:</strong> for Go-card No. edit text, for all other columns, choose an option.</p>
+<p><strong>Tip:</strong> for Passanger Name edit text, for all other columns, choose an option.</p>
 
 <div>
 
 <table class="responsive" id="int-dataset">
 <tr>
-    <th>Go-card No.</th>
-    <th>Passenger DoB
+    <th>Passenger Class
+    <select id="passclass" onchange="checkpassclass()">
+    <option value="none">Choose Option</option>
+    <option value="range">1-3</option>
+    <option value="asis">As is</option>
+  </select>
+    </th>
+    <th>Survived
+      <select id="survived" onchange="checksurvived()">
+    <option value="none">Choose Option</option>
+    <option value="na">N/A</option>
+    <option value="asis">As is</option>
+  </select>
+    </th>
+    <th>Passenger Name</th>
+    <th>Sex
+      <select id="passsex" onchange="checksex()">
+    <option value="none">Choose Option</option>
+    <option value="na">N/A</option>
+    <option value="asis">As is</option>
+  </select>
+    </th>
+    <th>Age
       <select id="birth" onchange="checkdob()">
     <option value="none">Choose Option</option>
-    <option value="dob">Show Date of Birth</option>
     <option value="age">Show Age</option>
     <option value="noage">Show No Age</option>
     <option value="ageband">Show Age-band</option>
   </select>
     </th>
-    <th>Start point
-      <select id="startpoint" onchange="checkstart()">
-    <option value="none">Choose Option</option>
-    <option value="start">Show Start Point</option>
-    <option value="nostart">Don't Show</option>
-    <option value="lessspecific">Less Specific</option>
-    <option value="morespecific">More Specific</option>
-  </select>
-    </th>
-    <th>End point
-      <select id="endpoint" onchange="checkend()">
-    <option value="none">Choose Option</option>
-    <option value="end">Show End Point</option>
-    <option value="noend">Don't Show</option>
-    <option value="lessspecific">Less Specific</option>
-    <option value="morespecific">More Specific</option>
-  </select>
-    </th>
-    <th>Journey time
-      <select id="time" onchange="checktime()">
+    <th>Fare
+      <select id="fare" onchange="checkfare()">
     <option value="none">Choose Option</option>
     <option value="show">Show</option>
     <option value="noshow">Don't Show</option>
@@ -48,36 +50,47 @@
   </select>
     </th>
   </tr>
+
+  <tr>
+    <td class="passclass pc-1">3</td>
+    <td class="survived sv-1">1</td>
+    <td><input class="passname1" type="text" value="de Messemaeker, Mrs. Guillaume Joseph (Emma)"></td>
+    <td class="passsex ps-1">female</td>
+    <td class="birth dob1">36</td>
+    <td class="fare fr-1">17.400</td>
+  </tr>
+
+  <tr>
+    <td class="passclass pc-2">2</td>
+    <td class="survived sv-2">0</td>
+    <td><input class="passname2" type="text" value="Levy, Mr. Rene Jacques"></td>
+    <td class="passsex ps-2">male</td>
+    <td class="birth dob2">36</td>
+    <td class="fare fr-2">12.875</td>
+  </tr>
+
+  <tr>
+    <td class="passclass pc-3">1</td>
+    <td class="survived sv-3">1</td>
+    <td><input class="passname3" type="text" value="Barkworth, Mr. Algernon Henry Wilson"></td>
+    <td class="passsex ps-3">male</td>
+    <td class="birth dob3">80</td>
+    <td class="fare fr-3">30.000</td>
+  </tr>
+
+  <tr>
+    <td class="passclass pc-4">3</td>
+    <td class="survived sv-4">0</td>
+    <td><input class="passname4" type="text" value="Goodwin, Miss. Lillian Amy"></td>
+    <td class="passsex ps-4">female</td>
+    <td class="birth dob4">16</td>
+    <td class="fare fr-4">46.900</td>
+  </tr>
+
   
-  <tr>
-    <td><input class="ticketno1" type="text" value="WT98765G"></td>
-    <td class="age">01/09/1933</td>
-    <td class="startpoint">Brooks End</td>
-    <td class="endpoint">Tree Street</td>
-    <td class="journey">17.45</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno2" type="text" value="WT98765H"></td>
-    <td class="age">01/09/1933</td>
-    <td class="startpoint">Brooks End</td>
-    <td class="endpoint">Tree Street</td>
-    <td class="journey">17.45</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno3" type="text" value="WT98765I"></td>
-    <td class="age">01/09/1933</td>
-    <td class="startpoint">Brooks End</td>
-    <td class="endpoint">Tree Street</td>
-    <td class="journey">17.45</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno4" type="text" value="WT98765J"></td>
-    <td class="age">01/09/1933</td>
-    <td class="startpoint">Brooks End</td>
-    <td class="endpoint">Tree Street</td>
-    <td class="journey">17.45</td>
-  </tr>
+  
 </table>
+
 
 <button id="dataset-submit" onclick="checkdataset()">Submit</button>
 <div class="dataset-feedback">

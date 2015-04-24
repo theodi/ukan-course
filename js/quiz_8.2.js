@@ -11,7 +11,7 @@ var score=0;
 		 
 
  
- 		$.getJSON('js/activity.json', function(data) {
+ 		$.getJSON('js/activityeight.json', function(data) {
 
 		for(i=0;i<data.quizlist.length;i++){ 
 			questionBank[i]=new Array;
