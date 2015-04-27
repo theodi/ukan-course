@@ -2,48 +2,58 @@
 
 <h1><span>7.2</span> Know the processes you will need to go through to assess disclosure risk</h1>
 
-<div class="content-left">
+
+
+<div class="section-slider">
+
+<section class="slider">
+    <div><p>First, we remove direct identifiers. The most obvious ones are name (column 3) and ticket number (column 8). We drop ticket number (very limited use) and replace the names with a randomly assigned number (a process called pseudonymisation).</p></div>
+    <div><p>We redact further variables that seem not useful or create too much risk. Thus, we delete cabin (column 10), lifeboat (column 12), body identification number (column 13) and home/destination (column 14).</p></div>
+    <div><p>It is very common to group age, so after some experimentation we decide on the following age bands: 0-14, 15-19, 20-24, 25-29, 30-34, 35-44, 45-54, 55 and older.</p></div>
+    <div><p>A frequency table reveals that the number of siblings/spouses aboard (column 6) has two very large families that are thus outliers. We expand the group “four” to include “four or more” siblings/spouses aboard.</p></div>
+    <div><p>A similar frequency table for number of parents/children aboard (column 7) reveals a similar risk. We group “three” to include “three or more” parents/children aboard.</p></div>
+    <div><p>The passenger fare is very granular and therefore risky. We round the variable to it’s nearest 10 and inspect it again.</p></div>
+    <div><p>We learn that home/destination is crucial for most analyses. We therefore go back to group the geographic destinations manually and add them back into the dataset.</p></div>
+    <div><p>The variables passenger class (column 1), survival status (column 2) and sex (column 4) look ok on their own. However, the may still be indirect identifiers in combination with other variables. In other words, we have to analyse the combinations of variables to understand what disclosure risk remains.</p></div>
+    <div><p>Most anonymisation techniques can be combined. We may chose to only release an aggregate table.</p></div>
+</section>
+
+<ul class="ch7-links">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#">9</a></li>
+</ul>
 	
+</div>
 
-	<p>
-	Assume our aim is to release this clearly personal dataset (contains names!) as an anonymised dataset. We’ll ignore for a moment that the passengers are long dead and that we’re unclear about the use case (or any other of the 10 steps in the decision-making framework). </p>
+<div style="float: left;">
 	
-	<p>
-The following is an example process. By no means it implies that this is the right, perfect or only solution.</p>
-
-
-
-<ol>
-<li>We have completed topic 2 and ‘know our data’. If you haven’t done this yet, doing it now may help you understand the data better.</li>
-<li>The first step is to remove direct identifiers. The most obvious ones are name (column 3) and ticket number (column 8). We drop ticket number (very limited use) and replace the names with a random number (a process called pseudonymisation).</li>
-
-<li>We redact further variables that seem not useful or create too much risk. Thus, we delete cabin (column 9), lifeboat (column 12), body identification number (column 13) and home/destination (column 14).</li>
-
-<li>It is very common to group age, so after some experimentation we decide on the following age bands: 0-14, 15-19, 20-24, 25-29, 30-34, 35-44, 45-54, 55 and older.</li>
-
-<li>A frequency table reveals that the number of siblings/spouses aboard (column 6) has two very large families that are thus outliers. We expand the group “four” to include “four or more” siblings/spouses aboard.</li>
-
-<li>A similar frequency table for number of parents/children aboard (column 7) reveals a similar risk. We group “three” to include “three or more” parents/children aboard.
-The passenger fare is very granular and therefore risky. We round the variable to it’s nearest 10 and inspect it again.</li>
-
-<li>We learn that home/destination is crucial for most analyses. We therefore go back to group the geographic destinations manually and add them back into the dataset. </li>
-
-<li>The variables passenger class (column 1), survival status (column 2) and sex (column 4) look ok on their own. However, the may still be indirect identifiers in combination with other variables. In other words, we have to analyse the combinations of variables to understand what disclosure risk remains.</li>
-
-<li>Most anonymisation techniques can be combined. We may chose to only release an aggregate table.</li>
-</ol>
-
-<p>
-	Many more techniques and examples are in the Information Commissioner’s Office’s document <a href="">Anonymisation: managing data protection risk code of practice</a></p>
-
-	
+	<p>Many more techniques and examples are in the Information Commissioner’s Office’s document <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/anonymisation/" target="_blank">Anonymisation: managing data protection risk code of practice</a></p>
 </div>
 
 </section>
 
 
 <script>
-	 dynamicContent()
+	//dynamicContent()
 	next = '7.3';
 	previous = '7.1';
+
+	var $slideshow = $(".slider").slick();
+
+$('.ch7-links').on('click', 'a', function( e ) {
+
+    var slideIndex = $(this).closest('li').index();
+    
+    $slideshow.slick( 'slickGoTo', parseInt( slideIndex ) );
+    
+    e.preventDefault();
+});
+
 </script>

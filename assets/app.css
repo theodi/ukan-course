@@ -81,7 +81,7 @@ table {
 	display: inline;
 }
 
-.show_hide, button
+.show_hide
 {
 	border: 0;
 	color: #8e8e8e;
@@ -110,8 +110,7 @@ h1 {
 h2
 {
 	font-weight: bold;
-	font-size: 100%;
-	font-size: 1.3em;
+	font-size: 1.7em;
 	margin: 20px 0 0 0;
 }
 
@@ -572,7 +571,8 @@ strong{
 	border: solid 4px #ededed;
 }
 
-input[type=submit] {
+input[type=submit], imagequiz-submit
+{
 	background: #5AEA5B;
 	border: none;
 	color: black;
@@ -605,7 +605,9 @@ input#image-submit{
 
 /**** demo content ****/
 
-
+#int-dataset > tbody > tr:nth-child(2) > td.startpoint {
+	line-height: 24px;
+}
 
 #welcome {
 	text-align: center;
@@ -658,6 +660,7 @@ input#image-submit{
 	padding-left: 20px;
 	padding-bottom: 40px;
 	font-weight: 500;
+	word-wrap: break-word;
 }
 
 /**** multiple choice ****/
@@ -742,7 +745,8 @@ input#image-submit{
   	padding: 20px;
 }
 
-input#restartQuiz {
+input#restartQuiz,
+#imagequiz-submit {
  	background: #5AEA5B;
   	height: 40px;
   	width: 150px;
@@ -820,7 +824,7 @@ button#dataset-submit {
 
 /*** order quiz ***/
 
-.orderquiz input {
+.orderquiz1 input, .orderquiz2 input, .orderquiz input {
 	margin-right: 20px;
 	height: 30px;
 	width: 30px;
@@ -834,7 +838,7 @@ button#dataset-submit {
 
 
 
-.imagequiz-wrong {
+.imagequiz-correct, .imagequiz-wrong {
 	display: none;
 	text-align: left;
 	width: 40%;
@@ -844,12 +848,12 @@ button#dataset-submit {
 	margin-top: 20px;
 }
 
-.imagequiz-wrong img {
+.imagequiz-correct img, .imagequiz-wrong img {
 	float: right;
 	width: 50px;
 }
 
-.imagequiz-wrong p {
+.imagequiz-correct p, .imagequiz-wrong p {
 	float: left;
 	width: 80%;
 	margin: 0;
@@ -907,13 +911,24 @@ button#dataset-submit {
 .cool-ol ol li p em { display:block; }
 
 .highlight {
-	background-color: yellow;
 	padding-left: 5px;
 	padding-right: 5px;
+	text-decoration: underline;
+	color: blue;
+	cursor: pointer;
 }
 
 .hidden-p {
 	display: none;
+}
+
+.ch7-links li {
+	float: left;
+	padding: 20px;
+}
+
+.ch7-links li:before {
+  content: "";
 }
 
 @media only screen { } /* Define mobile styles */
@@ -1055,6 +1070,7 @@ button#dataset-submit {
 /* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 
 		display: block; 
+		font-size: 75%;
 	}
 	
 	/* Hide table headers (but not display: none;, for accessibility) */
@@ -1072,6 +1088,7 @@ button#dataset-submit {
 		border-bottom: 1px solid #eee; 
 		position: relative;
 		padding-left: 50%; 
+		width: auto;
 	}
 	
 	td:before { 

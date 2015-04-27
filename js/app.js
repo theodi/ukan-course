@@ -40,7 +40,12 @@ $(window).on('hashchange', function(e){
 
 
 function dynamicContent()
-{
+{	
+	
+	
+	
+	
+	$(".hide_me p").addClass("ignore");
 	// Wrap list item content in span
 
 		$.each($(".content-left li"), function(key, value){
@@ -50,30 +55,14 @@ function dynamicContent()
 		
 
 // Shorten Paragraphs
-		$.each($(".content-left p"), function(key, value){
+		$.each($(".content-left p:not(.ignore)"), function(key, value){
+		
 		
 		var characterLimit = 150;
 		
 		if(	$(this).text().length > characterLimit )	// If paragraph is longer than character limit
 		{	
-			/*
-			if( $(this).text().substr(characterLimit, 1) != "" ) // If cut off point is not white space
-			{
-						
-				for(count = 0; count < 20; count++ )
-				{
-					characterLimit++;
-					
-					if($(this).text().substr(characterLimit, 1) == "")
-					{
-					break 
-					}
-				}
-				
-				console.log("Not whitesapce");
-				
-			}
-			*/
+			
 			
 			var beforeCut = $(this).html().substr(0, characterLimit);
 			var afterCut = $(this).html().substr(characterLimit);
@@ -87,7 +76,19 @@ function dynamicContent()
 		}
 		
 		});
-
+		
+		
+		
+		$.each($(".hide_me"), function(key, value){
+		
+		
+		$(this).html("<span class='elipsis'>...</span><span class='afterCut'>" + $(this).html() + "</span>")
+		$(this).append("<button type='button' class='show_hide'>Show</button>");
+		
+		
+		});
+		
+		
 		
 		$(".show_hide").click(function(){
 			
@@ -248,7 +249,7 @@ $(window).bind("beforeunload", function()
 				{
 					if(parseInt(nextSection) == parseInt(localData[nextTopic]) + parseInt(1))
 					{
-						//allowed = true;
+						allowed = true;
 					}
 					
 				}
@@ -299,9 +300,10 @@ $(window).bind("beforeunload", function()
 			// Summary Page
 			if(nextSection > lastSection)
 			{
-				$("#progress-text").html("");
+				console.log( $("#slide-left .slide-content").html()  );
 				$("#left").addClass("faded");
 				$("#descriptor h4").html("Topic Summary");
+				$(".content-left").append( $("#slide-left .slide-content").html() );
 			}
 			
 			// Previous - Next Buttons
@@ -586,6 +588,34 @@ function chkorder(){
 		} else {
 			$('.ordresultmessage').append('false');
 			$('.ordresultmessage').delay(5000).fadeOut('slow');
+		}
+	
+
+}
+
+function chkorder1(){
+
+	
+
+		if(($(".orderquiz1 .ord1").val() == 3) && ($(".orderquiz1 .ord2").val() == 2) && ($(".orderquiz1 .ord3").val() == 1)){
+			$('.orderquiz1 .ordresultmessage').append('correct');
+		} else {
+			$('.orderquiz1 .ordresultmessage').append('false');
+			$('.orderquiz1 .ordresultmessage').delay(5000).fadeOut('slow');
+		}
+	
+
+}
+
+function chkorder2(){
+
+	
+
+		if(($(".orderquiz2 .ord1").val() == 1) && ($(".orderquiz2 .ord2").val() == 3) && ($(".orderquiz2 .ord3").val() == 2)){
+			$('.ordresultmessage').append('correct');
+		} else {
+			$('.orderquiz2 .ordresultmessage').append('false');
+			$('.orderquiz2 .ordresultmessage').delay(5000).fadeOut('slow');
 		}
 	
 

@@ -1,115 +1,35 @@
-<section class="course-section-title">
+<section class="course-section-title" >
 
 <h1><span>2.3</span> Topic 2: Know your data</h1>
 
-<div class="knowyourdata content-left">
-	<p>Here we see a few rows of the dataset of the Titanic's passenger list. It contains 1309 passengers but none of the crew. In 14 columns we have various passenger characteristics such as age or their passenger class. This data clearly contains personal information and if we would want to release it, we would first go through the process of anonymising this data.
-<br>
-If a name is unique, we would call it a direct identifier. This means an unusual name is enough to identify a person. A more common name such as James Smith in combination with for eg address may also be a direct identifier. </p>
+<div class="content-left">
 
-<p>Ticket number may also be a direct identifier. If someone knows to whom the ticket number refers, it would be possible to identify the person in the data.
-
-What can we do? A common strategy is to mask or hash the direct identifier, that is, to replace it with another, usually random, value. Or we may choose to simply delete both columns.
-
-<br>Age is quite an important variable for many analyses or use cases. We cannot delete it, even though there is, for example, only one passenger aged 80. A common strategy is to create age bands such as 0-10, 11-20, 21-30 and so forth. Choosing the optimal trade-off between usefulness and risk is up to the analyst and also depends on the remaining data and its context.</p> 
-
-<p>Fare is, similar to age, quite granular. We may want to include it in a data release because it could tell an interesting story around prices. Again, it may be prudent to reduce the amount of information disclosed. More on possible methods to do so in topic 7 of the course.<br>
-
-Just applying some anonymisation method on its own is usually not enough. You have to evaluate its effect on the risk of disclosing personal information. The beginning of anonymising data is to understand your data. </p>
-
-
-
-
-
-<table class="responsive" id="int-dataset">
-<tr>
-    <th>Passenger Class
-    <select id="passclass" onchange="checkpassclass()">
-    <option value="none">Choose Option</option>
-    <option value="range">1-3</option>
-    <option value="asis">As is</option>
-  </select>
-    </th>
-    <th>Survived
-      <select id="survived" onchange="checksurvived()">
-    <option value="none">Choose Option</option>
-    <option value="na">N/A</option>
-    <option value="asis">As is</option>
-  </select>
-    </th>
-    <th>Passenger Name</th>
-    <th>Sex
-      <select id="passsex" onchange="checksex()">
-    <option value="none">Choose Option</option>
-    <option value="na">N/A</option>
-    <option value="asis">As is</option>
-  </select>
-    </th>
-    <th>Age
-      <select id="birth" onchange="checkdob()">
-    <option value="none">Choose Option</option>
-    <option value="age">Show Age</option>
-    <option value="noage">Show No Age</option>
-    <option value="ageband">Show Age-band</option>
-  </select>
-    </th>
-    <th>Fare
-      <select id="fare" onchange="checkfare()">
-    <option value="none">Choose Option</option>
-    <option value="show">Show</option>
-    <option value="noshow">Don't Show</option>
-    <option value="roundup">Round Up</option>
-    <option value="rounddown">Round Down</option>
-  </select>
-    </th>
-  </tr>
-
-  <tr>
-    <td class="passclass pc-1">3</td>
-    <td class="survived sv-1">1</td>
-    <td><input class="passname1" type="text" value="de Messemaeker, Mrs. Guillaume Joseph (Emma)"></td>
-    <td class="passsex ps-1">female</td>
-    <td class="birth dob1">36</td>
-    <td class="fare fr-1">17.400</td>
-  </tr>
-
-  <tr>
-    <td class="passclass pc-2">2</td>
-    <td class="survived sv-2">0</td>
-    <td><input class="passname2" type="text" value="Levy, Mr. Rene Jacques"></td>
-    <td class="passsex ps-2">male</td>
-    <td class="birth dob2">36</td>
-    <td class="fare fr-2">12.875</td>
-  </tr>
-
-  <tr>
-    <td class="passclass pc-3">1</td>
-    <td class="survived sv-3">1</td>
-    <td><input class="passname3" type="text" value="Barkworth, Mr. Algernon Henry Wilson"></td>
-    <td class="passsex ps-3">male</td>
-    <td class="birth dob3">80</td>
-    <td class="fare fr-3">30.000</td>
-  </tr>
-
-  <tr>
-    <td class="passclass pc-4">3</td>
-    <td class="survived sv-4">0</td>
-    <td><input class="passname4" type="text" value="Goodwin, Miss. Lillian Amy"></td>
-    <td class="passsex ps-4">female</td>
-    <td class="birth dob4">16</td>
-    <td class="fare fr-4">46.900</td>
-  </tr>
-
-  
-  
-</table>
+<p class="ignore">You may also have <strong>qualitative data</strong>. For example in the form of free text fields in a survey. They can be problematic when releasing them in its raw form because you have to be sure no one mentions a name or other data relating to individuals. </p> 
+	
 </div>
+
+<div class="content-right">
+	<div><iframe src="https://player.vimeo.com/video/125947558" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> </div>
+	 
+	 </div>
 
 </section>
 
 
 <script>
-	 dynamicContent()
-	next = '2.4';
-	previous = '2.2';
+
+	$(document).ready(function(){
+  		var $slideshow = $('.content-right').slick();
+
+  		$('.links').on('click', 'a', function( e ) {
+    	var slideIndex = $(this).closest('li').index();
+    	$slideshow.slick( 'slickGoTo', parseInt( slideIndex ) );
+    e.preventDefault();
+	});
+	});
+
+	
+ dynamicContent()
+	next = '2.3';
+	previous = '2.1';
 </script>

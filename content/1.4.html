@@ -6,18 +6,119 @@
 <h1><span>1.4</span> Assessment for Topic 1</h1>
 
 <div class="imagequiz content-left">
-<p class="instruction">Choose the dataset you believe to have been anonymised.</p>
+<p class="instruction">Select all datasets below that you think are anonymised data.</p>
 
   <ul class="destyled-ul">
-    <li><input type="checkbox" id="dataset1"><label for="dataset1">Part of a passenger underground travel data set</label><br><img src="assets/images/dataset1.png"></li>
-    <li><input type="checkbox" id="dataset2"><label for="dataset2">Mobile phone metadata</label><br><img src="assets/images/dataset2.png"></li>
-    <li><input type="checkbox" id="dataset3"><label for="dataset3">Annual Consumption of Government Hospitality Wine Cellar</label><br><img src="assets/images/dataset3.png"></li>
+    <li><input type="checkbox" id="dataset1">
+    <label for="dataset1">Part of a passenger underground travel data set</label>
+    
+<div class="table-div">
+<table class="responsive" id="int-dataset">
+<tr>
+    <th>Hashed passenger ref. no.</th>
+    <th>Age Band</th>
+    <th>Start Location</th>
+    <th>End Location</th>
+    <th>Journey Time</th>
+  </tr>
+  
+  <tr>
+    <td>32499FA9</td>
+    <td class="age">20-25</td>
+    <td class="startpoint">Waterloo station</td>
+    <td class="endpoint">London Bridge station</td>
+    <td class="journey">18 min</td>
+  </tr>
+  <tr>
+    <td>093A921E</td>
+    <td>35-45</td>
+    <td>Bank Station</td>
+    <td>King's Cross Station</td>
+    <td>14 min</td>
+  </tr>
+ </table>
+</div>
+    </li>
+    
+    
+    
+    
+    <li><input type="checkbox" id="dataset2"><label for="dataset2">Mobile phone metadata</label><br>
+    
+    <div class="table-div">
+<table class="responsive" id="int-dataset">
+<tr>
+    <th>IMEI</th>
+    <th>Longitude</th>
+    <th>Latitude</th>
+    <th>Time Stamp</th>
+  </tr>
+  
+  <tr>
+    <td>49-015420-323751</td>
+    <td>51.498609</td>
+    <td>-0.133906</td>
+    <td>20014-11-09 T 11:20:01 UTC</td>
+</td>
+  </tr>
+  <tr>
+    <td>49-015420-323751</td>
+    <td>51.440012</td>
+    <td>-0.132901</td>
+    <td>20014-11-09 T 11:27:13 UTC</td>
+  </tr>
+ </table>
+</div>
+    
+    </li>
+    
+    
+    
+    
+    <li><input type="checkbox" id="dataset3"><label for="dataset3">Annual Consumption of Government Hospitality Wine Cellar</label>
+    <br>
+    
+        <div class="table-div">
+<table class="responsive" id="int-dataset">
+<tr>
+    <th>Country/Region</th>
+    <th>Vintage</th>
+    <th>Product Name</th>
+    <th>Consumption</th>
+  </tr>
+  
+  <tr>
+    <td>Bordeaux</td>
+    <td>1985</td>
+    <td>Château Cheval Blanc 1985, 1er Grand Cru Classé, St Emilion</td>
+    <td>5</td>
+</td>
+  </tr>
+  <tr>
+    <td>Chile</td>
+    <td>2001</td>
+    <td>Le Dix de Los Vascos 2001 (Domaine Barons de Rothschild) Colchagua</td>
+    <td>3</td>
+  </tr>
+ </table>
+</div>
+    
+    
+    
+    </li>
+    
+    
+    
+    
     <li><button id="imagequiz-submit">Submit</button></li>
   </ul>
 
   
   
   <div class="imagequiz-wrong"><p>You cannot determine whether a dataset is anonymised by only looking at the data.</p><img src="assets/images/error.png"></div>
+  
+  <div class="imagequiz-correct"><p>Correct. From <em class="underline">only</em> looking at the data we cannot determine whether a dataset is anonymised. 
+</p><img src="assets/images/correct.png"></div>
 </div>
 
 </section>
@@ -28,7 +129,17 @@
 <script>
 
 $('#imagequiz-submit').click(function(){
-  $('.imagequiz-wrong').css({'display':'table'});
+	
+	if($('input').is(':checked'))
+	{
+		$('.imagequiz-wrong').css({'display':'table'});
+	}
+	
+	else
+	{
+		$('.imagequiz-correct').css({'display':'table'});
+  	}
+  
   $("#right").removeClass("faded");
   
 });
