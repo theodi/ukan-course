@@ -11,8 +11,7 @@
   <ul class="destyled-ul">
     <li><input type="checkbox" id="dataset1">
     <label for="dataset1">Part of a passenger underground travel data set</label>
-
-<div class="table-div">
+    
 <table class="responsive" id="int-dataset">
 <tr>
     <th>Hashed passenger ref. no.</th>
@@ -21,7 +20,7 @@
     <th>End Location</th>
     <th>Journey Time</th>
   </tr>
-
+  
   <tr>
     <td>32499FA9</td>
     <td class="age">20-25</td>
@@ -37,15 +36,13 @@
     <td>14 min</td>
   </tr>
  </table>
-</div>
     </li>
-
-
-
-
+    
+    
+    
+    
     <li><input type="checkbox" id="dataset2"><label for="dataset2">Mobile phone metadata</label><br>
-
-    <div class="table-div">
+    
 <table class="responsive" id="int-dataset">
 <tr>
     <th>IMEI</th>
@@ -53,7 +50,7 @@
     <th>Latitude</th>
     <th>Time Stamp</th>
   </tr>
-
+  
   <tr>
     <td>49-015420-323751</td>
     <td>51.498609</td>
@@ -68,17 +65,15 @@
     <td>20014-11-09 T 11:27:13 UTC</td>
   </tr>
  </table>
-</div>
-
+    
     </li>
-
-
-
-
+    
+    
+    
+    
     <li><input type="checkbox" id="dataset3"><label for="dataset3">Annual Consumption of Government Hospitality Wine Cellar</label>
     <br>
-
-        <div class="table-div">
+    
 <table class="responsive" id="int-dataset">
 <tr>
     <th>Country/Region</th>
@@ -86,7 +81,7 @@
     <th>Product Name</th>
     <th>Consumption</th>
   </tr>
-
+  
   <tr>
     <td>Bordeaux</td>
     <td>1985</td>
@@ -101,23 +96,22 @@
     <td>3</td>
   </tr>
  </table>
-</div>
-
-
-
+    
+    
+    
     </li>
-
-
-
-
+    
+    
+    
+    
     <li><button id="imagequiz-submit">Submit</button></li>
   </ul>
 
-
-
-  <div class="imagequiz-wrong"><p>You cannot determine whether a dataset is anonymised by <em>only</em> looking at the data.</p><img src="assets/images/error.png"></div>
-
-  <div class="imagequiz-correct"><p>Correct. From <em>only</em> looking at the data we cannot determine whether a dataset is anonymised.
+  
+  
+  <div class="imagequiz-wrong"><p>You cannot determine whether a dataset is anonymised by only looking at the data.</p><img src="assets/images/error.png"></div>
+  
+  <div class="imagequiz-correct"><p>Correct. From <em class="underline">only</em> looking at the data we cannot determine whether a dataset is anonymised. 
 </p><img src="assets/images/correct.png"></div>
 </div>
 
@@ -129,19 +123,19 @@
 <script>
 
 $('#imagequiz-submit').click(function(){
-
+	
 	if($('input').is(':checked'))
 	{
 		$('.imagequiz-wrong').css({'display':'table'});
 	}
-
+	
 	else
 	{
 		$('.imagequiz-correct').css({'display':'table'});
   	}
-
+  
   $("#right").removeClass("faded");
-
+  
 });
 
 	next = '1.5';

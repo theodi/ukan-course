@@ -228,8 +228,7 @@ $(window).bind("beforeunload", function()
 			console.log(context);
 			
 			/* Check user has progressed to this page - prevent access via URL manipulation */
-			console.log("Before Update " + localData);
-			
+				
 			if(nextTopic > 0) 
 			{
 				allowed = false;
@@ -284,10 +283,9 @@ $(window).bind("beforeunload", function()
 		
 		
 		if( allowed == true)
-		{
-			console.log("After Update " + localData);	
+		{	
 			$('#course-content').load("content/" + page + ".html");		// Load page contents
-			
+			window.scrollTo(0,0)			;							// Position screen at top of page
 				
 			// Update UI Elements
 			$("#descriptor h4").html(  $("[data-topic=" + nextTopic + "] h3 strong").html() );
@@ -558,7 +556,7 @@ function checkdataset(){
 	var passname4 = $(".passname4").val().length == 0;
 	var dobcorrect = $( '#birth option:selected' ).val() == 'ageband';
 	var survivecorrect = $( '#survived option:selected' ).val() == 'asis';
-	var classcorrect = $( '#passclass option:selected' ).val() == 'asis';
+	var classcorrect = $( '#passclass option:selected' ).val() == 'range';
 	var sexcorrect = $( '#passsex option:selected' ).val() == 'asis';
 	var farecorrectup = $( '#fare option:selected' ).val() == 'roundup';
 	var farecorrectdown = $( '#fare option:selected' ).val() == 'rounddown';
@@ -590,6 +588,7 @@ function chkorder(){
 			$('.ordresultmessage').delay(5000).fadeOut('slow');
 		}
 	
+				$("#right").removeClass("faded");
 
 }
 
@@ -604,6 +603,7 @@ function chkorder1(){
 			$('.orderquiz1 .ordresultmessage').delay(5000).fadeOut('slow');
 		}
 	
+				$("#right").removeClass("faded");
 
 }
 
@@ -618,6 +618,7 @@ function chkorder2(){
 			$('.orderquiz2 .ordresultmessage').delay(5000).fadeOut('slow');
 		}
 	
+				$("#right").removeClass("faded");
 
 }
 

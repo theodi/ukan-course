@@ -114,6 +114,12 @@ h2
 	margin: 20px 0 0 0;
 }
 
+#slide-left h2, #slide-right h2
+{
+	margin: 0;
+	font-size: 1em;
+}
+
 
 
 /**** header ****/
@@ -617,13 +623,13 @@ input#image-submit{
 	color: gray;
 }
 
-.course-section-title h1 {
+h1 {
 	font-size: 3em;
 	font-weight: 600;
 	margin-bottom: 40px;
 }
 
-#course-content > section > h1 > span {
+h1 > span {
 	color: #8e8e8e;
 	font-weight: 500;
 }
@@ -894,6 +900,11 @@ button#dataset-submit {
   -webkit-transform: scale(1.5);
 }
 
+.destyled-ul table
+{
+	margin-left: -20px;
+}
+
 .show_hide
 {
     border: 0;
@@ -902,6 +913,40 @@ button#dataset-submit {
     padding: 10px;
     margin: 10px 0 0 0;
     display: block;
+}
+
+.graphic_list
+{
+	list-style: none;
+	padding: 0;
+	line-height: 2;
+	font-size: 1.75em;
+}
+
+.graphic_list li:nth-child(1) span
+{
+	background-color: #00AFFF;
+}
+
+.graphic_list li:nth-child(2) span
+{
+	background-color: #1681FF;
+}
+
+.graphic_list li:nth-child(3) span
+{
+	background-color: #1C4BF2;
+}
+
+.graphic_list span
+{
+	color: white;
+	padding: 5px;
+}
+
+.graphic_list span:nth-child(1)
+{
+	margin-right: 10px;
 }
 
 .cool-ol { padding-left: 50px; padding-top: 40px; }
@@ -1070,7 +1115,6 @@ button#dataset-submit {
 /* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 
 		display: block; 
-		font-size: 75%;
 	}
 	
 	/* Hide table headers (but not display: none;, for accessibility) */

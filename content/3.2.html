@@ -87,6 +87,8 @@
   var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_liI4Eytg3nVawiKvK1Gj4snaekWOcB4OjaDAunV37g/pubhtml?gid=1760723390&single=true';
 
   function init() {
+	  
+	$("#right").removeClass("faded");
     Tabletop.init( { key: public_spreadsheet_url,
                      callback: showInfo,
                      simpleSheet: true } )
