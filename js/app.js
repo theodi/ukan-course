@@ -231,6 +231,7 @@ $(window).bind("beforeunload", function()
 				
 			if(nextTopic > 0) 
 			{
+			
 				allowed = false;
 				
 				if(nextSection == 1) // If trying to get to first page in section
@@ -334,6 +335,7 @@ $(window).bind("beforeunload", function()
 
 
 $( document ).ready(function() {
+
 
 // Load data from cookie
 if($.cookie('progress') != undefined)

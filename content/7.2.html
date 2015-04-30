@@ -7,17 +7,67 @@
 <div class="section-slider">
 
 <section class="slider">
-    <div><p>First, we remove direct identifiers. The most obvious ones are name (column 3) and ticket number (column 8). We drop ticket number (very limited use) and replace the names with a randomly assigned number (a process called pseudonymisation).</p></div>
-    <div><p>We redact further variables that seem not useful or create too much risk. Thus, we delete cabin (column 10), lifeboat (column 12), body identification number (column 13) and home/destination (column 14).</p></div>
-    <div><p>It is very common to group age, so after some experimentation we decide on the following age bands: 0-14, 15-19, 20-24, 25-29, 30-34, 35-44, 45-54, 55 and older.</p></div>
-    <div><p>A frequency table reveals that the number of siblings/spouses aboard (column 6) has two very large families that are thus outliers. We expand the group “four” to include “four or more” siblings/spouses aboard.</p></div>
-    <div><p>A similar frequency table for number of parents/children aboard (column 7) reveals a similar risk. We group “three” to include “three or more” parents/children aboard.</p></div>
-    <div><p>The passenger fare is very granular and therefore risky. We round the variable to it’s nearest 10 and inspect it again.</p></div>
-    <div><p>We learn that home/destination is crucial for most analyses. We therefore go back to group the geographic destinations manually and add them back into the dataset.</p></div>
-    <div><p>The variables passenger class (column 1), survival status (column 2) and sex (column 4) look ok on their own. However, the may still be indirect identifiers in combination with other variables. In other words, we have to analyse the combinations of variables to understand what disclosure risk remains.</p></div>
-    <div><p>Most anonymisation techniques can be combined. We may chose to only release an aggregate table.</p></div>
+    <div><div class="content-left"><p>First, we remove direct identifiers. The most obvious ones are name (column 3) and ticket number (column 8). We drop ticket number (very limited use) and replace the names with a randomly assigned number (a process called pseudonymisation).</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126092309?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div><div class="content-left"><p>We redact further variables that seem not useful or create too much risk. Thus, we delete cabin (column 10), lifeboat (column 12), body identification number (column 13) and home/destination (column 14).</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126103067?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div><div class="content-left"><p>It is very common to group age, so after some experimentation we decide on the following age bands: 0-14, 15-19, 20-24, 25-29, 30-34, 35-44, 45-54, 55 and older.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126103067?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left">
+    <p>A frequency table reveals that the number of siblings/spouses aboard (column 6) has two very large families that are thus outliers. We expand the group “four” to include “four or more” siblings/spouses aboard.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126092336?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left"><p>A similar frequency table for number of parents/children aboard (column 7) reveals a similar risk. We group “three” to include “three or more” parents/children aboard.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126092338?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left"><p>The passenger fare is very granular and therefore risky. We round the variable to it’s nearest 10 and inspect it again.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126103068?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left"><p>We learn that home/destination is crucial for most analyses. We therefore go back to group the geographic destinations manually and add them back into the dataset.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126103070?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left"><p>The variables passenger class (column 1), survival status (column 2) and sex (column 4) look ok on their own. However, the may still be indirect identifiers in combination with other variables. In other words, we have to analyse the combinations of variables to understand what disclosure risk remains.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126103069?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left"><p>Most anonymisation techniques can be combined. We may chose to only release an aggregate table.</p></div>
+    <div class="content-right"></div>
+    </div>
 </section>
 
+<div class="ch7-links-wrapper">
 <ul class="ch7-links">
     <li><a href="#">1</a></li>
     <li><a href="#">2</a></li>
@@ -29,6 +79,7 @@
     <li><a href="#">8</a></li>
     <li><a href="#">9</a></li>
 </ul>
+</div>
 	
 </div>
 

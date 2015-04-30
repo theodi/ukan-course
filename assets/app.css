@@ -853,6 +853,23 @@ button#dataset-submit {
 	display: none;
 } 
 
+.tables {
+	margin: 0 auto;
+}
+
+.tables th {
+	background-color:#ccc;
+	height: 50px;
+}
+
+.tables td, .tables th {
+	height: 50px;
+	line-height: 50px;
+}
+
+.tables tr:nth-child(even) {background: #f2f2f2}
+.tables tr:nth-child(odd) {background: #FFF}
+
 
 /*** order quiz ***/
 
@@ -993,6 +1010,10 @@ button#dataset-submit {
 	display: none;
 }
 
+.ch7-links {
+	display: inline-block;
+}
+
 .ch7-links li {
 	float: left;
 	padding: 20px;
@@ -1000,6 +1021,41 @@ button#dataset-submit {
 
 .ch7-links li:before {
   content: "";
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #bbb;
+}
+td,th {
+    border-top: 1px solid #ddd;
+    padding: 4px 8px;
+}
+
+#poll label {
+	font-size: 1.5em;
+	margin-bottom: 20px;
+}
+
+#poll input[type=checkbox] {
+  /* All browsers except webkit*/
+  transform: scale(1.5);
+  margin-right: 20px;
+  /* Webkit browsers*/
+  -webkit-transform: scale(1.5);
+}
+
+#ButtonSubmit {
+	background: #5AEA5B;
+    height: 50px;
+    width: 100px;
+    border: none;
+    font-size: 1.2em;
+}
+
+.ch7-links-wrapper {
+	text-align: center;
 }
 
 @media only screen { } /* Define mobile styles */
@@ -1135,15 +1191,25 @@ button#dataset-submit {
   margin-top: 25px;
 }
 
+table {
+		overflow-x: auto;
+		display: block;
+	}
+
+.tables td, .tables th {
+	height: 50px;
+	line-height: 24px;
+}
 
 
+/*
 
-/* Force table to not be like tables anymore */
+
 	table, thead, tbody, th, td, tr { 
 		display: block; 
 	}
 	
-	/* Hide table headers (but not display: none;, for accessibility) */
+	
 	thead tr { 
 		position: absolute;
 		top: -9999px;
@@ -1153,7 +1219,7 @@ button#dataset-submit {
 	tr { border: 1px solid #ccc; }
 	
 	td { 
-		/* Behave  like a "row" */
+		
 		border: none;
 		border-bottom: 1px solid #eee; 
 		position: relative;
@@ -1162,19 +1228,17 @@ button#dataset-submit {
 	}
 	
 	td:before { 
-		/* Now like a table header */
+		
 		position: absolute;
-		/* Top/left values mimic padding */
+		
 		top: 0px;
-		left: 6px;
+		left: 35px;
 		width: 45%; 
 		padding-right: 10px; 
 		white-space: nowrap;
 	}
 	
-	/*
-	Label the data
-	*/
+	
 	td:nth-of-type(1):before { content: "Go-card No."; }
 	td:nth-of-type(2):before { content: "Passenger DoB"; }
 	td:nth-of-type(3):before { content: "Start point"; }
@@ -1185,7 +1249,7 @@ button#dataset-submit {
 
 	#int-dataset th, #int-dataset td {
 		line-height: 50px;
-		padding-left: 5px;
+		padding-left: 35px;
 		padding-right: 5px;
 		text-align: left;
 		height: 50px;
@@ -1204,6 +1268,18 @@ button#dataset-submit {
 	#int-dataset input {
 		text-align: left;
 	}
+
+	.destyled-ul {
+		margin-left: 0px;
+	}
+
+	#dataset-two tr td {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/
 
 
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */

@@ -8,11 +8,10 @@
 <div class="imagequiz content-left">
 <p class="instruction">Select all datasets below that you think are anonymised data.</p>
 
-  <ul class="destyled-ul">
-    <li><input type="checkbox" id="dataset1">
-    <label for="dataset1">Part of a passenger underground travel data set</label>
-    
-<table class="responsive" id="int-dataset">
+<input type="checkbox" id="dataset1">
+<label for="dataset1">Part of a passenger underground travel data set</label><br>
+
+<table class="tables">
 <tr>
     <th>Hashed passenger ref. no.</th>
     <th>Age Band</th>
@@ -23,10 +22,10 @@
   
   <tr>
     <td>32499FA9</td>
-    <td class="age">20-25</td>
-    <td class="startpoint">Waterloo station</td>
-    <td class="endpoint">London Bridge station</td>
-    <td class="journey">18 min</td>
+    <td>20-25</td>
+    <td>Waterloo station</td>
+    <td>London Bridge station</td>
+    <td>18 min</td>
   </tr>
   <tr>
     <td>093A921E</td>
@@ -36,14 +35,14 @@
     <td>14 min</td>
   </tr>
  </table>
-    </li>
+
+  
     
     
     
+    <input type="checkbox" id="dataset2"><label for="dataset2">Mobile phone metadata</label><br>
     
-    <li><input type="checkbox" id="dataset2"><label for="dataset2">Mobile phone metadata</label><br>
-    
-<table class="responsive" id="int-dataset">
+<table class="tables">
 <tr>
     <th>IMEI</th>
     <th>Longitude</th>
@@ -66,15 +65,15 @@
   </tr>
  </table>
     
-    </li>
+   
     
     
     
     
-    <li><input type="checkbox" id="dataset3"><label for="dataset3">Annual Consumption of Government Hospitality Wine Cellar</label>
+<input type="checkbox" id="dataset3"><label for="dataset3">Annual Consumption of Government Hospitality Wine Cellar</label>
     <br>
     
-<table class="responsive" id="int-dataset">
+<table class="tables">
 <tr>
     <th>Country/Region</th>
     <th>Vintage</th>
@@ -99,13 +98,12 @@
     
     
     
-    </li>
+   
     
     
     
     
-    <li><button id="imagequiz-submit">Submit</button></li>
-  </ul>
+   <button id="imagequiz-submit">Submit</button>
 
   
   
@@ -121,6 +119,7 @@
 
 
 <script>
+
 
 $('#imagequiz-submit').click(function(){
 	
