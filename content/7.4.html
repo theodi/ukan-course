@@ -24,7 +24,14 @@
     <option value="asis">As is</option>
   </select>
     </th>
-    <th>Passenger Name</th>
+    <th>Passenger Name
+      <select id="passname" onchange="checkname()">
+    <option value="none">Choose Option</option>
+    <option value="blank">Blank</option>
+    <option value="hash">Hash</option>
+    <option value="asis">As is</option>
+  </select>
+    </th>
     <th>Sex
       <select id="passsex" onchange="checksex()">
     <option value="none">Choose Option</option>
@@ -45,8 +52,7 @@
     <option value="none">Choose Option</option>
     <option value="show">Show</option>
     <option value="noshow">Don't Show</option>
-    <option value="roundup">Round Up</option>
-    <option value="rounddown">Round Down</option>
+    <option value="roundup">Round</option>
   </select>
     </th>
   </tr>
@@ -54,7 +60,7 @@
   <tr>
     <td class="passclass pc-1">3</td>
     <td class="survived sv-1">1</td>
-    <td><input class="passname1" type="text" value="de Messemaeker, Mrs. Guillaume Joseph (Emma)"></td>
+    <td class="passname pn-1">de Messemaeker, Mrs. Guillaume Joseph (Emma)</td>
     <td class="passsex ps-1">female</td>
     <td class="birth dob1">36</td>
     <td class="fare fr-1">17.400</td>
@@ -63,7 +69,7 @@
   <tr>
     <td class="passclass pc-2">2</td>
     <td class="survived sv-2">0</td>
-    <td><input class="passname2" type="text" value="Levy, Mr. Rene Jacques"></td>
+    <td class="passname pn-2">Levy, Mr. Rene Jacques</td>
     <td class="passsex ps-2">male</td>
     <td class="birth dob2">36</td>
     <td class="fare fr-2">12.875</td>
@@ -72,7 +78,7 @@
   <tr>
     <td class="passclass pc-3">1</td>
     <td class="survived sv-3">1</td>
-    <td><input class="passname3" type="text" value="Barkworth, Mr. Algernon Henry Wilson"></td>
+    <td class="passname pn-3">Barkworth, Mr. Algernon Henry Wilson</td>
     <td class="passsex ps-3">male</td>
     <td class="birth dob3">80</td>
     <td class="fare fr-3">30.000</td>
@@ -81,7 +87,7 @@
   <tr>
     <td class="passclass pc-4">3</td>
     <td class="survived sv-4">0</td>
-    <td><input class="passname4" type="text" value="Goodwin, Miss. Lillian Amy"></td>
+    <td class="passname pn-4">Goodwin, Miss. Lillian Amy</td>
     <td class="passsex ps-4">female</td>
     <td class="birth dob4">16</td>
     <td class="fare fr-4">46.900</td>

@@ -499,6 +499,23 @@ function checksurvived(){
   } 
 }
 
+function checkname(){
+  if($( '#passname option:selected' ).val() == 'blank'){
+    $('.passname').text('');
+  } else if($( '#passname option:selected' ).val() == 'asis'){
+    $('.passname.pn-1').text('de Messemaeker, Mrs. Guillaume Joseph (Emma)');
+    $('.passname.pn-2').text('Levy, Mr. Rene Jacques');
+    $('.passname.pn-3').text('Barkworth, Mr. Algernon Henry Wilson');
+    $('.passname.pn-4').text('Goodwin, Miss. Lillian Amy');
+  } else if($( '#passname option:selected' ).val() == 'hash'){
+    $('.passname.pn-1').text('#A001AH');
+    $('.passname.pn-2').text('#A001XY');
+    $('.passname.pn-3').text('#A001TG');
+    $('.passname.pn-4').text('#A001UW');
+	}
+}
+
+
 
 
 function checksex(){
@@ -535,35 +552,28 @@ function checkfare(){
     $('.fare.fr-3').text('30.000');
     $('.fare.fr-4').text('46.900');
   } else if($( '#fare option:selected' ).val() == 'noshow'){
-    $('.fare').text('N/A');
+    $('.fare').text('');
   } else if($( '#fare option:selected' ).val() == 'roundup'){
     $('.fare.fr-1').text('18.000');
     $('.fare.fr-2').text('13.000');
     $('.fare.fr-3').text('30.000');
     $('.fare.fr-4').text('47.000');
-  } else if($( '#fare option:selected' ).val() == 'rounddown'){
-    $('.fare.fr-1').text('17.000');
-    $('.fare.fr-2').text('12.000');
-    $('.fare.fr-3').text('30.000');
-    $('.fare.fr-4').text('46.000');
-  }
+  } 
 }
 
 
 function checkdataset(){
 
-	var passname1 = $(".passname1").val().length == 0;
-	var passname2 = $(".passname2").val().length == 0;
-	var passname3 = $(".passname3").val().length == 0;
-	var passname4 = $(".passname4").val().length == 0;
+	var namecorrect_one = $( '#passname option:selected' ).val() == 'blank';
+	var namecorrect_two = $( '#passname option:selected' ).val() == 'hash';
 	var dobcorrect = $( '#birth option:selected' ).val() == 'ageband';
 	var survivecorrect = $( '#survived option:selected' ).val() == 'asis';
 	var classcorrect = $( '#passclass option:selected' ).val() == 'range';
 	var sexcorrect = $( '#passsex option:selected' ).val() == 'asis';
 	var farecorrectup = $( '#fare option:selected' ).val() == 'roundup';
-	var farecorrectdown = $( '#fare option:selected' ).val() == 'rounddown';
+	var farecorrectnone = $( '#fare option:selected' ).val() == 'noshow';
 
-    if(passname1 && passname2 && passname3 && passname4 && dobcorrect && survivecorrect && classcorrect && sexcorrect && (farecorrectdown || farecorrectup)){
+    if(dobcorrect && survivecorrect && classcorrect && sexcorrect && (farecorrectup || farecorrectnone) && (namecorrect_one || namecorrect_two)){
     //alert('correct');
     $('#int-dataset').css({'border':'6px solid #5AEA5B'});
     $('.dataset-correct').fadeIn('slow');
