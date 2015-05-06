@@ -1,22 +1,22 @@
 {"quizlist":[
   
 	{
-	"question":"What should do in order to deal with a data breach?",
-	"option1":"As there is always a risk of disclosure (although it should be as remote as possible), developing a breaches policy is crucial ",
-	"option2":"wrong answer",
-	"option3":"wrong answer"
+	"question":"Why is your work not complete after you have shared or released a dataset?",
+	"option1":"The data environment is not static",
+	"option2":"Someone may have a question",
+	"option3":"Disclosure control is dynamic"
 	},
 	{
-	"question":"Identify a core part of a breaches poilicy",
-	"option1":"Identify critical factors that might lead to a breach such as non-compliance of data security policies and procedures, error, malicious intrusion.",
-	"option2":"wrong answer",
-	"option3":"None of these."
+	"question":"What is least likely to happen in a data environment change?",
+	"option1":"Your anonymisation method becomes obsolete",
+	"option2":"The data is used in new ways",
+	"option3":"You release additional and related data"
 	},
 	{
-	"question":"What should you do if a breach was to occur?",
-	"option1":"To be able to provide a clear data audit trail",
-	"option2":"wrong answer",
-	"option3":"wrong answer"
+	"question":"What is not a recommended way to monitor your data release?",
+	"option1":"Consider datasets only going forward",
+	"option2":"Keeping a register of all your data",
+	"option3":"Being aware of what organisations in your sector are doing"
 	}
 
 ]

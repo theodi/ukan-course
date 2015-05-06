@@ -1,128 +1,114 @@
 <section class="course-section-title">
 
-<h1><span>7.3</span>  Know the processes you will need to go through to anonymise your data</h1>
+<h1><span>7.3</span> Identify the processes you will need to control disclosure risk</h1>
 
-<div class="content-left">
+<p>The following is an example process. By no means should it be considered to be the it implies that this is the right, perfect or only solution. What you will need to do will depend on the key properties of the data environment that the data are being moved to.
+</p>
 
-<p><strong>BEFORE</strong></p>
+<div class="section-slider">
 
-	<div class="table-div">
-<table class="tables">
-<tr>
-    <th>Passenger Class</th>
-    <th>Survived</th>
-    <th>Passenger Name</th>
-    <th>Sex</th>
-    <th>Age</th>
-    <th style="line-height: 24px;">Number of siblings/spouse</th>
-    <th>Fare</th>
-  </tr>
-  
-  <tr>
-    <td><input class="ticketno1" type="text" value="3"></td>
-    <td class="age">1</td>
-    <td class="startpoint">de Messemaeker, Mrs. Guillaume Joseph (Emma)</td>
-    <td class="endpoint">female</td>
-    <td class="journey">36</td>
-    <td>1</td>
-    <td class="journey">17.400</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno2" type="text" value="2"></td>
-    <td class="age">0</td>
-    <td class="startpoint">Levy, Mr. Rene Jacques</td>
-    <td class="endpoint">male</td>
-    <td class="journey">36</td>
-    <td>0</td>
-    <td class="journey">12.875</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno3" type="text" value="1"></td>
-    <td class="age">1</td>
-    <td class="startpoint">Barkworth, Mr. Algernon Henry Wilson</td>
-    <td class="endpoint">male</td>
-    <td class="journey">80</td>
-    <td>0</td>
-    <td class="journey">30.000</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno4" type="text" value="3"></td>
-    <td class="age">0</td>
-    <td class="startpoint">Goodwin, Miss. Lillian Amy</td>
-    <td class="endpoint">female</td>
-    <td class="journey">16</td>
-    <td>5</td>
-    <td class="journey">46.900</td>
-  </tr>
-</table>
+<section class="slider">
+    <div><div class="content-left"><p>First, we remove direct identifiers. The most obvious ones are name (column 3) and ticket number (column 8). We drop ticket number (very limited use) and replace the names with a randomly assigned number (a process called pseudonymisation). Don’t forget to keep a copy of the original data!</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126092309?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div><div class="content-left"><p>We redact further variables that seem not useful or create too much risk. Therefore we delete cabin (column 10), lifeboat (column 12), body identification number (column 13) and home/destination (column 14).
+</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126103067?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div><div class="content-left"><p>It is very common to group age, so after some experimentation we decide on the following age bands: 0-14, 15-19, 20-24, 25-29, 30-34, 35-44, 45-54, 55 and older.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126103067?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left">
+    <p>A frequency table reveals that the number of siblings/spouses aboard (column 6) has two very large families that are thus outliers. We expand the group “four” to include “four or more” siblings/spouses aboard.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126092336?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left"><p>A similar frequency table for number of parents/children aboard (column 7) reveals a similar risk. We group “three” to include “three or more” parents/children aboard.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126092338?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left"><p>The passenger fare is very granular and therefore risky. We round the variable to it’s nearest 10 and inspect it again.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126103068?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left"><p>We learn that home/destination is crucial for most analyses. We therefore go back to group the geographic destinations manually and add them back into the dataset.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126103070?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left"><p>The variables passenger class (column 1), survival status (column 2) and sex (column 4) look ok on their own. However, the may still be indirect identifiers in combination with other variables. In other words, we have to analyse the combinations of variables to understand what disclosure risk remains.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126103069?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div>
+    <div class="content-left"><p>Most disclosure control techniques can be combined. We may chose to only release an aggregate table.</p></div>
+    <div class="content-right">
+        <iframe src="https://player.vimeo.com/video/126822627?title=0&byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    </div>
+</section>
+
+<div class="ch7-links-wrapper">
+<ul class="ch7-links">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#">9</a></li>
+</ul>
+</div>
+	
 </div>
 
-<p><strong>AFTER</strong></p>
-
-<div class="table-div">
-<table class="tables">
-<tr>
-    <th>Passenger Class</th>
-    <th>Survived</th>
-    <th style="line-height: 24px;">Passenger Name</th>
-    <th>Sex</th>
-    <th>Age</th>
-    <th style="line-height: 24px;">Number of siblings/spouse</th>
-    <th>Fare</th>
-  </tr>
-  
-  <tr>
-    <td><input class="ticketno1" type="text" value="3"></td>
-    <td class="age">1</td>
-    <td class="startpoint"></td>
-    <td class="endpoint">female</td>
-    <td class="journey">35-44</td>
-    <td>1</td>
-    <td class="journey">17</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno2" type="text" value="2"></td>
-    <td class="age">0</td>
-    <td class="startpoint"></td>
-    <td class="endpoint">male</td>
-    <td class="journey">35-44</td>
-    <td>0</td>
-    <td class="journey">13</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno3" type="text" value="1"></td>
-    <td class="age">1</td>
-    <td class="startpoint"></td>
-    <td class="endpoint">male</td>
-    <td class="journey">55 or older</td>
-    <td>0</td>
-    <td class="journey">30</td>
-  </tr>
-  <tr>
-    <td><input class="ticketno4" type="text" value="3"></td>
-    <td class="age">0</td>
-    <td class="startpoint"></td>
-    <td class="endpoint">female</td>
-    <td class="journey">15-19</td>
-    <td>4 or more</td>
-    <td class="journey">45</td>
-  </tr>
-</table>
-</div>	
-
-
+<div style="float: left;">
+	
+	<p>Many more techniques and examples are in the Information Commissioner’s Office’s document <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/anonymisation/" target="_blank">Anonymisation: managing data protection risk code of practice.</a> Recent comprehensive technical reviews can be found in: Duncan et al (2011) and hunderpool et al (2012)</p>
 </div>
-
-
-
-
-
 
 </section>
 
 
 <script>
-	 dynamicContent()
+	//dynamicContent()
 	next = '7.4';
 	previous = '7.2';
+
+	var $slideshow = $(".slider").slick();
+
+$('.ch7-links').on('click', 'a', function( e ) {
+
+    var slideIndex = $(this).closest('li').index();
+    
+    $slideshow.slick( 'slickGoTo', parseInt( slideIndex ) );
+    
+    e.preventDefault();
+});
+
 </script>

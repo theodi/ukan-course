@@ -1,22 +1,28 @@
 {"quizlist":[
   
 	{
-	"question":"Why is you work is not done after you have shared or released a dataset?",
-	"option1":"right answer",
-	"option2":"wrong answer",
-	"option3":"wrong answer"
+	"question":"What should you do in order to deal with a data breach?",
+	"option1":"develop a breaches policy",
+	"option2":"hire more lawyers",
+	"option3":"make sure it wasn’t your fault"
 	},
 	{
-	"question":"Select three examples of how the data environment might change.",
-	"option1":"right anwer",
-	"option2":"wrong answer",
-	"option3":"wrong answer"
+	"question":"What are core parts of a breaches policy?",
+	"option1":"define what you mean by a breach",
+	"option2":"enforce the penalties associated with critical factors",
+	"option3":"who to blame in case of a breach"
 	},
 	{
-	"question":"question",
-	"option1":"right answer",
-	"option2":"wrong answer",
-	"option3":"wrong answer"
+	"question":"What are core parts of a breaches policy?",
+	"option1":"identity who is responsible for doing what, when and how.",
+	"option2":"avoid non-compliance, error or malicious intrusion",
+	"option3":"document how your risk was zero"
+	},
+	{
+	"question":"What should you do if a breach occurred?",
+	"option1":"provide a clear data audit trail",
+	"option2":"explain how the breach was an exceptional case and has no impact on any other data releases",
+	"option3":"avoid communication with stakeholders"
 	}
 
 ]

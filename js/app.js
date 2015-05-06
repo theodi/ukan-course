@@ -568,7 +568,7 @@ function checkdataset(){
 	var namecorrect_two = $( '#passname option:selected' ).val() == 'hash';
 	var dobcorrect = $( '#birth option:selected' ).val() == 'ageband';
 	var survivecorrect = $( '#survived option:selected' ).val() == 'asis';
-	var classcorrect = $( '#passclass option:selected' ).val() == 'range';
+	var classcorrect = $( '#passclass option:selected' ).val() == 'asis';
 	var sexcorrect = $( '#passsex option:selected' ).val() == 'asis';
 	var farecorrectup = $( '#fare option:selected' ).val() == 'roundup';
 	var farecorrectnone = $( '#fare option:selected' ).val() == 'noshow';

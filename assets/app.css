@@ -999,10 +999,7 @@ button#dataset-submit {
 .cool-ol ol li p em { display:block; }
 
 .highlight {
-	padding-left: 5px;
-	padding-right: 5px;
-	text-decoration: underline;
-	color: blue;
+	color: #AA40C7;
 	cursor: pointer;
 }
 

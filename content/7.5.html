@@ -1,39 +1,115 @@
-
-
-
 <section class="course-section-title">
+
+<h1><span>7.4</span> Know what to do if things go wrong</h1>
+
+<p>Edit this table according to what you have learnt about anonymisation. When you're done, press the submit button to get feedback. </p>
+
+<div>
+
+<table class="responsive" id="int-dataset">
+<tr>
+    <th>Passenger Class
+    <select id="passclass" onchange="checkpassclass()">
+    <option value="none">Choose Option</option>
+    <option value="range">1-3</option>
+    <option value="asis">As is</option>
+  </select>
+    </th>
+    <th>Survived
+      <select id="survived" onchange="checksurvived()">
+    <option value="none">Choose Option</option>
+    <option value="na">N/A</option>
+    <option value="asis">As is</option>
+  </select>
+    </th>
+    <th>Passenger Name
+      <select id="passname" onchange="checkname()">
+    <option value="none">Choose Option</option>
+    <option value="blank">Blank</option>
+    <option value="hash">Hash</option>
+    <option value="asis">As is</option>
+  </select>
+    </th>
+    <th>Sex
+      <select id="passsex" onchange="checksex()">
+    <option value="none">Choose Option</option>
+    <option value="na">N/A</option>
+    <option value="asis">As is</option>
+  </select>
+    </th>
+    <th>Age
+      <select id="birth" onchange="checkdob()">
+    <option value="none">Choose Option</option>
+    <option value="age">Show Age</option>
+    <option value="noage">Show No Age</option>
+    <option value="ageband">Show Age-band</option>
+  </select>
+    </th>
+    <th>Fare
+      <select id="fare" onchange="checkfare()">
+    <option value="none">Choose Option</option>
+    <option value="show">Show</option>
+    <option value="noshow">Don't Show</option>
+    <option value="roundup">Round</option>
+  </select>
+    </th>
+  </tr>
+
+  <tr>
+    <td class="passclass pc-1">3</td>
+    <td class="survived sv-1">1</td>
+    <td class="passname pn-1">de Messemaeker, Mrs. Guillaume Joseph (Emma)</td>
+    <td class="passsex ps-1">female</td>
+    <td class="birth dob1">36</td>
+    <td class="fare fr-1">17.400</td>
+  </tr>
+
+  <tr>
+    <td class="passclass pc-2">2</td>
+    <td class="survived sv-2">0</td>
+    <td class="passname pn-2">Levy, Mr. Rene Jacques</td>
+    <td class="passsex ps-2">male</td>
+    <td class="birth dob2">36</td>
+    <td class="fare fr-2">12.875</td>
+  </tr>
+
+  <tr>
+    <td class="passclass pc-3">1</td>
+    <td class="survived sv-3">1</td>
+    <td class="passname pn-3">Barkworth, Mr. Algernon Henry Wilson</td>
+    <td class="passsex ps-3">male</td>
+    <td class="birth dob3">80</td>
+    <td class="fare fr-3">30.000</td>
+  </tr>
+
+  <tr>
+    <td class="passclass pc-4">3</td>
+    <td class="survived sv-4">0</td>
+    <td class="passname pn-4">Goodwin, Miss. Lillian Amy</td>
+    <td class="passsex ps-4">female</td>
+    <td class="birth dob4">16</td>
+    <td class="fare fr-4">46.900</td>
+  </tr>
+
+  
+  
+</table>
+
+
+<button id="dataset-submit" onclick="checkdataset()">Submit</button>
+<div class="dataset-feedback">
+  <article class="dataset-correct"><p>Spot on! Congrats! You may now proceed to your results page.</p><img src="assets/images/correct.png"></article>
+  <article class="dataset-wrong"><p>Not quite what we were looking for. Have another go at it!</p><img src="assets/images/error.png"></article>
+</div>
 	
-	<h1><span>Topic 7</span> Summary</h1>
-	
-	<div class="content-left">
-	</div>
-	
-	<div class="content-right">
-		<div class='circle' id='circles-7.5'></div>
-	</div>
+</div>
+
 
 </section>
 
 
-
-
 <script>
-
-	
-$(document).ready( function(){
-	
-Circles.create({
-				id:         'circles-7.5' ,
-				value:		100,
-				radius:     75,
-				width:      25,
-				text:       '',
-				colors:     ['#999999', '#5AEA5B']
-			});
-
-
-	next = '8.1';
-	previous = null;
-
-});
+	 dynamicContent()
+	next = '7.6';
+	previous = '7.4';
 </script>
