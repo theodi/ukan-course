@@ -854,7 +854,7 @@ button#dataset-submit {
 } 
 
 .tables {
-	margin: 0 auto;
+	margin-bottom: 20px;
 }
 
 .tables th {
@@ -911,7 +911,7 @@ button#dataset-submit {
 }
 
 .imagequiz {
-	text-align: center;
+	text-align: left;
 }
 
 .instruction {

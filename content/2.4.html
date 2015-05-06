@@ -3,27 +3,11 @@
 <h1><span>2.4</span> Topic 2: Know your data</h1>
 
 <div class="knowyourdata content-left">
-	<p>This data needs to go through the whole anonymisation process, but let’s start with thinking about the relatively more risky variables. 
-<br>
-These are only a few selected rows and columns of the Titanic passenger data (The full data is here: <a href="http://bit.ly/odi-titanic">here</a> or <a href="http://bit.ly/odi-titanic2">here</a> ).
+	<p>Below are a few selected rows and columns of the Titanic passenger data. (The full data is here: <a href="http://bit.ly/odi-titanic">here</a> or <a href="http://bit.ly/odi-titanic2">here</a> ).
 </p>
 
-<p>Name: If a name is unique, we would call it a direct identifier. This means an unusual name is enough to identify a person. A more common name such as James Smith in combination with for for example address may also be a direct identifier. In general, you have to remove direct identifiers. </p> 
-
-
-<p>Ticket number may also be a direct identifier. If someone knows to whom the ticket number refers, it would be possible to identify the person in the data.
-
-What can we do? A common strategy is to mask or hash the direct identifier, that is, to replace it with another, usually random, value. Or we may choose to simply delete both columns.
-
-<br>Age is quite an important variable for many analyses or use cases. We cannot delete it, even though there is, for example, only one passenger aged 80. A common strategy is to create age bands such as 0-10, 11-20, 21-30 and so forth. Choosing the optimal trade-off between usefulness and risk is up to the analyst and also depends on the remaining data and its context.</p> 
-
-<p>Fare is, similar to age, quite granular. We may want to include it in a data release because it could tell an interesting story around prices. Again, it may be prudent to reduce the amount of information disclosed. More on possible methods to do so in topic 7 of the course.<br>
-
-Just applying some anonymisation method on its own is usually not enough. You have to evaluate its effect on the risk of disclosing personal information. The beginning of anonymising data is to understand your data. </p>
-
-
-
-
+<p>This data needs to go through the whole anonymisation process, but there are a few basic options to change the data.<strong> Consider which of the variables below you would expect to be relatively risky, and why.</strong>
+</p>
 
 <table class="responsive" id="int-dataset">
 <tr>
@@ -107,13 +91,42 @@ Just applying some anonymisation method on its own is usually not enough. You ha
   
   
 </table>
+
+<p><strong>Just applying some anonymisation method on its own is not enough. The beginning of the process of anonymisation is to understand your data. 
+</strong></p>
+
+<p><strong>Passenger class</strong></p>
+<p>This variable is most likely less risky than others. However, we should not ignore it completely, for example, in combinations with other variables.</p>
+
+<p><strong>Survived</strong></p>
+<p>This variable is most likely less risky than others. However, we should not ignore it completely, for example, in combinations with other variables.</p>
+
+<p><strong>Passenger name</strong></p> 
+<p>If a name is unique, we would call it a direct identifier. This means an unusual name is enough to identify a person. A more common name such as James Smith, in combination with an address, for example, may also be a direct identifier. In general, you have to remove direct identifiers. </p> 
+
+<p>Ticket number (in the full dataset) may also be a direct identifier. If someone knows who the ticket number refers to, it would be possible to identify the person in the data. </p>
+
+<p>What can we do? A common strategy is to mask or hash the direct identifier, that is, to replace it with another, usually random, value. Or we may choose to simply delete both columns. </p>
+
+<p><strong>Sex</strong></p>
+<p>This variable is most likely less risky than others. However, we should not ignore it completely, for example, in combinations with other variables. </p>
+
+<p><strong>Age</strong></p>
+<p>Age is quite an important variable for many analyses or use cases. A common strategy is to create age bands such as 0-10, 11-20, 21-30 and so on. Choosing the optimal trade-off between usefulness and risk is up to the analyst and also depends on the remaining data and its context.</p> 
+
+<p><strong>Fare</strong></p>
+<p>Fare is, similar to age, quite granular. We may want to include it in a data release because it could tell an interesting story around prices. Again, it may be prudent to reduce the amount of information disclosed. More on possible methods to do so in topic 7 of the course.</p>
+
+
+
+
 </div>
 
 </section>
 
 
 <script>
-	 dynamicContent()
+	 //dynamicContent()
 	next = '2.5';
 	previous = '2.3';
 </script>

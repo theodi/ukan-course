@@ -634,3 +634,12 @@ function chkorder2(){
 
 }
 
+
+/*
+
+$('#data-situation').click(function(){
+		$('.hidden-p').toggle();
+	});
+
+*/
+
