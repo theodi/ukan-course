@@ -700,7 +700,7 @@ h1 > span {
 #navContent{
       margin:auto;
       width:100%;
-      height:400px;
+      height:500px;
       position:relative;
       overflow:hidden;
       }
@@ -724,7 +724,7 @@ h1 > span {
       color:#000;
       }
 .option{
-      width:400px;
+      width:92%;
       height:auto;
       margin:15px;
       font-size:18px;
@@ -736,6 +736,7 @@ h1 > span {
       background-color:#CCC;
       vertical-align: middle;
   	  line-height: 30px;
+  	  margin-left: 0px;
       }
 .option:hover{
       border:#CCC solid 5px;
@@ -877,6 +878,10 @@ button#dataset-submit {
 	margin-right: 20px;
 	height: 30px;
 	width: 30px;
+} 
+
+.orderquiz1 p, .orderquiz2 p, .orderquiz p {
+	display: block;
 } 
 
 /*** image quiz ***/

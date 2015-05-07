@@ -594,10 +594,10 @@ function chkorder(){
 	
 
 		if(($(".ord1").val() == 2) && ($(".ord2").val() == 1) && ($(".ord3").val() == 3)){
-			$('.ordresultmessage').append('correct');
+			$('.ordresultmessage').append('Correct');
 		} else {
-			$('.ordresultmessage').append('false');
-			$('.ordresultmessage').delay(5000).fadeOut('slow');
+			$('.ordresultmessage').append('False!');
+			
 		}
 	
 				$("#right").removeClass("faded");
@@ -609,10 +609,10 @@ function chkorder1(){
 	
 
 		if(($(".orderquiz1 .ord1").val() == 3) && ($(".orderquiz1 .ord2").val() == 2) && ($(".orderquiz1 .ord3").val() == 1)){
-			$('.orderquiz1 .ordresultmessage').append('correct');
+			$('.orderquiz1 .ordresultmessage1').append('Correct');
 		} else {
-			$('.orderquiz1 .ordresultmessage').append('false');
-			$('.orderquiz1 .ordresultmessage').delay(5000).fadeOut('slow');
+			$('.orderquiz1 .ordresultmessage1').append('False');
+			
 		}
 	
 				$("#right").removeClass("faded");
@@ -624,10 +624,10 @@ function chkorder2(){
 	
 
 		if(($(".orderquiz2 .ord1").val() == 1) && ($(".orderquiz2 .ord2").val() == 3) && ($(".orderquiz2 .ord3").val() == 2)){
-			$('.ordresultmessage').append('correct');
+			$('.ordresultmessage2').append('Correct');
 		} else {
-			$('.orderquiz2 .ordresultmessage').append('false');
-			$('.orderquiz2 .ordresultmessage').delay(5000).fadeOut('slow');
+			$('.orderquiz2 .ordresultmessage2').append('False');
+			
 		}
 	
 				$("#right").removeClass("faded");
