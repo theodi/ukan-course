@@ -102,6 +102,16 @@ table {
 	display: block;
 }
 
+.conditional, .conditional1 {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.conditional-target, .conditional-target1 {
+	display: none;
+
+}
+
 ul, ol
 {
 	color: #2d2d2d;
@@ -603,7 +613,7 @@ strong{
 	border: solid 4px #ededed;
 }
 
-input[type=submit], imagequiz-submit
+input[type=submit], #imagequiz-submit
 {
 	background: #5AEA5B;
 	border: none;
@@ -612,6 +622,18 @@ input[type=submit], imagequiz-submit
 	font-size: 1.2em;
 	width: 33%;
 	margin-top: 40px;
+}
+
+.greenbutton {
+	background: #5AEA5B;
+	border: none;
+	color: black;
+	font-weight: 600;
+	font-size: 1.2em;
+	width: 33%;
+	margin-top: 40px;
+	width: 150px;
+	height: 50px;
 }
 
 input#image-submit{
@@ -961,6 +983,16 @@ button#dataset-submit {
     padding: 10px;
     margin: 10px 0 0 0;
     display: block;
+}
+
+.correct {
+	display: none;
+	color: green !important;
+}
+
+.false {
+	display: none;
+	color: red !important;
 }
 
 .graphic_list

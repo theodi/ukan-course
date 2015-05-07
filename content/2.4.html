@@ -102,11 +102,13 @@
 <p>This variable is most likely less risky than others. However, we should not ignore it completely, for example, in combinations with other variables.</p>
 
 <p><strong>Passenger name</strong></p> 
-<p>If a name is unique, we would call it a direct identifier. This means an unusual name is enough to identify a person. A more common name such as James Smith, in combination with an address, for example, may also be a direct identifier. In general, you have to remove direct identifiers. </p> 
+<p>If a name is unique, we would call it a <span class="conditional">direct identifier</span>. This means an unusual name is enough to identify a person. A more common name such as James Smith, in combination with an address, for example, may also be a direct identifier. In general, you have to remove direct identifiers. </p> 
 
+<section class="conditional-target">
 <p>Ticket number (in the full dataset) may also be a direct identifier. If someone knows who the ticket number refers to, it would be possible to identify the person in the data. </p>
 
 <p>What can we do? A common strategy is to mask or hash the direct identifier, that is, to replace it with another, usually random, value. Or we may choose to simply delete both columns. </p>
+</section>
 
 <p><strong>Sex</strong></p>
 <p>This variable is most likely less risky than others. However, we should not ignore it completely, for example, in combinations with other variables. </p>
@@ -126,6 +128,9 @@
 
 
 <script>
+  $('.conditional').click(function(){
+    $('.conditional-target').show();
+  });
 	 //dynamicContent()
 	next = '2.5';
 	previous = '2.3';
