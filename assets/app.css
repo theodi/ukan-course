@@ -721,6 +721,10 @@ h1 > span {
 	word-wrap: break-word;
 }
 
+.section-slider {
+	margin-top: 40px;
+}
+
 /**** multiple choice ****/
 
 #navContent{
@@ -832,9 +836,10 @@ input#restartQuiz,
 }
 
 #int-dataset th, #int-dataset td {
-	line-height: 50px;
+	line-height: inherit;
 	padding-left: 5px;
 	padding-right: 5px;
+	padding-top: 10px;
 	text-align: center;
 	height: 50px;
 }
@@ -891,7 +896,7 @@ button#dataset-submit {
 
 .tables td, .tables th {
 	height: 50px;
-	line-height: 50px;
+	line-height: inherit;
 }
 
 .tables tr:nth-child(even) {background: #f2f2f2}

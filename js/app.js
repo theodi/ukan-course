@@ -508,10 +508,10 @@ function checkname(){
     $('.passname.pn-3').text('Barkworth, Mr. Algernon Henry Wilson');
     $('.passname.pn-4').text('Goodwin, Miss. Lillian Amy');
   } else if($( '#passname option:selected' ).val() == 'hash'){
-    $('.passname.pn-1').text('#A001AH');
-    $('.passname.pn-2').text('#A001XY');
-    $('.passname.pn-3').text('#A001TG');
-    $('.passname.pn-4').text('#A001UW');
+    $('.passname.pn-1').text('A001AH');
+    $('.passname.pn-2').text('A001XY');
+    $('.passname.pn-3').text('A001TG');
+    $('.passname.pn-4').text('A001UW');
 	}
 }
 

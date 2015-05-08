@@ -7,7 +7,7 @@
 	"option3":"Data subjects"
 	},
 	{
-	"question":"What are questions you might want to consider when communicating your data release?",
+	"question":"What are questions you might not want to consider when communicating your data release?",
 	"option1":"How can I obscure our anonymisation approach?",
 	"option2":"How much of your anonymisation process do you want to explain?",
 	"option3":"Who are you informing about your data release?"
