@@ -389,6 +389,10 @@ em
 	text-decoration: underline;
 }
 
+.ord1, .ord2, .ord3 {
+	font-size: 1em;
+}
+
 /**** footer ****/
 
 footer {
