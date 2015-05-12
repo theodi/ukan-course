@@ -897,6 +897,7 @@ button#dataset-submit {
 .tables td, .tables th {
 	height: 50px;
 	line-height: inherit;
+	text-align: center;
 }
 
 .tables tr:nth-child(even) {background: #f2f2f2}
