@@ -333,7 +333,6 @@
     <item href="assets/css/custom.css" id="item-321" media-type="text/css" />
     <item href="assets/css/ie-resp-table.css" id="item-322" media-type="text/css" />
     <item href="assets/css/slick-theme.css" id="item-323" media-type="text/css" />
-    <item href="s9ml/remarks.xhtml" id="item-324" media-type="application/xhtml+xml" />
     <item href="toc.xhtml" id="item-325" media-type="application/xhtml+xml" properties="nav" />
     <item href="toc.ncx" id="item-326" media-type="application/x-dtbncx+xml" />
     <item href="assets/css/epub_main.css" id="item-327" media-type="text/css" />
@@ -393,6 +392,5 @@
     <itemref idref="item-data-uuid-3db955707fe24e799f321b7e190317a2" linear="yes" />
     <itemref idref="item-data-uuid-2b544a44db85436693af5af9a0dd4c4e" linear="yes" />
     <itemref idref="item-data-uuid-9abfebc970914851a3272212c93d1fa7" linear="yes" />
-    <itemref idref="item-324" linear="no" />
   </spine>
 </package>
