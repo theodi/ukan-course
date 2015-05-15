@@ -3877,12 +3877,12 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 
 /* line 269, ../bower_components/foundation/scss/foundation/components/_type.scss */
 h1 {
-  font-size: 1.4375rem;
+  font-size: 1.375rem;
 }
 
 /* line 270, ../bower_components/foundation/scss/foundation/components/_type.scss */
 h2 {
-  font-size: 2.125rem;
+  font-size: 1.125rem;
 }
 
 /* line 271, ../bower_components/foundation/scss/foundation/components/_type.scss */
@@ -4127,12 +4127,12 @@ blockquote p {
 
   /* line 456, ../bower_components/foundation/scss/foundation/components/_type.scss */
   h1 {
-    font-size: 2.0625rem;
+    font-size: 1.6875rem;
   }
 
   /* line 457, ../bower_components/foundation/scss/foundation/components/_type.scss */
   h2 {
-    font-size: 2.75rem;
+    font-size: 1.4375rem;
   }
 
   /* line 458, ../bower_components/foundation/scss/foundation/components/_type.scss */
