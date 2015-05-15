@@ -1,0 +1,3 @@
+com.inkling.widget.flashcard
+1.1.0
+20150225.173212z.c1da09af

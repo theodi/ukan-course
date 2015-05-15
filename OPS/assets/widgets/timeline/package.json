@@ -1,0 +1,9 @@
+{
+    "name": "com.inkling.widget.timeline",
+    "displayName": "Timeline",
+    "version": "1.1.0",
+    "inkling": {
+        "sha": "c1da09af",
+        "date": "20150225.173321z"
+    }
+}

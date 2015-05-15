@@ -1,0 +1,21 @@
+/* line 1, ../sass/custom.scss */
+ol li p {
+  padding: 8px;
+  font-style: normal;
+  font-family: Arial;
+  font-size: 1em;
+  color: black;
+  border-left: 1px solid #999;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 11, ../sass/custom.scss */
+ul li {
+  list-style: none;
+}
+
+/* line 13, ../sass/custom.scss */
+ul li::before {
+  content: "\0BB \020";
+}

@@ -1,0 +1,10 @@
+{
+	"image1": "img/slideline_placeholder_images_1.jpg",
+	"caption1": "This is the first caption. This is optional.",
+    "label1": "Label 1. This is optional.",
+    "image2": "img/slideline_placeholder_images_2.jpg",
+    "caption2": "This is the second caption. This is optional.",
+    "label2": "Label 2. This is optional.",
+    "image3": "img/slideline_placeholder_images_3.jpg",
+    "caption3": "This is the third caption. This is optional."
+}

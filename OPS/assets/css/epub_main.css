@@ -1,0 +1,72 @@
+@import url("../fonts/fonts.css");
+
+a.block-link {
+    color:inherit;
+}
+
+/* base font for generic elements */
+.unsupported-note, .pagemark,
+.blueprint-figure,
+.blueprint-slideshow,
+.blueprint-video,
+.blueprint-other
+{
+    font-family: "Source Sans Pro", "Verdana", Helvetica, sans;
+    font-size: 1em;
+    line-height: inherit;
+    text-transform: none;
+    letter-spacing: inherit;
+    font-weight: 400;
+}
+
+
+
+/* glossary */
+body.glossary dfn {
+    font-size: 1.1em;
+}
+body.glossary dd {
+    margin-bottom: 1em;
+}
+
+
+
+/* blueprints */
+
+aside.unsupported-note {
+    width: 90%;
+}
+
+.unsupported-note   {
+    display: inline-block;
+    background: url('../img/band.png');
+    background-size: 100% auto;
+    border: 2px solid #e5e5e5;
+    padding: .5em 1em .4em;
+    color: #fff;
+}
+.unsupported-note a {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    background: none;
+    padding-right: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+/* slideshow/multifigure */
+.blueprint-slideshow div.imagefigure    {
+    margin-top: 0;
+}
+ol.figures li   {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #e5e5e5;
+}
+div.caption {
+    margin: 1em 0 .5em;
+}
+div.cite, div.annotations   {
+    font-size: .9em;
+    color: #888;
+}

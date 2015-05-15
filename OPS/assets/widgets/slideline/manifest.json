@@ -1,0 +1,14 @@
+{
+    "viewAssets": {
+        "included": [ 
+            "index.html",
+            "css/view.css",
+            "vendorcss/jquery-ui-1.10.4.custom.css",
+            "js/view.js",
+            "img/slider_background.svg",
+            "img/placeholder-image1.svg",
+            "img/placeholder-image2.svg",
+            "img/placeholder-image3.svg",
+        ]
+    }
+}

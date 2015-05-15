@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="22px" height="22px" viewBox="0 0 22 22" version="1.1">
+    <!-- Generator: Sketch 3.0.4 (8053) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs />
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Group" sketch:type="MSLayerGroup" transform="translate(1.000000, 0.000000)">
+            <polygon id="Star-1" fill="#007D99" sketch:type="MSShapeGroup" points="12.5 12.8571429 7.50382536 15.50586 8.45800981 9.89578712 4.41601961 5.92271148 10.0019127 5.10421288 12.5 0 14.9980873 5.10421288 20.5839804 5.92271148 16.5419902 9.89578712 17.4961746 15.50586 " />
+            <path d="M11.5813706,15.604923 L5.66105737,21.5252363" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup" />
+            <path d="M5.58243622,16.5803052 L2.47476371,19.6879776" id="Line-2" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup" />
+            <path d="M6.04604205,11.4186294 L0.125728784,17.3389426" id="Line-3" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup" />
+        </g>
+    </g>
+</svg>

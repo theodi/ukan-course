@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  -ms-overflow-style: none;
+  /*auto | none | scrollbar | -ms-autohiding-scrollbar*/
+  overflow: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: "Source Sans Pro", Verdana, Helvetica, sans; }
+
+.widget_container {
+  overflow: hidden; }
+
+b {
+  font-weight: bold; }
+
+em {
+  font-style: italic; }
+
+.button {
+  color: #00a7ce;
+  font-family: "Source Sans Pro", Verdana, Helvetica, sans;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 26px;
+  z-index: 2;
+  background: #fff;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 16px;
+  height: auto; }
+  .button:hover {
+    cursor: pointer; }
+  .button.clicked .marker {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    cursor: pointer; }
+  .button .button_text {
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased; }
+
+.marker {
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiMwMEE3Q0UiIHBvaW50cz0iMTUsOSAxMSw5IDExLDUgOSw1IDksOSA1LDkgNSwxMSA5LDExIDksMTUgMTEsMTUgMTEsMTEgMTUsMTEgIi8+DQo8cGF0aCBmaWxsPSIjMDBBN0NFIiBkPSJNMTAsMmM0LjQsMCw4LDMuNiw4LDhzLTMuNiw4LTgsOHMtOC0zLjYtOC04UzUuNiwyLDEwLDIgTTEwLDFjLTUsMC05LDQtOSw5czQsOSw5LDlzOS00LDktOVMxNSwxLDEwLDFMMTAsMQ0KCXoiLz4NCjwvc3ZnPg0K");
+  height: 20px;
+  width: 20px;
+  -webkit-transition: all linear 0.4s;
+  -moz-transition: all linear 0.4s;
+  -o-transition: all linear 0.4s;
+  transition: all linear 0.4s;
+  background-size: 100% 100%;
+  margin-right: 5px;
+  top: 3px;
+  position: relative;
+  float: left; }
+  @media (max-width: 320px) {
+    .marker {
+      background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTdweCIgaGVpZ2h0PSIxN3B4IiB2aWV3Qm94PSIwIDAgMTcgMTciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE3IDE3IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwb2x5Z29uIGZpbGw9IiMwMEE3Q0UiIHBvaW50cz0iOS4zMzMsNC4zMzQgNy42NjcsNC4zMzQgNy42NjcsNy42NjcgNC4zMzMsNy42NjcgNC4zMzMsOS4zMzQgNy42NjcsOS4zMzQgNy42NjcsMTIuNjY2IA0KCQk5LjMzMywxMi42NjYgOS4zMzMsOS4zMzQgMTIuNjY3LDkuMzM0IDEyLjY2Nyw3LjY2NyA5LjMzMyw3LjY2NyAJIi8+DQoJPHBhdGggZmlsbD0iIzAwQTdDRSIgZD0iTTguNSwxQzQuMzU3LDEsMSw0LjM1NywxLDguNVM0LjM1NywxNiw4LjUsMTZTMTYsMTIuNjQzLDE2LDguNVMxMi42NDMsMSw4LjUsMXogTTguNSwxNQ0KCQlDNC45MTYsMTUsMiwxMi4wODQsMiw4LjVTNC45MTYsMiw4LjUsMlMxNSw0LjkxNiwxNSw4LjVTMTIuMDg0LDE1LDguNSwxNXoiLz4NCjwvZz4NCjwvc3ZnPg0K");
+      height: 15px;
+      width: 15px;
+      background-size: 100% 100%;
+      margin-top: 3px; } }
+
+.answer {
+  position: relative;
+  font-family: "Source Sans Pro", Verdana, Helvetica, sans;
+  font-size: 19px;
+  line-height: 27px;
+  padding-top: 30px;
+  border-top: 1px dotted #c0bfbf;
+  top: -1px;
+  border-bottom: 1px #c0bfbf dotted;
+  padding-bottom: 30px; }
+  @media (max-width: 480px) {
+    .answer {
+      font-size: 17px;
+      line-height: 24px; } }
+  .answer img {
+    width: 75%;
+    height: auto;
+    margin: 0 12%;
+    position: relative; }
+  .answer.open {
+    height: auto; }
+  .answer p {
+    margin: 1em 0; }
+  .answer > p:first-of-type {
+    margin: 0 0 1em 0; }

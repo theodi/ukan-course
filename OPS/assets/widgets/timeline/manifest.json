@@ -1,0 +1,13 @@
+{
+    "viewAssets": {
+        "included": [ 
+            "index.html",
+            "css/view.css",
+            "js/view.js",
+            "vendorjs/storyjs-embed.js"
+            "vendorcss/loadingat2x.gif",
+            "vendorcss/timeline.png",
+            "vendorcss/timelineat2x.png"
+        ]
+    }
+}

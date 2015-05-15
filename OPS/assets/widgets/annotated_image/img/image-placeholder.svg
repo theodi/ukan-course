@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="117px" height="92px" viewBox="0 0 117 92" version="1.1">
+    <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+    <title>ic-add-image-background-normal</title>
+    <description>Created with Sketch.</description>
+    <defs />
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ic-add-image-background-normal" sketch:type="MSLayerGroup">
+            <g id="Group" sketch:type="MSShapeGroup">
+                <rect id="Rectangle-1" fill="#F3F3F3" x="0" y="0" width="117" height="92" />
+                <g transform="translate(19.000000, 21.000000)">
+                    <g transform="translate(0.000000, 6.000000)" id="Shape">
+                        <path d="M51.4547363,0.571232343 C52.3547363,-0.328767657 53.2,1.3 54.1,2.2 L78.9,27 L78.9,43 L-0.4,43 L51.4547363,0.571232343 Z" fill="#E7E7E9" />
+                        <path d="M52.4,0.5 L63,42.9 L78.8,42.9 L78.8,26.9 L52.4,0.5 Z" fill="#DDDDDF" />
+                    </g>
+                    <path d="M-0.4,35 C-0.4,33.7 0.1,32.4 1.1,31.4 L11.2,21.3 C12.1,20.4 13.6,20.4 14.5,21.3 L39.8,48.8 L1.6,48.8 C0.5,48.9 -0.4,48 -0.4,46.9 L-0.4,35 Z" id="Shape" fill="#DDDDDF" />
+                    <circle id="Oval" fill="#DDDDDF" cx="23.8" cy="5.8" r="5.8" />
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

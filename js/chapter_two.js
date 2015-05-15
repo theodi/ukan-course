@@ -1,2 +1,0 @@
-// js for chapter two
-

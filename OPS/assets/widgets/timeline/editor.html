@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Timeline Editor</title>
+    <link rel="stylesheet" href="css/edit.css">
+</head>
+
+<body class="editor panel--active">
+    <div class="panel">
+        <ul class="panel-menu">
+            <li><a class="panel-tab" href="#tabs-1">Events</a>
+            </li>
+            <li><a class="panel-tab" href="#tabs-2">Settings</a>
+            </li>
+            <span class="stretch"></span>
+            <li class="menu-underline"></li>
+        </ul>
+        <div class="panel-content">
+            <div id="tabs-1">
+                <div class="group">
+
+                    <ul class="menu-list" id="panelSlides">
+                    </ul>
+                    <div id="addButton">Add Event</div>
+                </div>
+            </div>
+            <div id="tabs-2">
+                <label class="checkbox" id="hideDates">
+                    <input type="checkbox">
+                    <span class="checkbox-label">Hide Dates</span>
+                </label>
+                <span class="details">
+                    <p>Timeline will not display dates in events or on the scrolling view.</p>
+                </span>
+                <label class="checkbox" id="removeTitle">
+                    <input type="checkbox">
+                    <span class="checkbox-label">Remove Title Slide</span>
+                </label>
+                <span class="details">
+                    <p>Timeline will start on first event rather than using a title slide.</p>
+                </span>
+            </div>
+        </div>
+
+    </div>
+    <div class="workspace">
+        <div class="content">
+            <div class="grid">
+                <div class="group one-half" id="startDate">
+                    <h4 class="group-title">Start Date</h4>
+                    <div class="inputGroup">
+                        <input type="text" class="inputMonth date" placeholder="MM" maxlength="2">
+                        <input type="text" class="inputDay date" placeholder="DD" maxlength="2">
+                        <input type="text" class="inputYear date" placeholder="YYYY">
+                        <input type="text" class="inputTime date" placeholder="00:00:00" maxlength="8">
+                    </div>
+                </div>
+                <div id="arrow"></div>
+                <div class="group one-half" id="endDate">
+                    <h4 class="group-title">End Date</h4>
+                    <div class="inputGroup">
+                        <input type="text" class="inputMonth date" placeholder="MM" maxlength="2">
+                        <input type="text" class="inputDay date" placeholder="DD" maxlength="2">
+                        <input type="text" class="inputYear date" placeholder="YYYY">
+                        <input type="text" class="inputTime date" placeholder="00:00:00" maxlength="8">
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <h4 class="group-title" id="slide">Slide
+                    <!--  <label class="checkbox">
+                        <input type="checkbox" id="titleSlide">
+                        <span class="checkbox-label">Title Slide</span>
+                    </label> -->
+                </h4>
+                <textarea placeholder="Headline" id="headline" rows="1"></textarea>
+                <textarea placeholder="Description" id="description" rows="1"></textarea>
+                <div id="addImage" class="imageEditor">
+                    <span>Add Image</span>
+                    <span class="optional">(optional)</span>
+                    <input id="imagePicker" type="file">
+                </div>
+                <div class="group" id="imageGroup" style="display: none">
+                    <menu class="button-menu vert-right" id="imageButtons">
+                        <div class="button btn-replace" name="Swap Image">
+                            <input id="swapButton" type="file">
+                        </div>
+                        <div class="button btn-delete" name="Delete Image">
+                        </div>
+                    </menu>
+                    <div class="image">
+                        <img id="imageContainer" style="display: inline-block">
+                    </div>
+                    <textarea class="imageCaption" placeholder="Media Caption (Optional)" rows="1" style="height: auto"></textarea>
+                    <textarea class="imageCredit" placeholder="Media Credit (Optional)" rows="1" style="height: auto"></textarea>
+                </div>
+            </div>
+            <div class="group" id="categories">
+                <h4 class="group-title">Categories
+                    <span class="optional">(optional)</span>
+                </h4>
+                <span>Add a category for event. There can be 6 unique categories.</span>
+                <br>
+                <span style="font-size: 12px; font-style: italic">If you use categories, all events must be tagged.</span>
+                <textarea placeholder="Add Category" rows="1"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-mask"></div>
+
+    <div class="dialog-box confirmation">
+        <div class="dialogText">
+            <h4>Are you sure?</h4>
+        </div>
+        <div class="dialogButtons">
+            <div class="button-div confirmDelete clickable">
+                <div class="button-text">Okay</div>
+            </div>
+            <br>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script type="text/javascript" src="js/edit.js"></script>
+
+</body>
+
+</html>

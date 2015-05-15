@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Editor</title>
+    <!-- Multiple Choice Assessment Widget CSS. -->
+    <link rel="stylesheet" href="css/edit.css" />
+</head>
+<body class="editor panel--active">
+    <div class="panel">
+        <ul class="panel-menu">
+            <!-- <li><a class="panel-tab" href="#tabs-1">Question</a></li> -->
+            <li><a class="panel-tab" href="#tabs-1">Settings</a>
+            </li>
+            <span class="stretch"></span>
+            <li class="menu-underline"></li>
+        </ul>
+        <div class="panel-content">
+            <div id="tabs-1">
+                <label class="checkbox">
+                    <input type="checkbox">
+                    <span class="checkbox-label">Shuffle Choices</span>
+                </label>
+                <span id="settingsHelper">
+                    Randomly shuffle choices each time the reader takes this assessment.
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="workspace">
+        <div class="content">
+            <div class="group" id="questionGroup">
+                <menu class="button-menu vert-right">
+                    <div class="button btn-add-image imageEditor" name="Add Image">
+                        <input id="imagePicker" type="file">
+                    </div>
+
+                </menu>
+                <div class="btnEdit" id="question">
+                    <textarea type="text" class="answerInput" placeholder="Add Question" font-weight: "800"></textarea>
+                    <textarea class="optionalText" placeholder="Add Hint (optional)" rows="1"></textarea>
+                    <div class="promptText"></div>
+                </div>
+            </div>
+            <div class="group" id="imageGroup" style="display: none">
+                <menu class="button-menu vert-right" id="imageButtons">
+                    <div class="button btn-replace" name="Swap Image">
+                        <input id="swapButton" type="file">
+                    </div>
+                     <div class="button btn-delete" name="Delete Image">
+                    </div>
+
+                </menu>
+                <div class="image"><img id="imageContainer" style="display:none"></div>
+            </div>
+            <div class="group">
+                <ul class="answer_set sortable"></ul>
+                <div id="addButton">Add Choice</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="overlay-mask"></div>
+
+        <div class="dialog-box confirmation">
+            <div class="dialogText">
+                <h4>Are you sure?</h4>
+            </div>
+            <div class="dialogButtons">
+                <div class="button-div confirmDelete clickable"><div class="button-text">Okay</div></div><br>
+                <!-- <span class="cancelDelete clickable">Cancel</span> -->
+            </div>
+           <!--  <div class="show-again">
+                <input type="checkbox" id="showDelConf" class="custom-checkbox">
+                <div class="fake-checkbox"></div>
+                Don't show this message again.
+            </div> -->
+        </div>
+    <script>
+    var global = {};
+
+    </script>
+    <script src="js/edit.js"></script>
+
+</body>
+
+</html>

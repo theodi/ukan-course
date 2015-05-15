@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" id="data-uuid-055331342abf4f099154e9973c92a3ba" data-uuid="055331342abf4f099154e9973c92a3ba">
+  <head>
+    <meta charset="utf-8" />
+    <link type="text/css" title="default" rel="stylesheet" href="../../assets/css/app.css" />
+    <title>Know your data</title>
+    <link type="text/css" rel="stylesheet" href="../../assets/fonts/fonts.css" />
+    <link type="text/css" rel="stylesheet" href="../../assets/css/epub_main.css" />
+    <script src="../../assets/js/habitat_platform.js" />
+  </head>
+  <body>
+    <section id="data-uuid-a4a74f3d4f8f4502ade764d9fc40e383" data-uuid="a4a74f3d4f8f4502ade764d9fc40e383" class="course-section-title">
+      <h1 id="data-uuid-8f370a144f5445f88be5e1bf1c7d3e80" data-uuid="8f370a144f5445f88be5e1bf1c7d3e80">
+        <span>2.1</span>
+        Know your data
+      </h1>
+      <div id="data-uuid-e4ba6e09911b475ea9ba7cc9d571bc10" data-uuid="e4ba6e09911b475ea9ba7cc9d571bc10" class="content-left">
+        <p id="data-uuid-38e24845b4ec4fcebf3d5e22364214f8" data-uuid="38e24845b4ec4fcebf3d5e22364214f8">If you want to anonymise a dataset, it is crucial that you understand your data. For example, you have to know</p>
+        <ul id="data-uuid-4c0ce2cbffd348d0844a3533ed95aa58" data-uuid="4c0ce2cbffd348d0844a3533ed95aa58">
+          <li id="data-uuid-6919d3ec307547f39ac447da68fab970" data-uuid="6919d3ec307547f39ac447da68fab970">where there are special or unique cases,</li>
+          <li id="data-uuid-ebf0c729867d42e1b681bc6cda25d23b" data-uuid="ebf0c729867d42e1b681bc6cda25d23b">which combination of variables are risky, and</li>
+          <li id="data-uuid-798c97e26cb64497ae5080c1d382ebce" data-uuid="798c97e26cb64497ae5080c1d382ebce">what is sensitive information.</li>
+        </ul>
+        <p id="data-uuid-487ed0685950412f964070b1c25cf08c" data-uuid="487ed0685950412f964070b1c25cf08c">Let’s look at an example dataset to illustrate this: the Titanic passenger data. The data describes the survival status of individual passengers on the Titanic. It has 1309 passengers (rows) and 14 variables (columns). The variables are characteristics such as name, age, travel companion or how much they paid for the ticket. An extract of the data is below.</p>
+        <p id="data-uuid-d1945d5aec384ae8861d804640652131" data-uuid="d1945d5aec384ae8861d804640652131">
+          You can find the full dataset
+          <a href="http://bit.ly/odi-titanic">here</a>
+          or
+          <a href="http://bit.ly/odi-titanic2">here</a>
+          .
+        </p>
+        <p id="data-uuid-73eb704ecbc842d6947a74529bf6cfdc" data-uuid="73eb704ecbc842d6947a74529bf6cfdc">
+          You can find out more details about the data
+          <a href="http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3info.txt">if you follow this link</a>
+          .
+        </p>
+        <div id="data-uuid-c220d5a3a1a54e8090b98605e0f4a98e" data-uuid="c220d5a3a1a54e8090b98605e0f4a98e" class="table-div">
+          <table id="data-uuid-29f1c6140e1e4e62b7763ad82faec22b" data-uuid="29f1c6140e1e4e62b7763ad82faec22b" class="tables">
+            <tbody>
+              <tr>
+                <th id="data-uuid-ae80475a17fb4145a212df4b567af4b2" data-uuid="ae80475a17fb4145a212df4b567af4b2">Passenger class</th>
+                <th id="data-uuid-32f89d2ff36b427996d5eed15d0203d8" data-uuid="32f89d2ff36b427996d5eed15d0203d8">Survived</th>
+                <th id="data-uuid-efa2093b4b56468ca0a274efdb534946" data-uuid="efa2093b4b56468ca0a274efdb534946">Passenger name</th>
+                <th id="data-uuid-79940526a238456ead23a08ab2471d18" data-uuid="79940526a238456ead23a08ab2471d18">Sex</th>
+                <th id="data-uuid-fa5815b6160a4706bbe9e4e6ab2286ac" data-uuid="fa5815b6160a4706bbe9e4e6ab2286ac">Age</th>
+                <th id="data-uuid-03d0418ed03849189b68d85dd7fab6e9" data-uuid="03d0418ed03849189b68d85dd7fab6e9">Fare</th>
+              </tr>
+              <tr>
+                <td id="data-uuid-dc48cf2b068d4f9a81534bf5b6e06b26" data-uuid="dc48cf2b068d4f9a81534bf5b6e06b26">3</td>
+                <td id="data-uuid-95d8e5c242cd4b00ad6cd6d85809941e" data-uuid="95d8e5c242cd4b00ad6cd6d85809941e" class="age">1</td>
+                <td id="data-uuid-993075e0c51542429df72c1b74dee7c6" data-uuid="993075e0c51542429df72c1b74dee7c6" class="startpoint">de Messemaeker, Mrs. Guillaume</td>
+                <td id="data-uuid-d832dc13ab1441b5862797a2ad0fb954" data-uuid="d832dc13ab1441b5862797a2ad0fb954" class="endpoint">female</td>
+                <td id="data-uuid-0bb1ba1c19114799bbfa5cfef5dcae91" data-uuid="0bb1ba1c19114799bbfa5cfef5dcae91" class="journey">36</td>
+                <td id="data-uuid-84110bd9170548f5bfb0d01260e172fc" data-uuid="84110bd9170548f5bfb0d01260e172fc" class="journey">17.400</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-aecdef741801446da4689c8875c9156d" data-uuid="aecdef741801446da4689c8875c9156d">2</td>
+                <td id="data-uuid-d014ba7b33ed410abbd3f58bc56462c5" data-uuid="d014ba7b33ed410abbd3f58bc56462c5" class="age">0</td>
+                <td id="data-uuid-8f30933af6684a928b196edf905cf4ab" data-uuid="8f30933af6684a928b196edf905cf4ab" class="startpoint">Levy, Mr. Rene Jacques</td>
+                <td id="data-uuid-28f16a74b8614be182d7d1cf8c9d884a" data-uuid="28f16a74b8614be182d7d1cf8c9d884a" class="endpoint">male</td>
+                <td id="data-uuid-f07733f3a3d34de587eec1eeca5cfbe4" data-uuid="f07733f3a3d34de587eec1eeca5cfbe4" class="journey">36</td>
+                <td id="data-uuid-a474527f52b047a09ebd27e02a03ce77" data-uuid="a474527f52b047a09ebd27e02a03ce77" class="journey">12.875</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-2d71676f25994668ade3d9eda6e4ea01" data-uuid="2d71676f25994668ade3d9eda6e4ea01">1</td>
+                <td id="data-uuid-b786c7fb1e0d470c8c66b4bc931a53d8" data-uuid="b786c7fb1e0d470c8c66b4bc931a53d8" class="age">1</td>
+                <td id="data-uuid-5af2e4d5cc1945c9be1780eed3d0ca8c" data-uuid="5af2e4d5cc1945c9be1780eed3d0ca8c" class="startpoint">Barkworth, Mr. Algernon</td>
+                <td id="data-uuid-5543993b29ff475ebe8021091a9e5cbe" data-uuid="5543993b29ff475ebe8021091a9e5cbe" class="endpoint">male</td>
+                <td id="data-uuid-8690ca769ceb405db5e2f67096210723" data-uuid="8690ca769ceb405db5e2f67096210723" class="journey">80</td>
+                <td id="data-uuid-a8b144e4a4534fa2a1d0f5b52b43ec60" data-uuid="a8b144e4a4534fa2a1d0f5b52b43ec60" class="journey">30.000</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-ec10f6891c0a48c78e713be58af8adc5" data-uuid="ec10f6891c0a48c78e713be58af8adc5">3</td>
+                <td id="data-uuid-34e2a9ac302e4d7aaffe7e033ebb96bf" data-uuid="34e2a9ac302e4d7aaffe7e033ebb96bf" class="age">0</td>
+                <td id="data-uuid-8628e4cd47a34564bd9e73bd8c0547ec" data-uuid="8628e4cd47a34564bd9e73bd8c0547ec" class="startpoint">Goodwin, Miss. Lillian Amy</td>
+                <td id="data-uuid-f0d3fa5b56a14da99a00d85a3893fcc3" data-uuid="f0d3fa5b56a14da99a00d85a3893fcc3" class="endpoint">female</td>
+                <td id="data-uuid-a5d5bd0fbce74ab28835f76cc55875cf" data-uuid="a5d5bd0fbce74ab28835f76cc55875cf" class="journey">16</td>
+                <td id="data-uuid-f04e73dae6b84cc59d8e0ecf8e7def69" data-uuid="f04e73dae6b84cc59d8e0ecf8e7def69" class="journey">46.900</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="data-uuid-8939cfa49ad942e28fccc8d157ff107a" data-uuid="8939cfa49ad942e28fccc8d157ff107a" class="content-right">
+        <div id="data-uuid-402cc035ba8d43caa44f94da44c798a2" data-uuid="402cc035ba8d43caa44f94da44c798a2" class="captioned-image">
+          <img src="../../assets/images/titanic.jpg" id="data-uuid-8fca80c22b7e45fa988be75db5ac8f21" data-uuid="8fca80c22b7e45fa988be75db5ac8f21" />
+          <p id="data-uuid-be66550c2677412382825a4b3be8917e" data-uuid="be66550c2677412382825a4b3be8917e" class="caption">en.wikipedia.org/wiki/File:Stöwer_Titanic.jpg</p>
+        </div>
+      </div>
+    </section>
+    <section id="data-uuid-2b07c5dc97f14bd4b932122b1b8d73f8" data-uuid="2b07c5dc97f14bd4b932122b1b8d73f8" class="course-section-title">
+      <h1 id="data-uuid-e0f1c36c4952462cbd331c31547275d5" data-uuid="e0f1c36c4952462cbd331c31547275d5">
+        <span>2.2</span>
+        Know your data
+      </h1>
+      <div id="data-uuid-60b42173b2a34cefba4ad7ed3d0e4fb7" data-uuid="60b42173b2a34cefba4ad7ed3d0e4fb7" class="content-left">
+        <p id="data-uuid-c55aac57db964760b0ed6a130d00e46a" data-uuid="c55aac57db964760b0ed6a130d00e46a">
+          Here are some suggestions for getting to know
+          <strong>quantitative data</strong>
+          . 
+        </p>
+        <figure id="data-uuid-f5e85ffea05d44f19aa21c556e0a82bd" data-uuid="f5e85ffea05d44f19aa21c556e0a82bd" class="video">
+          <div id="data-uuid-39a1fb2f7e5f4ed596e1f4c6ad3a682e" data-uuid="39a1fb2f7e5f4ed596e1f4c6ad3a682e" class="s9-video-wrapper">
+            <video poster="../../img/video_thumb/topic_2_eyeball-sd.png" id="data-uuid-d91b54cf798946ef8b3cfc8135a83e2c" data-uuid="d91b54cf798946ef8b3cfc8135a83e2c" controls="controls">
+              <source type="video/mp4" src="../../assets/video/topic_2_eyeball-sd.mp4" />
+            </video>
+          </div>
+          <figcaption>1. ‘Eyeball’ your data if it is small enough</figcaption>
+        </figure>
+        <figure id="data-uuid-bbdebc1492554e2fb3650275af47964b" data-uuid="bbdebc1492554e2fb3650275af47964b" class="video">
+          <div id="data-uuid-068bbe611205488b9a5e6f34f33f8e2a" data-uuid="068bbe611205488b9a5e6f34f33f8e2a" class="s9-video-wrapper">
+            <video poster="../../img/video_thumb/topic_2_frequency_tables-sd.png" id="data-uuid-a910bfe874d146588a36bef82404fa19" data-uuid="a910bfe874d146588a36bef82404fa19" controls="controls">
+              <source type="video/mp4" src="../../assets/video/topic_2_frequency_tables-sd.mp4" />
+            </video>
+          </div>
+          <figcaption>2. Create descriptive statistics, for example a frequency table of passenger class</figcaption>
+        </figure>
+        <figure id="data-uuid-c87a72900a1d4cc7b81b8222a66709e5" data-uuid="c87a72900a1d4cc7b81b8222a66709e5" class="figure-image">
+          <img src="../../img/topic02/age-vs-far.png" id="data-uuid-38ee3271197c43d2858ce938d6985871" data-uuid="38ee3271197c43d2858ce938d6985871" alt="" />
+          <figcaption>3. Create a chart, for example, a scatterplot of age versus fare</figcaption>
+        </figure>
+        <figure id="data-uuid-f68fba9ef4704869ba15b4568f201ee4" data-uuid="f68fba9ef4704869ba15b4568f201ee4" class="video">
+          <div id="data-uuid-91390a0df3ba43299615838b6fe33b8b" data-uuid="91390a0df3ba43299615838b6fe33b8b" class="s9-video-wrapper">
+            <video poster="../../img/video_thumb/topic_2_count_missing-sd.png" id="data-uuid-f2b6fccfff844a719828827bed7615c8" data-uuid="f2b6fccfff844a719828827bed7615c8" controls="controls">
+              <source type="video/mp4" src="../../assets/video/topic_2_count_missing-sd.mp4" />
+            </video>
+          </div>
+          <figcaption>
+            <span data-attribute="title" class="caption-title" />
+            Create other statistics, such as a count of the missing cell values in the age column
+          </figcaption>
+        </figure>
+        <p id="data-uuid-e8fd9254bc4647b2afc83383fde7fd76" data-uuid="e8fd9254bc4647b2afc83383fde7fd76">You should do this for all variables in the data.</p>
+      </div>
+    </section>
+    <section id="data-uuid-755d71e8abea4ad49ac0b3f619019df1" data-uuid="755d71e8abea4ad49ac0b3f619019df1" class="course-section-title">
+      <h1 id="data-uuid-40acee3596884b3aac61107c17b81adb" data-uuid="40acee3596884b3aac61107c17b81adb">
+        <span>2.3</span>
+        Know your data
+      </h1>
+      <div id="data-uuid-eb72222adf6543c6bd83b97a129aa59d" data-uuid="eb72222adf6543c6bd83b97a129aa59d" class="content-left">
+        <p id="data-uuid-7dfabcceca9b4cb2be899cd4d02964b3" data-uuid="7dfabcceca9b4cb2be899cd4d02964b3" class="ignore">
+          You may also have
+          <strong>qualitative data</strong>
+          , for example, in the form of free text fields in a survey. They can be problematic when releasing them in its raw form because you have to be sure the data does not contain a name or other information relating to individuals.
+        </p>
+      </div>
+    </section>
+    <figure id="data-uuid-d87f4b71e0534493961e98fe3d90c3c0" data-uuid="d87f4b71e0534493961e98fe3d90c3c0" class="video">
+      <div id="data-uuid-0d640111be88485fab88c4e5947be574" data-uuid="0d640111be88485fab88c4e5947be574" class="s9-video-wrapper">
+        <video poster="../../img/video_thumb/topic_2_free_text_fields-sd.png" id="data-uuid-0d4347e732d14de49e10ef7e6f9714eb" data-uuid="0d4347e732d14de49e10ef7e6f9714eb" controls="controls">
+          <source type="video/mp4" src="../../assets/video/topic_2_free_text_fields-sd.mp4" />
+        </video>
+      </div>
+    </figure>
+    <section id="data-uuid-311200a000e94732bd7b371b67c7e13a" data-uuid="311200a000e94732bd7b371b67c7e13a" class="course-section-title">
+      <h1 id="data-uuid-4dfcd516dae24423909bccdd8c048ceb" data-uuid="4dfcd516dae24423909bccdd8c048ceb">
+        <span>2.4</span>
+        Know your data
+      </h1>
+      <div id="data-uuid-e051fc3f593740119c2c9e4d22e2b758" data-uuid="e051fc3f593740119c2c9e4d22e2b758" class="knowyourdata content-left">
+        <p id="data-uuid-1ac14ac753c04a5ea038203432372449" data-uuid="1ac14ac753c04a5ea038203432372449">
+          Below are a few selected rows and columns of the Titanic passenger data. (The full data is here:
+          <a href="http://bit.ly/odi-titanic">here</a>
+          or
+          <a href="http://bit.ly/odi-titanic2">here</a>
+          ).
+        </p>
+        <p id="data-uuid-7d4490286d1d4809abe8970dd25cc509" data-uuid="7d4490286d1d4809abe8970dd25cc509">
+          This data needs to go through the whole anonymisation process, but there are a few basic options to change the data.
+          <strong>Consider which of the variables below you would expect to be relatively risky, and why.</strong>
+        </p>
+        <figure id="data-uuid-5505ae3284dc48f7bc407696fd4b3fae" data-uuid="5505ae3284dc48f7bc407696fd4b3fae" class="figure-image">
+          <img src="../../img/topic02/screen_shot_2015-05-15_at_11.17.39.png" id="data-uuid-29106d30a9c3487193c782dec487496f" data-uuid="29106d30a9c3487193c782dec487496f" alt="" />
+        </figure>
+        <table id="int-dataset" data-uuid="b206ac1ded764b50a0b6b579a2608f02" class="responsive" />
+        <p id="data-uuid-c17db087ccc043ba8c2583602d379792" data-uuid="c17db087ccc043ba8c2583602d379792">
+          <strong>Just applying some anonymisation method on its own is not enough. The beginning of the process of anonymisation is to understand your data.</strong>
+        </p>
+        <p id="data-uuid-91fa42e075314eb5a2c9948e9ce732e5" data-uuid="91fa42e075314eb5a2c9948e9ce732e5">
+          <strong>Passenger class</strong>
+        </p>
+        <p id="data-uuid-79b5a8337cf94878a37704a80fe0b964" data-uuid="79b5a8337cf94878a37704a80fe0b964">This variable is most likely less risky than others. However, we should not ignore it completely, for example, in combinations with other variables.</p>
+        <p id="data-uuid-101a4af8ae3241779021dd1507c3f892" data-uuid="101a4af8ae3241779021dd1507c3f892">
+          <strong>Survived</strong>
+        </p>
+        <p id="data-uuid-37ec27085c574a95b292f509ced88c43" data-uuid="37ec27085c574a95b292f509ced88c43">This variable is most likely less risky than others. However, we should not ignore it completely, for example, in combinations with other variables.</p>
+        <p id="data-uuid-83b59947e8bd4657a76b173260b1fc39" data-uuid="83b59947e8bd4657a76b173260b1fc39">
+          <strong>Passenger name</strong>
+        </p>
+        <p id="data-uuid-dfcbc04590aa459b98fbeba54e702fed" data-uuid="dfcbc04590aa459b98fbeba54e702fed">
+          If a name is unique, we would call it a
+          <span class="conditional">direct identifier</span>
+          . This means an unusual name is enough to identify a person. A more common name such as James Smith, in combination with an address, for example, may also be a direct identifier. In general, you have to remove direct identifiers.
+        </p>
+        <section id="data-uuid-9ca5173a1ee94484bb822ee9c7681b7f" data-uuid="9ca5173a1ee94484bb822ee9c7681b7f" class="conditional-target">
+          <p id="data-uuid-a0e73acb8c204216a6b21830db490569" data-uuid="a0e73acb8c204216a6b21830db490569">Ticket number (in the full dataset) may also be a direct identifier. If someone knows who the ticket number refers to, it would be possible to identify the person in the data.</p>
+          <p id="data-uuid-8c2a69de32cd4cf8b988b65faabbc84e" data-uuid="8c2a69de32cd4cf8b988b65faabbc84e">What can we do? A common strategy is to mask or hash the direct identifier, that is, to replace it with another, usually random, value. Or we may choose to simply delete both columns.</p>
+        </section>
+        <p id="data-uuid-c7c412b062c24f909af41254b6875b19" data-uuid="c7c412b062c24f909af41254b6875b19">
+          <strong>Sex</strong>
+        </p>
+        <p id="data-uuid-2e6d539e9ba4460a8a20079291f8b823" data-uuid="2e6d539e9ba4460a8a20079291f8b823">This variable is most likely less risky than others. However, we should not ignore it completely, for example, in combinations with other variables.</p>
+        <p id="data-uuid-ffbbfb0d5ad5459a8254518dda374b58" data-uuid="ffbbfb0d5ad5459a8254518dda374b58">
+          <strong>Age</strong>
+        </p>
+        <p id="data-uuid-c34882bce0274701940c019e0a27e9ac" data-uuid="c34882bce0274701940c019e0a27e9ac">Age is quite an important variable for many analyses or use cases. A common strategy is to create age bands such as 0-10, 11-20, 21-30 and so on. Choosing the optimal trade-off between usefulness and risk is up to the analyst and also depends on the remaining data and its context.</p>
+        <p id="data-uuid-eb5279eaac9145049b63942b44e4dce8" data-uuid="eb5279eaac9145049b63942b44e4dce8">
+          <strong>Fare</strong>
+        </p>
+        <p id="data-uuid-b43dac200092486991a2ecc120b75ff9" data-uuid="b43dac200092486991a2ecc120b75ff9">Fare is, similar to age, quite granular. We may want to include it in a data release because it could tell an interesting story around prices. Again, it may be prudent to reduce the amount of information disclosed. More on possible methods to do so in topic 7 of the course.</p>
+      </div>
+    </section>
+    <section id="data-uuid-43c7762735de4178a85afda9b4adda3b" data-uuid="43c7762735de4178a85afda9b4adda3b" class="course-section-title">
+      <h1 id="data-uuid-cbff3cc041fd4597908ed1fbd862f522" data-uuid="cbff3cc041fd4597908ed1fbd862f522">
+        <span>Topic 2</span>
+        Summary
+      </h1>
+      <div id="data-uuid-85567a4c19b04404ace93b2446870d39" data-uuid="85567a4c19b04404ace93b2446870d39" class="content-left">
+        <div id="data-uuid-b2ceb8ab76cf46b6a00d615ab2113872" data-uuid="b2ceb8ab76cf46b6a00d615ab2113872" class="cool-ol">
+          <ol id="data-uuid-eef599424af343a8afcea483956f4d4f" data-uuid="eef599424af343a8afcea483956f4d4f">
+            <li id="data-uuid-3f188dc09c1a434596e4f79914290029" data-uuid="3f188dc09c1a434596e4f79914290029">
+              <p id="data-uuid-e1526910e377434e8405a44fadc8f9d9" data-uuid="e1526910e377434e8405a44fadc8f9d9">To anonymise your data, you have to understand it. For example, understanding what are special cases, outliers, combinations of variables, and what is sensitive information are all important steps.</p>
+            </li>
+            <li id="data-uuid-53ecc7a1b9bc40a7ae26f2758987a74d" data-uuid="53ecc7a1b9bc40a7ae26f2758987a74d">
+              <p id="data-uuid-3aa931e5f0894b5db0a4de786a2fc4ea" data-uuid="3aa931e5f0894b5db0a4de786a2fc4ea">Techniques for understanding your data range from visualisations to descriptive statistics.</p>
+            </li>
+            <li id="data-uuid-3088b957220547fda33291086c009c46" data-uuid="3088b957220547fda33291086c009c46">
+              <p id="data-uuid-27caf4e0ab2d45338bfc8bf20e3b8e15" data-uuid="27caf4e0ab2d45338bfc8bf20e3b8e15">Consider carefully which variables may pose a risk to creating safe data.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div id="data-uuid-df715016490341048212a7f287115a8d" data-uuid="df715016490341048212a7f287115a8d" class="content-right" />
+    </section>
+  </body>
+</html>

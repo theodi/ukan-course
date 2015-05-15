@@ -1,3 +1,0 @@
-// js for chapter three
-
-

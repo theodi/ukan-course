@@ -1,0 +1,11 @@
+{
+	"image1": "./img/image1.jpg",
+	"title1": "Image 1",
+	"image2": "./img/image2.jpg",
+	"title2": "Image 2",
+	"caption2": "Caption two",
+	"source2": "Source two",
+	"image4": "./img/image4.jpg",
+	"source4": "source three",
+	"autoplay": true
+}

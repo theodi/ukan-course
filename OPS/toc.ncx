@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en-US">
+      <head>
+        <meta content="0bd244b431a2b4f4eda928aaa1522600878" name="dtb:uid"></meta>
+      </head>
+      <docTitle>
+        <text>Table of Contents</text>
+      </docTitle>
+      <navMap>
+        <navPoint id="76f7baee620a4a748e7796a1a098c623">
+      <navLabel>
+        <text>Introduction</text>
+      </navLabel>
+      <content src="s9ml/topic01/reader_1.xhtml"></content>
+      <navPoint id="ea9a2c44efc74a17bfc8a21d388f4ccf">
+      <navLabel>
+        <text>The Anonymisation Decision-Making Framework</text>
+      </navLabel>
+      <content src="s9ml/topic01/reader_1.xhtml#data-uuid-ea9a2c44efc74a17bfc8a21d388f4ccf"></content>
+      
+    </navPoint><navPoint id="17e5a124632142d89629e63480968f82">
+      <navLabel>
+        <text>How to use the ADF</text>
+      </navLabel>
+      <content src="s9ml/topic01/reader_2.xhtml#data-uuid-17e5a124632142d89629e63480968f82"></content>
+      
+    </navPoint>
+    </navPoint><navPoint id="3a18e9bf492242eb8b548910318f9060">
+      <navLabel>
+        <text>Topic 1: Describing the data situation</text>
+      </navLabel>
+      <content src="s9ml/topic01/describing_the_data_situation.xhtml"></content>
+      <navPoint id="5cb6bf7c597340e4b6bd483b31f506c5">
+      <navLabel>
+        <text>Describing the data situation</text>
+      </navLabel>
+      <content src="s9ml/topic01/describing_the_data_situation.xhtml#data-uuid-5cb6bf7c597340e4b6bd483b31f506c5"></content>
+      
+    </navPoint>
+    </navPoint><navPoint id="323d15aabe6d46c6b9abe36c3d2b6a14">
+      <navLabel>
+        <text>Topic 2: Know your data</text>
+      </navLabel>
+      <content src="s9ml/topic02/reader_1.xhtml"></content>
+      <navPoint id="055331342abf4f099154e9973c92a3ba">
+      <navLabel>
+        <text>Know your data</text>
+      </navLabel>
+      <content src="s9ml/topic02/reader_1.xhtml#data-uuid-055331342abf4f099154e9973c92a3ba"></content>
+      
+    </navPoint>
+    </navPoint><navPoint id="eff48d6b347044c38933c4de2d783b31">
+      <navLabel>
+        <text>Topic 3: The use case</text>
+      </navLabel>
+      <content src="s9ml/topic03/reader_1.xhtml"></content>
+      <navPoint id="1fc40fbecb0c45b59dde853c98080dd8">
+      <navLabel>
+        <text>Understand the use case</text>
+      </navLabel>
+      <content src="s9ml/topic03/reader_1.xhtml#data-uuid-1fc40fbecb0c45b59dde853c98080dd8"></content>
+      
+    </navPoint>
+    </navPoint><navPoint id="1672810fd5fc4fb18738d91dfce0fb56">
+      <navLabel>
+        <text>Topic 4: Understand the pre-share/release legal issues</text>
+      </navLabel>
+      <content src="s9ml/topic04/reader_1.xhtml"></content>
+      <navPoint id="3a363a5c7f124fba8d06d9cdef732e6a">
+      <navLabel>
+        <text>Understand the pre-share/release legal issues</text>
+      </navLabel>
+      <content src="s9ml/topic04/reader_1.xhtml#data-uuid-3a363a5c7f124fba8d06d9cdef732e6a"></content>
+      
+    </navPoint>
+    </navPoint><navPoint id="fe0ca9d4ba3c4c08ae4901d27230596e">
+      <navLabel>
+        <text>Topic 5: Understand the issue of consent and your ethical obligations</text>
+      </navLabel>
+      <content src="s9ml/topic05/reader_1.xhtml"></content>
+      <navPoint id="7e598080a9df43d8b083a9fab0b6fd12">
+      <navLabel>
+        <text>Understand the issue of consent and your ethical obligations</text>
+      </navLabel>
+      <content src="s9ml/topic05/reader_1.xhtml#data-uuid-7e598080a9df43d8b083a9fab0b6fd12"></content>
+      <navPoint id="data-uuid-8c06bae959b040599047b279eaf19a6f">
+      <navLabel>
+        <text>When consent is not possible</text>
+      </navLabel>
+      <content src="s9ml/topic05/reader_1.xhtml#data-uuid-8c06bae959b040599047b279eaf19a6f"></content>
+      
+    </navPoint>
+    </navPoint>
+    </navPoint><navPoint id="35ceee65790746a69a2affc9aa794e95">
+      <navLabel>
+        <text>Topic 6: Assess disclosure risk process</text>
+      </navLabel>
+      <content src="s9ml/topic06/reader_1.xhtml"></content>
+      <navPoint id="fd9afbf12bb647b7bef366c745d48499">
+      <navLabel>
+        <text>Identify the processes you will need to assess disclosure risk</text>
+      </navLabel>
+      <content src="s9ml/topic06/reader_1.xhtml#data-uuid-fd9afbf12bb647b7bef366c745d48499"></content>
+      
+    </navPoint>
+    </navPoint><navPoint id="49e4cdc8506e489bad60a18c55020801">
+      <navLabel>
+        <text>Topic 7: Anonymise your data</text>
+      </navLabel>
+      <content src="s9ml/topic07/reader_1.xhtml"></content>
+      <navPoint id="d06e8c981a2f4a2aaadcd091678a99ad">
+      <navLabel>
+        <text>Identify the processes you will need to control disclosure risk</text>
+      </navLabel>
+      <content src="s9ml/topic07/reader_1.xhtml#data-uuid-d06e8c981a2f4a2aaadcd091678a99ad"></content>
+      
+    </navPoint>
+    </navPoint><navPoint id="5bb23a8c15ea4385928abf78fbffe573">
+      <navLabel>
+        <text>Topic 8: Stakeholders</text>
+      </navLabel>
+      <content src="s9ml/topic08/reader_1.xhtml"></content>
+      <navPoint id="40b033f264de4d6d90b72fb6895d241a">
+      <navLabel>
+        <text>Identify who your stakeholders are and plan how you will communicate with them</text>
+      </navLabel>
+      <content src="s9ml/topic08/reader_1.xhtml#data-uuid-40b033f264de4d6d90b72fb6895d241a"></content>
+      
+    </navPoint>
+    </navPoint><navPoint id="4474f5d597264c9198cd2481f0fe3184">
+      <navLabel>
+        <text>Topic 9: What if something goes wrong?</text>
+      </navLabel>
+      <content src="s9ml/topic09/reader_1.xhtml"></content>
+      <navPoint id="3db955707fe24e799f321b7e190317a2">
+      <navLabel>
+        <text>Plan what happens next once you have shared or released data</text>
+      </navLabel>
+      <content src="s9ml/topic09/reader_1.xhtml#data-uuid-3db955707fe24e799f321b7e190317a2"></content>
+      
+    </navPoint>
+    </navPoint><navPoint id="f778c8c5abc548a98b054bea92a10fb4">
+      <navLabel>
+        <text>Topic 10: What happens next?</text>
+      </navLabel>
+      <content src="s9ml/topic10/reader_1.xhtml"></content>
+      <navPoint id="2b544a44db85436693af5af9a0dd4c4e">
+      <navLabel>
+        <text>Plan what you will do if things go wrong</text>
+      </navLabel>
+      <content src="s9ml/topic10/reader_1.xhtml#data-uuid-2b544a44db85436693af5af9a0dd4c4e"></content>
+      
+    </navPoint>
+    </navPoint><navPoint id="ad4e4fc272404d9d81b710d69c817169">
+      <navLabel>
+        <text>Summary</text>
+      </navLabel>
+      <content src="s9ml/topic10x/reader_1.xhtml"></content>
+      <navPoint id="9abfebc970914851a3272212c93d1fa7">
+      <navLabel>
+        <text>Summary</text>
+      </navLabel>
+      <content src="s9ml/topic10x/reader_1.xhtml#data-uuid-9abfebc970914851a3272212c93d1fa7"></content>
+      
+    </navPoint>
+    </navPoint><navPoint id="appendix">
+      <navLabel>
+        <text>Appendix</text>
+      </navLabel>
+      <content src="s9ml/remarks.xhtml"></content>
+      <navPoint id="f7c7701f81d94e638509f883adb5b9b7">
+      <navLabel>
+        <text>Remarks</text>
+      </navLabel>
+      <content src="s9ml/remarks.xhtml#data-uuid-f7c7701f81d94e638509f883adb5b9b7"></content>
+      
+    </navPoint>
+    </navPoint>
+      </navMap>
+    </ncx>

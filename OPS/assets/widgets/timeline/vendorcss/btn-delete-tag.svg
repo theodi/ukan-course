@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="11px" height="11px" viewBox="0 0 11 11" version="1.1">
+    <!-- Generator: Sketch 3.0.3 (7891) - http://www.bohemiancoding.com/sketch -->
+    <title>zoom-control-plus-active</title>
+    <desc>Created with Sketch.</desc>
+    <defs />
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="zoom-control-plus-active" sketch:type="MSLayerGroup" transform="translate(5.000000, 5.000000) rotate(-315.000000) translate(-5.000000, -5.000000) " fill="#ffffff">
+            <path d="M10,4 L6,4 L6,0 L4,0 L4,4 L0,4 L0,6 L4,6 L4,10 L6,10 L6,6 L10,6 L10,4 Z" id="Shape" sketch:type="MSShapeGroup" />
+        </g>
+    </g>
+</svg>

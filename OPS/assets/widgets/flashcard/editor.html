@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Widget Editor Template</title>
+    <script type="text/javascript" src="js/edit.js"></script>
+
+    <link rel="stylesheet" href="css/edit.css">
+</head>
+
+<body class="editor panel--active">
+    <div class="panel">
+        <ul class="panel-menu">
+            <li><a class="panel-tab" href="#tabs-1">Settings</a>
+            </li>
+            <li>
+                <a class="panel-tab" href="#tabs-2"></a>
+            </li>
+            <span class="stretch"></span>
+            <li class="menu-underline"></li>
+        </ul>
+        <div class="panel-content">
+            <div id="tabs-1">
+                <div class="group">
+                    <label class="checkbox">
+                        <input id="global-bleed" type="checkbox">
+                        <span class="checkbox-label">Scale images to cover</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="workspace">
+        <div class="content">
+            <div class="card-root grid">
+                <div class="card-front group one-half">
+                    <h2 class="group-title">Front</h2>
+                    <select class="select-menu">
+                        <option value="image">Image</option>
+                        <option selected value="keyword">Keyword</option>
+                        <option value="desc">Description</option>
+                    </select>
+                    <div class="card-container square keyword">
+                        <menu class="button-menu vert-left">
+                            <label name="Replace Image" class="button btn-replace">
+                                <input class="input-replace" type="file" />
+                            </label>
+                        </menu>
+                        <div class="card">
+                            <label class="inner-add-image">
+                                <input class="input-add-image" type="file" />
+                            </label>
+                            <span class="inner-text">
+
+                            </span>
+                            <img class="inner-image" src="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card-back group one-half">
+                    <h2 class="group-title">Back</h2>
+                    <select class="select-menu">
+                        <option value="image">Image</option>
+                        <option value="keyword">Keyword</option>
+                        <option selected value="desc">Description</option>
+                    </select>
+                    <div class="card-container square desc">
+                        <menu class="button-menu vert-right">
+                            <label name="Replace Image" class="button btn-replace">
+                                <input class="input-replace" type="file" />
+                            </label>
+                        </menu>
+                        <div class="card">
+                            <label class="inner-add-image">
+                                <input class="input-add-image" type="file" />
+                            </label>
+                            <span class="inner-text">
+
+                            </span>
+                            <img class="inner-image" src="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

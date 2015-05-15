@@ -1,0 +1,433 @@
+/* Inkling Fonts
+ * 2014-09-23
+ * Font-face declarations required for Inkling CSS.   
+ */
+
+@font-face {
+    /* Font family name as it appears in the CSS */
+    font-family: 'Source Sans Pro';
+
+    /* Specified weight, style and stretch */
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+
+    /* Source locations, in order of loading attempts:
+        1. Locally installed font using postscript font name
+        2. Locally installed font using font family name
+        3. WOFF file in this directory - IE9+, FF3.6+, GC5+1, S5.1+
+        4. TTF file in this directory - Android 2.3 
+    */
+    src: local('SourceSansPro-Light'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-Light.otf.woff') format('woff'),
+         url('SourceSansPro-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-weight: 300;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('SourceSansPro-LightIt'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-LightIt.otf.woff') format('woff'),
+         url('SourceSansPro-LightIt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('SourceSansPro-Regular'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-Regular.otf.woff') format('woff'),
+         url('SourceSansPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('SourceSansPro-It'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-It.otf.woff') format('woff'),
+         url('SourceSansPro-It.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('SourceSansPro-Semibold'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-Semibold.otf.woff') format('woff'),
+         url('SourceSansPro-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('SourceSansPro-SemiboldIt'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-SemiboldIt.otf.woff') format('woff'),
+         url('SourceSansPro-SemiboldIt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('SourceSansPro-Bold'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-Bold.otf.woff') format('woff'),
+         url('SourceSansPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('SourceSansPro-BoldIt'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-BoldIt.otf.woff') format('woff'),
+         url('SourceSansPro-BoldIt.ttf') format('truetype');
+}
+
+/* Inkling Serif - 4 styles */
+@font-face {
+    font-family: 'Inkling Serif Web';
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Regular'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Regular.woff') format('woff'),
+         url('InklingSerifApp-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inkling Serif Web';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Italic'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Italic.woff') format('woff'),
+         url('InklingSerifApp-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inkling Serif Web';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Bold'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Bold.woff') format('woff'),
+         url('InklingSerifApp-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inkling Serif Web';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('InklingSerifApp-BoldItalic'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-BoldItalic.woff') format('woff'),
+         url('InklingSerifApp-BoldItalic.ttf') format('truetype');
+}
+
+/*------------------------------------------------------------------
+ * FALL-FORWARDS
+ * The following @font-face declarations map logcay font name to the new font files.
+ *----------------------------------------------------------------*/
+
+/* Meta Serif Office Pro - 4 styles
+ * 9-10-14 - These styles are mapped forward to Inkling Serif.
+ */
+@font-face {
+    font-family: 'Meta Serif Office Pro';
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Regular'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Regular.woff') format('woff'),
+         url('InklingSerifApp-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Meta Serif Office Pro';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Italic'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Italic.woff') format('woff'),
+         url('InklingSerifApp-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Meta Serif Office Pro';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Bold'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Bold.woff') format('woff'),
+         url('InklingSerifApp-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Meta Serif Office Pro';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('InklingSerifApp-BoldItalic'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-BoldItalic.woff') format('woff'),
+         url('InklingSerifApp-BoldItalic.ttf') format('truetype');
+}
+
+/* Tisa Mobile Pro - 4 styles
+ * 9-10-14 - These styles are mapped forward to Inkling Serif.
+ */
+@font-face {
+    font-family: 'Tisa Mobile Pro';
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Regular'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Regular.woff') format('woff'),
+         url('InklingSerifApp-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Tisa Mobile Pro';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Italic'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Italic.woff') format('woff'),
+         url('InklingSerifApp-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Tisa Mobile Pro';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Bold'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Bold.woff') format('woff'),
+         url('InklingSerifApp-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Tisa Mobile Pro';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('InklingSerifApp-BoldItalic'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-BoldItalic.woff') format('woff'),
+         url('InklingSerifApp-BoldItalic.ttf') format('truetype');
+}
+
+/* Chronicle - 4 styles
+ * 9-10-14 - These styles are mapped forward to Inkling Serif.
+ */
+@font-face {
+    font-family: 'Chronicle';
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Regular'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Regular.woff') format('woff'),
+         url('InklingSerifApp-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chronicle';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Italic'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Italic.woff') format('woff'),
+         url('InklingSerifApp-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chronicle';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('InklingSerifApp-Bold'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-Bold.woff') format('woff'),
+         url('InklingSerifApp-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chronicle';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('InklingSerifApp-BoldItalic'),
+         local('Inkling Serif App'),
+         url('InklingSerifWeb-BoldItalic.woff') format('woff'),
+         url('InklingSerifApp-BoldItalic.ttf') format('truetype');
+}
+
+/* Whitney - 8 styles
+ * 9-10-14 - These styles are mapped forward to Source Sans Pro.
+ */
+@font-face {
+    font-family: 'Whitney';
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('SourceSansPro-Regular'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-Regular.otf.woff') format('woff'),
+         url('SourceSansPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Whitney';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('SourceSansPro-It'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-It.otf.woff') format('woff'),
+         url('SourceSansPro-It.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Whitney';
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('SourceSansPro-Semibold'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-Semibold.otf.woff') format('woff'),
+         url('SourceSansPro-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Whitney';
+    font-weight: 500;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('SourceSansPro-SemiboldIt'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-SemiboldIt.otf.woff') format('woff'),
+         url('SourceSansPro-SemiboldIt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Whitney';
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('SourceSansPro-Semibold'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-Semibold.otf.woff') format('woff'),
+         url('SourceSansPro-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Whitney';
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('SourceSansPro-SemiboldIt'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-SemiboldIt.otf.woff') format('woff'),
+         url('SourceSansPro-SemiboldIt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Whitney';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('SourceSansPro-Bold'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-Bold.otf.woff') format('woff'),
+         url('SourceSansPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Whitney';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('SourceSansPro-BoldIt'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-BoldIt.otf.woff') format('woff'),
+         url('SourceSansPro-BoldIt.ttf') format('truetype');
+}
+
+
+/* Older Whitney Medium and Semibold Definitions */
+/* WhitneyMed - 4 styles 
+ * 9-10-14 - These styles are mapped forward to Inkling Serif.
+ */
+@font-face {
+    font-family: 'WhitneyMed';
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('SourceSansPro-Semibold'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-Semibold.otf.woff') format('woff'),
+         url('SourceSansPro-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'WhitneyMed';
+    font-weight: 500;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('SourceSansPro-SemiboldIt'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-SemiboldIt.otf.woff') format('woff'),
+         url('SourceSansPro-SemiboldIt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'WhitneySemi';
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    src: local('SourceSansPro-Semibold'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-Semibold.otf.woff') format('woff'),
+         url('SourceSansPro-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'WhitneySemi';
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    src: local('SourceSansPro-SemiboldIt'),
+         local('Source Sans Pro'),
+         url('SourceSansPro-SemiboldIt.otf.woff') format('woff'),
+         url('SourceSansPro-SemiboldIt.ttf') format('truetype');
+}

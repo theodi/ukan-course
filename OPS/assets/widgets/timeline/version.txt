@@ -1,0 +1,3 @@
+com.inkling.widget.timeline
+1.1.0
+20150225.173321z.c1da09af

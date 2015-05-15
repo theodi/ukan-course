@@ -1,0 +1,10 @@
+{
+    "viewAssets": {
+        "included": [ 
+            "css/view.css",
+            "img/image-placeholder.svg",
+            "index.html",
+            "js/view.js"
+        ]
+    }
+}

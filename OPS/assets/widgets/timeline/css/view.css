@@ -1,0 +1,8 @@
+body, html {
+  word-break: break-word;
+  word-wrap: break-word; }
+
+body.hide-dates .time-interval-major, body.hide-dates .time-interval, body.hide-dates .nav-container .date, body.hide-dates .content-container .date {
+  display: none; }
+body.hide-dates .vco-skinny .content-container h2.date.date {
+  display: none !important; }

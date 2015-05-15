@@ -1,0 +1,107 @@
+/**
+ * The following @font-face declarations provide fallback fonts for legacy versions of the Inkling iOS app (pre-v3.3).
+ * It can be removed when we support for v3.3 is removed.
+ */
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Whitney-Book");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Whitney-BookItalic");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Whitney-Book");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Whitney-BookItalic");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Whitney-Semibold"), local("WhitneySemibold-Regular");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Whitney-SemiboldItalic"), local("WhitneySemibold-Italic");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Whitney-Bold");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Whitney-BoldItalic");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Meta Serif Office Pro";
+  src: local("Chronicle Text G4 Roman"), local("ChronicleTextG4-Roman");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Meta Serif Office Pro";
+  src: local("Chronicle Text G4 Italic"), local("ChronicleTextG4-Italic");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Meta Serif Office Pro";
+  src: local("Chronicle Text G4 Bold"), local("ChronicleTextG4-Bold");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Meta Serif Office Pro";
+  src: local("Chronicle Text G4 Bold Italic"), local("ChronicleTextG4-BoldItalic");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tisa Mobile Pro";
+  src: local("Chronicle Text G4 Roman"), local("ChronicleTextG4-Roman");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Tisa Mobile Pro";
+  src: local("Chronicle Text G4 Italic"), local("ChronicleTextG4-Italic");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tisa Mobile Pro";
+  src: local("Chronicle Text G4 Bold"), local("ChronicleTextG4-Bold");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Tisa Mobile Pro";
+  src: local("Chronicle Text G4 Bold Italic"), local("ChronicleTextG4-BoldItalic");
+  font-weight: 700;
+  font-style: italic;
+}

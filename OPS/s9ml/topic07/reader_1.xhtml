@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" id="data-uuid-d06e8c981a2f4a2aaadcd091678a99ad" data-uuid="d06e8c981a2f4a2aaadcd091678a99ad">
+  <head>
+    <meta charset="utf-8" />
+    <link type="text/css" title="default" rel="stylesheet" href="../../assets/css/app.css" />
+    <title>Identify the processes you will need to control disclosure risk</title>
+    <link type="text/css" rel="stylesheet" href="../../assets/fonts/fonts.css" />
+    <link type="text/css" rel="stylesheet" href="../../assets/css/epub_main.css" />
+    <script src="../../assets/js/habitat_platform.js" />
+  </head>
+  <body>
+    <section id="data-uuid-6c0d883c647b44af96f66d2d489c8920" data-uuid="6c0d883c647b44af96f66d2d489c8920" class="course-section-title">
+      <h1 id="data-uuid-61b4531d428741be9b3984611b0ac808" data-uuid="61b4531d428741be9b3984611b0ac808">
+        <span>7.1</span>
+        Identify the processes you will need to control disclosure risk
+      </h1>
+      <div id="data-uuid-9a4396730d934896a1a94a5c934f0efa" data-uuid="9a4396730d934896a1a94a5c934f0efa" class="content-left">
+        <p id="data-uuid-2dc183449e604eedbc0af60951e86be6" data-uuid="2dc183449e604eedbc0af60951e86be6">Anonymising data is an iterative process. The key is to recognise that the technical work is only a part of the anonymisation process.</p>
+        <p id="data-uuid-3e1f607507b64c939122e871bdb28820" data-uuid="3e1f607507b64c939122e871bdb28820">Every anonymisation process depends on the data situation at hand. We will show a few techniques with the help of the Titanic passenger data. Depending on the use case, you may reach a different decision, even with the same dataset.</p>
+        <p id="data-uuid-847845aa13514d81a4978e4b1fb3783a" data-uuid="847845aa13514d81a4978e4b1fb3783a">The Titanic passenger data is the same as in component 2 ‘Know your data’.</p>
+        <p id="data-uuid-a3fc8a5e0c9745c292762355ffc81812" data-uuid="a3fc8a5e0c9745c292762355ffc81812">
+          You can find the full dataset
+          <a href="http://bit.ly/odi-titanic">here</a>
+          or
+          <a href="http://bit.ly/odi-titanic2">here</a>
+          .
+        </p>
+        <p id="data-uuid-806ece78e5ab4b29aaaf19fb8709401a" data-uuid="806ece78e5ab4b29aaaf19fb8709401a">
+          You can find out more details about the data
+          <a href="http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3info.txt">if you follow this link</a>
+          .
+        </p>
+      </div>
+      <div id="data-uuid-ad2699d082c443a18839247fa372a6e9" data-uuid="ad2699d082c443a18839247fa372a6e9" class="content-right">
+        <div id="data-uuid-79043c74381f4652a4029c5b0caffee0" data-uuid="79043c74381f4652a4029c5b0caffee0" class="captioned-image">
+          <img src="../../assets/images/titanic.jpg" id="data-uuid-4672c456dc974c4d8213b2196aca0aa5" data-uuid="4672c456dc974c4d8213b2196aca0aa5" />
+          <p id="data-uuid-09b947a56919449c95badf43c94ac7b5" data-uuid="09b947a56919449c95badf43c94ac7b5" class="caption">en.wikipedia.org/wiki/File:Stöwer_Titanic.jpg</p>
+        </div>
+      </div>
+    </section>
+    <section id="data-uuid-05381d9ce4714ad1a3bc7d529d53e1a0" data-uuid="05381d9ce4714ad1a3bc7d529d53e1a0" class="course-section-title">
+      <h1 id="data-uuid-41e233651b8e4404af29d84ab4a2a922" data-uuid="41e233651b8e4404af29d84ab4a2a922">
+        <span>7.2</span>
+        Identify the processes you will need to control disclosure risk
+      </h1>
+      <div id="data-uuid-eaaca58054d94f82bcc532520df844d8" data-uuid="eaaca58054d94f82bcc532520df844d8" class="content-left">
+        <p id="data-uuid-d7471b37281a4917bf17185672b0fc3c" data-uuid="d7471b37281a4917bf17185672b0fc3c">Assume our aim is to release this clearly personal dataset (contains names!) as an anonymised dataset. We’ll ignore for a moment that the passengers are long dead, that we’re unclear about the use case and any other of the 10 components.</p>
+        <p id="data-uuid-bde8d36d22334c6ab3dedec4ed19192d" data-uuid="bde8d36d22334c6ab3dedec4ed19192d">The following is an example process. By no means it implies that this is the right, perfect or only solution.</p>
+        <p id="data-uuid-1d4dcea466ef44d690bcb1c01e62e2a5" data-uuid="1d4dcea466ef44d690bcb1c01e62e2a5">Step 1: We have completed component 2 ‘Know your data’. If you haven’t done this yet, doing it now may help you understand the data better.</p>
+        <p id="data-uuid-a4eb9947fa6143db9b1a9f35e56ac6ba" data-uuid="a4eb9947fa6143db9b1a9f35e56ac6ba">An extract of the Titanic passenger data</p>
+        <div id="data-uuid-4726b851cf2f47348eb7691c2d9a1f1b" data-uuid="4726b851cf2f47348eb7691c2d9a1f1b" class="table-div">
+          <table id="data-uuid-d2d1fdbb1ed54010bdc6192b3c3db911" data-uuid="d2d1fdbb1ed54010bdc6192b3c3db911" class="tables">
+            <tbody>
+              <tr>
+                <th id="data-uuid-bc54333a1b1a4ce39d42b6cb275ad975" data-uuid="bc54333a1b1a4ce39d42b6cb275ad975">Passenger Class</th>
+                <th id="data-uuid-634c8f6e13b945caa2e4902d551752b2" data-uuid="634c8f6e13b945caa2e4902d551752b2">Survived</th>
+                <th id="data-uuid-28d12b45d75349208bd630318585ae33" data-uuid="28d12b45d75349208bd630318585ae33">Passenger Name</th>
+                <th id="data-uuid-08069b28c08f4c688b90fd95a9e8c506" data-uuid="08069b28c08f4c688b90fd95a9e8c506">Sex</th>
+                <th id="data-uuid-810c24faa7054e238d28d566bfb27281" data-uuid="810c24faa7054e238d28d566bfb27281">Age</th>
+                <th id="data-uuid-1c956a9211124d4b996cd2b486cb6c39" data-uuid="1c956a9211124d4b996cd2b486cb6c39">Number of siblings/spouse</th>
+                <th id="data-uuid-753f066a695544da9a9c818e88c2e132" data-uuid="753f066a695544da9a9c818e88c2e132">Fare</th>
+              </tr>
+              <tr>
+                <td id="data-uuid-082e9048071640358944b9e6f7cf0aac" data-uuid="082e9048071640358944b9e6f7cf0aac">3</td>
+                <td id="data-uuid-fd1aa10dfc254d1d8e60673a14d6546b" data-uuid="fd1aa10dfc254d1d8e60673a14d6546b" class="age">1</td>
+                <td id="data-uuid-a8e5d467787343569c4e27384060efad" data-uuid="a8e5d467787343569c4e27384060efad" class="startpoint">de Messemaeker, Mrs. Guillaume</td>
+                <td id="data-uuid-414005902c6c45cfbc08929c72955b25" data-uuid="414005902c6c45cfbc08929c72955b25" class="endpoint">female</td>
+                <td id="data-uuid-d6671b1e8664429a9394ea466297aaf1" data-uuid="d6671b1e8664429a9394ea466297aaf1" class="journey">36</td>
+                <td id="data-uuid-e97ed95268f8463ebfc3217694d13315" data-uuid="e97ed95268f8463ebfc3217694d13315">1</td>
+                <td id="data-uuid-c96a976aabd248e8a8aeb94b4b705386" data-uuid="c96a976aabd248e8a8aeb94b4b705386" class="journey">17.400</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-3797573796dc436ca5bd98d3f025bac3" data-uuid="3797573796dc436ca5bd98d3f025bac3">2</td>
+                <td id="data-uuid-f8f5043b4499403291a775416afe02eb" data-uuid="f8f5043b4499403291a775416afe02eb" class="age">0</td>
+                <td id="data-uuid-0090626f631b4716a4fc97980fcc6f06" data-uuid="0090626f631b4716a4fc97980fcc6f06" class="startpoint">Levy, Mr. Rene Jacques</td>
+                <td id="data-uuid-e5ceba8ab52c4d83b8422aef872f3738" data-uuid="e5ceba8ab52c4d83b8422aef872f3738" class="endpoint">male</td>
+                <td id="data-uuid-73c4ceccd6f546daa787869b0834b50b" data-uuid="73c4ceccd6f546daa787869b0834b50b" class="journey">36</td>
+                <td id="data-uuid-4ea070c0750143579e9006a590063024" data-uuid="4ea070c0750143579e9006a590063024">0</td>
+                <td id="data-uuid-bd4228b67ddf424194e964436f47c6ee" data-uuid="bd4228b67ddf424194e964436f47c6ee" class="journey">12.875</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-85ff30184c154cfaa545f76ad94d16c2" data-uuid="85ff30184c154cfaa545f76ad94d16c2">1</td>
+                <td id="data-uuid-99019c3b13fc47d6b87f05c26b548d30" data-uuid="99019c3b13fc47d6b87f05c26b548d30" class="age">1</td>
+                <td id="data-uuid-78d027ae1ca7454b82905474729c33b1" data-uuid="78d027ae1ca7454b82905474729c33b1" class="startpoint">Barkworth, Mr. Algernon</td>
+                <td id="data-uuid-8a3e96d005fb4ebeb4b03fcf2d5f5f6b" data-uuid="8a3e96d005fb4ebeb4b03fcf2d5f5f6b" class="endpoint">male</td>
+                <td id="data-uuid-c2cf0d3da6a54364b69cf149f6d32531" data-uuid="c2cf0d3da6a54364b69cf149f6d32531" class="journey">80</td>
+                <td id="data-uuid-9a767c925bc544f9a02e81cd6044e3ed" data-uuid="9a767c925bc544f9a02e81cd6044e3ed">0</td>
+                <td id="data-uuid-8ca30df19eb048e681c7d07bf50fc252" data-uuid="8ca30df19eb048e681c7d07bf50fc252" class="journey">30.000</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-74fc330fb4e34ab6981750884270edbd" data-uuid="74fc330fb4e34ab6981750884270edbd">3</td>
+                <td id="data-uuid-60bbe5648e6a45449cd2f4025c9f24e0" data-uuid="60bbe5648e6a45449cd2f4025c9f24e0" class="age">0</td>
+                <td id="data-uuid-52b0184f1da5442cb7d320449b9453b2" data-uuid="52b0184f1da5442cb7d320449b9453b2" class="startpoint">Goodwin, Miss. Lillian Amy</td>
+                <td id="data-uuid-69cf243a326a48c1bded5f72dc18f0f7" data-uuid="69cf243a326a48c1bded5f72dc18f0f7" class="endpoint">female</td>
+                <td id="data-uuid-4a0b2978c8cc4854a8f21a0f83dcd9ce" data-uuid="4a0b2978c8cc4854a8f21a0f83dcd9ce" class="journey">16</td>
+                <td id="data-uuid-e68247fe173c471ea1927559b988803a" data-uuid="e68247fe173c471ea1927559b988803a">5</td>
+                <td id="data-uuid-92f82ac71fb84af9a26f45df164ee900" data-uuid="92f82ac71fb84af9a26f45df164ee900" class="journey">46.900</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="data-uuid-d24188c7fb8541ebaf743bc2b7b8af02" data-uuid="d24188c7fb8541ebaf743bc2b7b8af02" class="content-right" />
+    </section>
+    <section id="data-uuid-dfe4230901e44193b4d579224d53300a" data-uuid="dfe4230901e44193b4d579224d53300a" class="course-section-title">
+      <h1 id="data-uuid-53640886c83e4a3b9a18bfdfbf431177" data-uuid="53640886c83e4a3b9a18bfdfbf431177">
+        <span>7.3</span>
+        Identify the processes you will need to control disclosure risk
+      </h1>
+      <p id="data-uuid-b652e2a1e017410aa21254d0e9c873dc" data-uuid="b652e2a1e017410aa21254d0e9c873dc">The following is an example process. By no means should it be considered to be the it implies that this is the right, perfect or only solution. What you will need to do will depend on the key properties of the data environment that the data are being moved to.</p>
+      <div id="data-uuid-abb239cbb8f145769a9f6ce4f51d98ab" data-uuid="abb239cbb8f145769a9f6ce4f51d98ab" class="section-slider">
+        <section id="data-uuid-437731674a3d4ff991c479bdb7bc1a35" data-uuid="437731674a3d4ff991c479bdb7bc1a35" class="slider">
+          <div id="data-uuid-2c1cc8adb17647d7a867585bf569f879" data-uuid="2c1cc8adb17647d7a867585bf569f879">
+            <div id="data-uuid-19074b1657c34120b5b717df9153a2c0" data-uuid="19074b1657c34120b5b717df9153a2c0" class="content-left">
+              <figure id="data-uuid-82cdcb92025f4832a918451c11fa1b48" data-uuid="82cdcb92025f4832a918451c11fa1b48" class="video">
+                <div id="data-uuid-55ea9594af6b490ab71b408df5a79bb0" data-uuid="55ea9594af6b490ab71b408df5a79bb0" class="s9-video-wrapper">
+                  <video poster="../../img/video_thumb/topic_7-1_direct_identifiers-sd.png" id="data-uuid-7bee9d0a59bf4acaa68afee115c1fa97" data-uuid="7bee9d0a59bf4acaa68afee115c1fa97" controls="controls">
+                    <source type="video/mp4" src="../../assets/video/topic_7-1_direct_identifiers-sd.mp4" />
+                  </video>
+                </div>
+                <figcaption>
+                  <span data-attribute="title" class="caption-title" />
+                  First, we remove direct identifiers. The most obvious ones are name (column 3) and ticket number (column 8). We drop ticket number (very limited use) and replace the names with a randomly assigned number (a process called pseudonymisation). Don’t forget to keep a copy of the original data!
+                </figcaption>
+              </figure>
+            </div>
+            <div id="data-uuid-32f8ccc5838645dd920bf3f204eec09b" data-uuid="32f8ccc5838645dd920bf3f204eec09b" class="content-right">
+              <figure id="data-uuid-e6bcd481352d4525af637918a4d9adfe" data-uuid="e6bcd481352d4525af637918a4d9adfe" class="video">
+                <div id="data-uuid-568e7cf946064079a567c64c13150a10" data-uuid="568e7cf946064079a567c64c13150a10" class="s9-video-wrapper">
+                  <video poster="../../img/video_thumb/topic_7-2_redact-sd.png" id="data-uuid-90be75a69c2c402396e333de4db152c2" data-uuid="90be75a69c2c402396e333de4db152c2" controls="controls">
+                    <source type="video/mp4" src="../../assets/video/topic_7-2_redact-sd.mp4" />
+                  </video>
+                </div>
+                <figcaption>
+                  <span data-attribute="title" class="caption-title" />
+                  We redact further variables that seem not useful or create too much risk. Therefore we delete cabin (column 10), lifeboat (column 12), body identification number (column 13) and home/destination (column 14).
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div id="data-uuid-1b0304b9df6c43d2b0fe25c9a603ad9a" data-uuid="1b0304b9df6c43d2b0fe25c9a603ad9a">
+            <figure id="data-uuid-8b15efc75320409bb6c09c551ea93814" data-uuid="8b15efc75320409bb6c09c551ea93814" class="video">
+              <div id="data-uuid-1fd6113d2e1243408ae79cc514c37ece" data-uuid="1fd6113d2e1243408ae79cc514c37ece" class="s9-video-wrapper">
+                <video poster="../../img/video_thumb/topic_7-3_age_bands-sd.png" id="data-uuid-f334f936033b40f9a23fd65605eb9fb8" data-uuid="f334f936033b40f9a23fd65605eb9fb8" controls="controls">
+                  <source type="video/mp4" src="../../assets/video/topic_7-3_age_bands-sd.mp4" />
+                </video>
+              </div>
+              <figcaption>
+                <span data-attribute="title" class="caption-title" />
+                It is very common to group age, so after some experimentation we decide on the following age bands: 0-14, 15-19, 20-24, 25-29, 30-34, 35-44, 45-54, 55 and older.
+              </figcaption>
+            </figure>
+          </div>
+          <div id="data-uuid-1f80e81d584d4a4a8036dc5a39154491" data-uuid="1f80e81d584d4a4a8036dc5a39154491">
+            <figure id="data-uuid-e5b3c1ed425f437b902c0a1880f60c4c" data-uuid="e5b3c1ed425f437b902c0a1880f60c4c" class="video">
+              <div id="data-uuid-61ee31589ef04857983c6db8ff22623b" data-uuid="61ee31589ef04857983c6db8ff22623b" class="s9-video-wrapper">
+                <video poster="../../img/video_thumb/topic_7-4_recoding-sd.png" id="data-uuid-36bccd7b793843e5a4b3f54876f67477" data-uuid="36bccd7b793843e5a4b3f54876f67477" controls="controls">
+                  <source type="video/mp4" src="../../assets/video/topic_7-4_recoding-sd.mp4" />
+                </video>
+              </div>
+              <figcaption>A frequency table reveals that the number of siblings/spouses aboard (column 6) has two very large families that are thus outliers. We expand the group “four” to include “four or more” siblings/spouses aboard.</figcaption>
+            </figure>
+          </div>
+          <div id="data-uuid-918f2ce249b5400a9294944ac67fb825" data-uuid="918f2ce249b5400a9294944ac67fb825">
+            <div id="data-uuid-727ed8cdcac04ca183cab19bfcab80b1" data-uuid="727ed8cdcac04ca183cab19bfcab80b1" class="content-left">
+              <figure id="data-uuid-3b4dd6de21f24a17a034adfeacf7387c" data-uuid="3b4dd6de21f24a17a034adfeacf7387c" class="video">
+                <div id="data-uuid-a7267c41597d438e85bc70c5ae6fa3ae" data-uuid="a7267c41597d438e85bc70c5ae6fa3ae" class="s9-video-wrapper">
+                  <video poster="../../img/video_thumb/topic_7-6_rounding-sd.png" id="data-uuid-f7d601028cda461c9be461cc54d12e68" data-uuid="f7d601028cda461c9be461cc54d12e68" controls="controls">
+                    <source type="video/mp4" src="../../assets/video/topic_7-6_rounding-sd.mp4" />
+                  </video>
+                </div>
+                <figcaption>
+                  <span data-attribute="title" class="caption-title" />
+                  A similar frequency table for number of parents/children aboard (column 7) reveals a similar risk. We group “three” to include “three or more” parents/children aboard.
+                  <span data-attribute="description" class="caption-body" />
+                </figcaption>
+              </figure>
+              <figure id="data-uuid-a95458e53a5b4b869019d74341749f49" data-uuid="a95458e53a5b4b869019d74341749f49" class="video">
+                <div id="data-uuid-7c8fa396253f45e59ed0b2824ff6731e" data-uuid="7c8fa396253f45e59ed0b2824ff6731e" class="s9-video-wrapper">
+                  <video poster="../../img/video_thumb/topic_7-5_pivot_table-sd.png" id="data-uuid-8ac63b4fa1c543dfb407a754c5384258" data-uuid="8ac63b4fa1c543dfb407a754c5384258" controls="controls">
+                    <source type="video/mp4" src="../../assets/video/topic_7-5_pivot_table-sd.mp4" />
+                  </video>
+                </div>
+                <figcaption>
+                  <span data-attribute="title" class="caption-title" />
+                  The passenger fare is very granular and therefore risky. We round the variable to it’s nearest 10 and inspect it again.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div id="data-uuid-5577e259ac164c0b8f9f6add64d92827" data-uuid="5577e259ac164c0b8f9f6add64d92827">
+            <div id="data-uuid-293db451d5b14ae39ff5c521e7a07816" data-uuid="293db451d5b14ae39ff5c521e7a07816" class="content-left">
+              <figure id="data-uuid-80a505d0e37d45528ee64235feae50f2" data-uuid="80a505d0e37d45528ee64235feae50f2" class="video">
+                <div id="data-uuid-dbe274436f6d4c1fbae8ac46dc566304" data-uuid="dbe274436f6d4c1fbae8ac46dc566304" class="s9-video-wrapper">
+                  <video poster="../../img/video_thumb/topic_7-7_manual_recoding-sd.png" id="data-uuid-ed12f4d67e004e75be7533921d6eb955" data-uuid="ed12f4d67e004e75be7533921d6eb955" controls="controls">
+                    <source type="video/mp4" src="../../assets/video/topic_7-7_manual_recoding-sd.mp4" />
+                  </video>
+                </div>
+                <figcaption>
+                  <span data-attribute="title" class="caption-title" />
+                  We learn that home/destination is crucial for most analyses. We therefore go back to group the geographic destinations manually and add them back into the dataset.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div id="data-uuid-d44d2a5c327d4b22b4b39a9c12611cef" data-uuid="d44d2a5c327d4b22b4b39a9c12611cef">
+            <div id="data-uuid-4fb0450fef80442d98d910fbd46392a9" data-uuid="4fb0450fef80442d98d910fbd46392a9" class="content-left">
+              <figure id="data-uuid-a06fa34a64254ec1aad6c09c287038dd" data-uuid="a06fa34a64254ec1aad6c09c287038dd" class="video">
+                <div id="data-uuid-b4698aa4c1e142cab866cee0e408159b" data-uuid="b4698aa4c1e142cab866cee0e408159b" class="s9-video-wrapper">
+                  <video poster="../../img/video_thumb/topic_7-8_combinations-sd.png" id="data-uuid-95c043470584497b9dd892dc0c67e994" data-uuid="95c043470584497b9dd892dc0c67e994" controls="controls">
+                    <source type="video/mp4" src="../../assets/video/topic_7-8_combinations-sd.mp4" />
+                  </video>
+                </div>
+                <figcaption>
+                  <span data-attribute="title" class="caption-title" />
+                  The variables passenger class (column 1), survival status (column 2) and sex (column 4) look ok on their own. However, the may still be indirect identifiers in combination with other variables. In other words, we have to analyse the combinations of variables to understand what disclosure risk remains.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div id="data-uuid-8162a19c098942a488890d6a993504ed" data-uuid="8162a19c098942a488890d6a993504ed">
+            <div id="data-uuid-eaa3fb8a22cb417e97aadc8b42767d4b" data-uuid="eaa3fb8a22cb417e97aadc8b42767d4b" class="content-left">
+              <figure id="data-uuid-76ce3dbaefd944ac8a9305ff3119a0bb" data-uuid="76ce3dbaefd944ac8a9305ff3119a0bb" class="video">
+                <div id="data-uuid-9b398f6ea7514dd2a3a081b4b70b3e8e" data-uuid="9b398f6ea7514dd2a3a081b4b70b3e8e" class="s9-video-wrapper">
+                  <video poster="../../img/video_thumb/topic_7-9_aggregate-sd.png" id="data-uuid-235478f22a0b40e0be23bce91aafddb1" data-uuid="235478f22a0b40e0be23bce91aafddb1" controls="controls">
+                    <source type="video/mp4" src="../../assets/video/topic_7-9_aggregate-sd.mp4" />
+                  </video>
+                </div>
+                <figcaption>
+                  <span data-attribute="title" class="caption-title" />
+                  Most disclosure control techniques can be combined. We may chose to only release an aggregate table.
+                  <span data-attribute="description" class="caption-body" />
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div id="data-uuid-d47103531d45465e836f6228498fcc5c" data-uuid="d47103531d45465e836f6228498fcc5c">
+        <p id="data-uuid-254653a5d97b47d09fccf466d4f75db3" data-uuid="254653a5d97b47d09fccf466d4f75db3">
+          Many more techniques and examples are in the Information Commissioner’s Office’s document
+          <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/anonymisation/">Anonymisation: managing data protection risk code of practice.</a>
+        </p>
+      </div>
+    </section>
+    <section id="data-uuid-c0dc4fe36d344c9db6b4fb7a6edf54b0" data-uuid="c0dc4fe36d344c9db6b4fb7a6edf54b0" class="course-section-title">
+      <h1 id="data-uuid-2dd0ee86e518410491aba1607746e39a" data-uuid="2dd0ee86e518410491aba1607746e39a">
+        <span>7.4</span>
+        Know the processes you will need to go through to anonymise your data
+      </h1>
+      <div id="data-uuid-d48bfbdab3d347e8adb5f19f064b8956" data-uuid="d48bfbdab3d347e8adb5f19f064b8956" class="content-left">
+        <p id="data-uuid-d3af3c1027194a12973ff2ed699441ab" data-uuid="d3af3c1027194a12973ff2ed699441ab">
+          <strong>BEFORE</strong>
+        </p>
+        <div id="data-uuid-c11a4cda3d284867abdb5803ae2cd91b" data-uuid="c11a4cda3d284867abdb5803ae2cd91b" class="table-div">
+          <table id="data-uuid-5267f750c2c446b796e6ceacbb8fc437" data-uuid="5267f750c2c446b796e6ceacbb8fc437" class="tables">
+            <tbody>
+              <tr>
+                <th id="data-uuid-45bd627f954d43b89eb515b647b3ee6a" data-uuid="45bd627f954d43b89eb515b647b3ee6a">Passenger class</th>
+                <th id="data-uuid-c9e5b2f50259497a9280e2c987e1ffea" data-uuid="c9e5b2f50259497a9280e2c987e1ffea">Survived</th>
+                <th id="data-uuid-ed5f2734157c49cc81bfd3fb37a9d8d7" data-uuid="ed5f2734157c49cc81bfd3fb37a9d8d7">Passenger name</th>
+                <th id="data-uuid-458a1f449ed54881b6866b248a961adc" data-uuid="458a1f449ed54881b6866b248a961adc">Sex</th>
+                <th id="data-uuid-999cdfb299874d7aad8f1a26176aab79" data-uuid="999cdfb299874d7aad8f1a26176aab79">Age</th>
+                <th id="data-uuid-79a35402d1e64f6e81694831291a875f" data-uuid="79a35402d1e64f6e81694831291a875f">Number of siblings/spouse</th>
+                <th id="data-uuid-f53da34e162c48d386c9aae7ea7c9aa2" data-uuid="f53da34e162c48d386c9aae7ea7c9aa2">Fare</th>
+              </tr>
+              <tr>
+                <td id="data-uuid-7aff8f523e0e47f787142be57d1c35ab" data-uuid="7aff8f523e0e47f787142be57d1c35ab">3</td>
+                <td id="data-uuid-131ba2248d9648ab82d4ef4b181724b2" data-uuid="131ba2248d9648ab82d4ef4b181724b2" class="age">1</td>
+                <td id="data-uuid-2f0f5722d9cf4bfa9f4e5a3330d9a00b" data-uuid="2f0f5722d9cf4bfa9f4e5a3330d9a00b" class="startpoint">de Messemaeker, Mrs. Guillaume</td>
+                <td id="data-uuid-21cf6aba97f740e488becd2d21d961d6" data-uuid="21cf6aba97f740e488becd2d21d961d6" class="endpoint">female</td>
+                <td id="data-uuid-33fab22795e54319812bdb7d74a14ee7" data-uuid="33fab22795e54319812bdb7d74a14ee7" class="journey">36</td>
+                <td id="data-uuid-b08c6d75dbc64df79fe9e897754802a1" data-uuid="b08c6d75dbc64df79fe9e897754802a1">1</td>
+                <td id="data-uuid-2d98e6d5da074a04acf258c6d8144e1d" data-uuid="2d98e6d5da074a04acf258c6d8144e1d" class="journey">17.400</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-46541b8d640c49c38732808124040467" data-uuid="46541b8d640c49c38732808124040467">2</td>
+                <td id="data-uuid-ef17eb0138134208bfe648278abf604d" data-uuid="ef17eb0138134208bfe648278abf604d" class="age">0</td>
+                <td id="data-uuid-368f11e33c39438187ddeb508283bfe3" data-uuid="368f11e33c39438187ddeb508283bfe3" class="startpoint">Levy, Mr. Rene Jacques</td>
+                <td id="data-uuid-7a972e5e3c0c4c849213f82890f9155c" data-uuid="7a972e5e3c0c4c849213f82890f9155c" class="endpoint">male</td>
+                <td id="data-uuid-66f88bb91a4b4061be73153870b9ef74" data-uuid="66f88bb91a4b4061be73153870b9ef74" class="journey">36</td>
+                <td id="data-uuid-3c748f83e40b4eacb5c971901fd3a84e" data-uuid="3c748f83e40b4eacb5c971901fd3a84e">0</td>
+                <td id="data-uuid-83eb50b97ef14d3d9d3649e30bc7f99e" data-uuid="83eb50b97ef14d3d9d3649e30bc7f99e" class="journey">12.875</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-fb9d36bba669419d91d8f68f10b8e283" data-uuid="fb9d36bba669419d91d8f68f10b8e283">1</td>
+                <td id="data-uuid-1e21df8d70434ad496bba164a20368e0" data-uuid="1e21df8d70434ad496bba164a20368e0" class="age">1</td>
+                <td id="data-uuid-df59ae8b0fee423084c9f3e5ff9d0396" data-uuid="df59ae8b0fee423084c9f3e5ff9d0396" class="startpoint">Barkworth, Mr. Algernon</td>
+                <td id="data-uuid-5fb9e7f6066c4150ba2a910b7deaf7dc" data-uuid="5fb9e7f6066c4150ba2a910b7deaf7dc" class="endpoint">male</td>
+                <td id="data-uuid-3090d6eb41e44ef4b5de70398ab425a3" data-uuid="3090d6eb41e44ef4b5de70398ab425a3" class="journey">80</td>
+                <td id="data-uuid-aeaeaf2c55c14459b959c30fd228999e" data-uuid="aeaeaf2c55c14459b959c30fd228999e">0</td>
+                <td id="data-uuid-51b9500eb6fd4ad29655c21fe864565e" data-uuid="51b9500eb6fd4ad29655c21fe864565e" class="journey">30.000</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-019c0654710c4e1494fa2200bbde7dd0" data-uuid="019c0654710c4e1494fa2200bbde7dd0">3</td>
+                <td id="data-uuid-6f74cb3509bf4403985f68142db078cf" data-uuid="6f74cb3509bf4403985f68142db078cf" class="age">0</td>
+                <td id="data-uuid-6abff48cb27e449e81dc8772c3a17724" data-uuid="6abff48cb27e449e81dc8772c3a17724" class="startpoint">Goodwin, Miss. Lillian Amy</td>
+                <td id="data-uuid-7224e33e7ad04fb29cde930c1a944d05" data-uuid="7224e33e7ad04fb29cde930c1a944d05" class="endpoint">female</td>
+                <td id="data-uuid-0628f9184f2b4f7b918090c6b557c29b" data-uuid="0628f9184f2b4f7b918090c6b557c29b" class="journey">16</td>
+                <td id="data-uuid-4ceb55e7fccf424aa4dc464b686c3fd8" data-uuid="4ceb55e7fccf424aa4dc464b686c3fd8">5</td>
+                <td id="data-uuid-eee9a582807042af944ef6c30aef6f01" data-uuid="eee9a582807042af944ef6c30aef6f01" class="journey">46.900</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p id="data-uuid-2016f7641375408f8016bd868a11f930" data-uuid="2016f7641375408f8016bd868a11f930">
+          <strong>AFTER</strong>
+        </p>
+        <div id="data-uuid-d05b3a22bda44d70bc704c831aa599a5" data-uuid="d05b3a22bda44d70bc704c831aa599a5" class="table-div">
+          <table id="data-uuid-18aa846f968545a28e9c77734cbd1dc7" data-uuid="18aa846f968545a28e9c77734cbd1dc7" class="tables">
+            <tbody>
+              <tr>
+                <th id="data-uuid-b5b92d1324304f9db815073862c7349d" data-uuid="b5b92d1324304f9db815073862c7349d">Passenger class</th>
+                <th id="data-uuid-29e5a054aeab4dc58a16bdf3bd575502" data-uuid="29e5a054aeab4dc58a16bdf3bd575502">Survived</th>
+                <th id="data-uuid-76305cd669e940d0bd254f25ba2e10d1" data-uuid="76305cd669e940d0bd254f25ba2e10d1">Passenger name</th>
+                <th id="data-uuid-83f4bc1535fd42f28df26d74f7b52649" data-uuid="83f4bc1535fd42f28df26d74f7b52649">Sex</th>
+                <th id="data-uuid-77031814ff194eba9cc5964351b7dcd4" data-uuid="77031814ff194eba9cc5964351b7dcd4">Age</th>
+                <th id="data-uuid-c38beb64ea32484b9f66b4500af9dc92" data-uuid="c38beb64ea32484b9f66b4500af9dc92">Number of siblings/spouse</th>
+                <th id="data-uuid-813f469acbbc41fcace431ea0ce88bf2" data-uuid="813f469acbbc41fcace431ea0ce88bf2">Fare</th>
+              </tr>
+              <tr>
+                <td id="data-uuid-31e3cc3d22394bb8b0e86927e04c0b5a" data-uuid="31e3cc3d22394bb8b0e86927e04c0b5a">3</td>
+                <td id="data-uuid-9313fad221f74166a7636f26570472f9" data-uuid="9313fad221f74166a7636f26570472f9" class="age">1</td>
+                <td id="data-uuid-e7b0335006244b20a78090185062e201" data-uuid="e7b0335006244b20a78090185062e201" class="startpoint" />
+                <td id="data-uuid-016756ba345546e88e5c893f533fb943" data-uuid="016756ba345546e88e5c893f533fb943" class="endpoint">female</td>
+                <td id="data-uuid-4c37fd47770c4793a8acfe16e93a3938" data-uuid="4c37fd47770c4793a8acfe16e93a3938" class="journey">35-44</td>
+                <td id="data-uuid-9154690c17ac4061be25c47d8d7c9585" data-uuid="9154690c17ac4061be25c47d8d7c9585">1</td>
+                <td id="data-uuid-b5ef569038d9495e98af80557e95b46f" data-uuid="b5ef569038d9495e98af80557e95b46f" class="journey">17</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-e0a919816b6f4a989bb9b63e44a11954" data-uuid="e0a919816b6f4a989bb9b63e44a11954">2</td>
+                <td id="data-uuid-153cbfab0f6048178fa97bb0d2de6bee" data-uuid="153cbfab0f6048178fa97bb0d2de6bee" class="age">0</td>
+                <td id="data-uuid-ed25b686c3d748738be3fe82dd1a59c9" data-uuid="ed25b686c3d748738be3fe82dd1a59c9" class="startpoint" />
+                <td id="data-uuid-c0434a65ad1b4e4fa60fcef81bf02b69" data-uuid="c0434a65ad1b4e4fa60fcef81bf02b69" class="endpoint">male</td>
+                <td id="data-uuid-78c3d44389c042c7b2f4e5ede0c46f24" data-uuid="78c3d44389c042c7b2f4e5ede0c46f24" class="journey">35-44</td>
+                <td id="data-uuid-7daacde001bc4bdab17e868b7eea1082" data-uuid="7daacde001bc4bdab17e868b7eea1082">0</td>
+                <td id="data-uuid-bfadaaf12f524d0fad53e94306c9e4df" data-uuid="bfadaaf12f524d0fad53e94306c9e4df" class="journey">13</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-e74b20be33d644038972c72a4c37fae5" data-uuid="e74b20be33d644038972c72a4c37fae5">1</td>
+                <td id="data-uuid-5b32589841f548699d47e8ea52ba4282" data-uuid="5b32589841f548699d47e8ea52ba4282" class="age">1</td>
+                <td id="data-uuid-0298b9bac79e49e0813261b22cabf3ce" data-uuid="0298b9bac79e49e0813261b22cabf3ce" class="startpoint" />
+                <td id="data-uuid-2d65df0797e74ba69b790c9c7b22384b" data-uuid="2d65df0797e74ba69b790c9c7b22384b" class="endpoint">male</td>
+                <td id="data-uuid-beccac58d96c44fca375200ddbaa213d" data-uuid="beccac58d96c44fca375200ddbaa213d" class="journey">55 or older</td>
+                <td id="data-uuid-3a7cba7fd8bd49a188bd50d20e808224" data-uuid="3a7cba7fd8bd49a188bd50d20e808224">0</td>
+                <td id="data-uuid-d677788cb06c4273a218e3813bad0482" data-uuid="d677788cb06c4273a218e3813bad0482" class="journey">30</td>
+              </tr>
+              <tr>
+                <td id="data-uuid-cda00c8ca7c44051a6e861920d6d22f8" data-uuid="cda00c8ca7c44051a6e861920d6d22f8">3</td>
+                <td id="data-uuid-23c67838eb594a58b589f118e3685b71" data-uuid="23c67838eb594a58b589f118e3685b71" class="age">0</td>
+                <td id="data-uuid-10043dce9ec645409c7d9bf6cf3b9584" data-uuid="10043dce9ec645409c7d9bf6cf3b9584" class="startpoint" />
+                <td id="data-uuid-db5a9587b0434938bf242b2ae697fa7d" data-uuid="db5a9587b0434938bf242b2ae697fa7d" class="endpoint">female</td>
+                <td id="data-uuid-59b84e23637343efb553f61b9bda26e5" data-uuid="59b84e23637343efb553f61b9bda26e5" class="journey">15-19</td>
+                <td id="data-uuid-178ed08d1071442dafaf52c354b24528" data-uuid="178ed08d1071442dafaf52c354b24528">4 or more</td>
+                <td id="data-uuid-664c1b5b93c249b0ac10239b4ce528ba" data-uuid="664c1b5b93c249b0ac10239b4ce528ba" class="journey">45</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section id="data-uuid-37f5321a42b743518e2641c42418369e" data-uuid="37f5321a42b743518e2641c42418369e" class="course-section-title">
+      <h1 id="data-uuid-50be6f0e103f4eaab1ca376d1b95c84b" data-uuid="50be6f0e103f4eaab1ca376d1b95c84b">
+        <span>Topic 7</span>
+        Summary
+      </h1>
+      <div id="data-uuid-3297f386d579400793d2fc4ee7e9b1fc" data-uuid="3297f386d579400793d2fc4ee7e9b1fc" class="content-left">
+        <div id="data-uuid-501a6ff966df4c05bfa50a396132a327" data-uuid="501a6ff966df4c05bfa50a396132a327" class="cool-ol">
+          <ol id="data-uuid-be5bde0d3f354392bfb3c614473c8a35" data-uuid="be5bde0d3f354392bfb3c614473c8a35">
+            <li id="data-uuid-bd21bc9409d440bbaf7890567c698cac" data-uuid="bd21bc9409d440bbaf7890567c698cac">
+              <p id="data-uuid-91a2cb75e897487ca5804bfe1c57d459" data-uuid="91a2cb75e897487ca5804bfe1c57d459">Anonymisation methods are only one step in the anonymisation process.</p>
+            </li>
+            <li id="data-uuid-6b4d8cd374e344819d69386c17533d9a" data-uuid="6b4d8cd374e344819d69386c17533d9a">
+              <p id="data-uuid-c20948082e3d4e899efaef2f34f68a05" data-uuid="c20948082e3d4e899efaef2f34f68a05">Every anonymisation process depends on the data situation, the use case, the environment and so forth.</p>
+            </li>
+            <li id="data-uuid-885c6936445b4b61bed34001f45f4031" data-uuid="885c6936445b4b61bed34001f45f4031">
+              <p id="data-uuid-3ce84342d6994ece8ba0b30d18e3cc56" data-uuid="3ce84342d6994ece8ba0b30d18e3cc56">
+                Many more techniques and examples are in the Information Commissioner’s Office’s document
+                <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/anonymisation/">Anonymisation: managing data protection risk code of practice.</a>
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div id="data-uuid-bc8c3f2703584af19323b6b898f1cde9" data-uuid="bc8c3f2703584af19323b6b898f1cde9" class="content-right" />
+    </section>
+  </body>
+</html>

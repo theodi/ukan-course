@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Default Scaffold Editor</title>
+        <link rel="stylesheet" href="css/jquery-ui-editor-slider-custom.css"></link>
+        <link rel="stylesheet" href="css/edit.css"></link>
+    </head>
+     <body class="editor panel--active">
+        <form enctype="multipart/form-data">
+            <div id="wrapper">
+                <div class="panel">
+                    <ul class="panel-menu">
+                        <li><a class="panel-tab" href="#tabs-1">States</a></li>
+                        <span class="stretch"></span>
+                        <li class="menu-underline"></li>
+                    </ul>
+                    <div class="panel-content">
+                        <div id="tabs-1">
+                            <div class="group mediaContent"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workspace">
+                    <div class="group preview">
+                        <div class="content">
+                            <menu class="button-menu vert-right">
+                                <button class="button btn-replace" name="Replace" type="button"></button>
+                                <button class="button btn-delete" name="Delete" type="button"></button>
+                            </menu>
+                            <div id="preview-area">
+                                <div id="preview-image"></div>
+                                <input type="text" class="slide-label" placeholder="Add Label (Optional)" maxlength="60"><br/><textarea class="slide-caption" placeholder="Add Caption (Optional)" maxlength="300" cols="100"></textarea>
+                                
+                            </div>
+                            <div id="slide_info">
+                                    <div id="slide_nav">
+                                        <div id="slider"></div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="upload">
+                        <div class="drag-area">
+                            <div class="upload-instructions">
+                                <div id="upload-image-icon"></div>
+                                <span class="dragText">Click to Upload Images</span>
+                                <div class="details">or drag and drop files from your desktop.
+                                    <p/>
+                                * All images should have the same aspect ratio.</div>
+                            </div>
+                        </div>
+                        <input id="image-uploader" type="file" multiple="multiple" accept="image/*"/>
+                        <input id="image-replacer" type="file" accept="image/*"/>
+                    </div>
+                </div>    
+            </div>
+        </form>
+
+        <div class="overlay-mask"></div>
+
+        <div class="dialog-box confirmation">
+            <div class="dialogText">
+                <h4>Are you sure?</h4>
+                <p>You cannot undo this action.</p>
+            </div>
+            <div class="dialogButtons">
+                <div class="button-div confirmDelete clickable"><div class="button-text">Remove</div></div><br>
+                <span class="cancelDelete clickable">Cancel</span>
+            </div>
+            <div class="show-again">
+                <input type="checkbox" id="showDelConf" class="custom-checkbox">
+                <div class="fake-checkbox"></div>
+                Don't show this message again.
+            </div>
+        </div>
+
+        <div class="dialog-box badUpload">
+            <div class="dialogText">
+                <h4>Wait a second!</h4>
+                <p>Some files you selected are not images.<br>These files will be ignored.</p>
+            </div>
+            <div class="dialogButtons">
+                <div class="button-div okay clickable"><div class="button-text">OK</div></div><br>
+            </div>
+        </div>
+        
+    </body>
+    <script src="js/edit.js"></script>
+</html>

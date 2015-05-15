@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Show/Hide Widget Editor</title>
+    <!-- Show/Hide Widget CSS. -->
+    <link rel="stylesheet" href="css/edit.css" />
+    <!-- Required javascript libraries. -->
+
+    <!-- Show/Hide Widget JS. -->
+    <script src="js/edit.js"></script>
+
+</head>
+
+<body class="editor">
+<div id="editor-container">
+    <div class="buttonContainer" id="show">
+        <span id="show-header">Button Normal State</span>
+        <div class="show-button-text">
+            <!-- Note: This 'placeholder' value must be kept in sync with the view.js defaults. -->
+            <input type="text" placeholder="Question" maxlength = "60">
+        </div>
+    </div>
+    <div class="buttonContainer" id="hide">
+        <span id="hide-header">Button Active State</span>
+        <div class="hide-button-text">
+            <!-- Note: This 'placeholder' value must be kept in sync with the view.js defaults. -->
+            <input type="text" placeholder="Answer" maxlength = "60">
+        </div>
+    </div>
+    <span id="answer-header">Answer Text</span>
+    <div class="group" id="answer">
+        <menu class="button-menu vert-right">
+            <div class="button btn-add-image imageEditor" name="Add Image">
+                <input id="imagePicker" type="file">
+            </div>
+        </menu>
+        <textarea placeholder="Add Answer" wrap="soft" id="answerText"></textarea>
+    </div>
+    <div class="group" id="imageGroup" style="display: none">
+        <menu class="button-menu vert-right" id="imageButtons">
+            <div class="button btn-replace" name="Swap Image">
+                <input id="swapButton" type="file">
+            </div>
+            <div class="button btn-delete" name="Delete Image">
+            </div>
+        </menu>
+        <div class="image">
+            <img id="imageContainer" style="display:none">
+        </div>
+    </div>
+</div>
+</body>
+</html>

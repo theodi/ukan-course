@@ -1,0 +1,4 @@
+.time-interval-major,
+    .time-interval, .nav-container .date {
+        display: none;
+    }
