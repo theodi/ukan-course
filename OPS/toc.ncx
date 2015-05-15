@@ -163,18 +163,7 @@
       <content src="s9ml/topic10x/reader_1.xhtml#data-uuid-9abfebc970914851a3272212c93d1fa7"></content>
       
     </navPoint>
-    </navPoint><navPoint id="appendix">
-      <navLabel>
-        <text>Appendix</text>
-      </navLabel>
-      <content src="s9ml/remarks.xhtml"></content>
-      <navPoint id="f7c7701f81d94e638509f883adb5b9b7">
-      <navLabel>
-        <text>Remarks</text>
-      </navLabel>
-      <content src="s9ml/remarks.xhtml#data-uuid-f7c7701f81d94e638509f883adb5b9b7"></content>
-      
     </navPoint>
-    </navPoint>
+    
       </navMap>
     </ncx>
