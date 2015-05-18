@@ -27,7 +27,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	font-family: 'helvetica neue';
+	font-family: "Helvetica Neue", "HelveticaNeue-Light", "Helvetica Neue Light",  
+  Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 .content-left
